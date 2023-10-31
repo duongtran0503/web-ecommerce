@@ -1,3 +1,4 @@
+///thuộc tính image để trống 
 const product = [
   {
     productType: "điện thoại",
