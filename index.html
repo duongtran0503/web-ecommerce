@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Commerce</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="icon" type="image/x-icon" href="./image/logo/logo.png" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <!-- header start  -->
+    <section class="container">
+      <section id="header" class="container-header">
+        <header class="header">
+          <section class="header-top">
+            <h4 class="header-top__title-left">E-Commerce.com</h4>
+            <div class="header-top-right">
+              <h4 class="header-top__title-right-1">&copy; group 17</h4>
+              <div class="header-top__title-right-2">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-square-instagram"></i>
+                <i class="fa-brands fa-tiktok"></i>
+              </div>
+            </div>
+          </section>
+          <section class="header-bottom">
+            <div class="logo" onclick="window.scrollTo(0,0)">
+              <div class="logo-img">
+                <img src="./image/logo/logo.png" alt="" />
+              </div>
+              <div class="logo-title">
+                <h2><span>E</span>Commerce</h2>
+              </div>
+            </div>
+            <div class="search-box">
+              <form action="#" class="form">
+                <div class="input-box">
+                  <label class="icon-search" for="input-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </label>
+                  <input
+                    type="text"
+                    id="input-search"
+                    class="input-search"
+                    placeholder="nhập tên sản phẩm bạn muốn mua"
+                  />
+                </div>
+              </form>
+              <button class="search-btn">tìm kiếm</button>
+            </div>
+            <div class="header__bottom-right">
+              <div
+                class="header__shop-btn"
+                onclick="location.href='./page/shop.html' "
+              >
+                <div>
+                  <i class="fa-solid fa-shop"></i>
+                </div>
+                <h4 class="shop-title">đến cửa hàng</h4>
+              </div>
+              <div
+                class="header__viewCart-btn"
+                onclick=" location.href =`./page/ViewCart.html`"
+              >
+                <div class="viewCart-btn">
+                  <div class="viewCart-icon">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                  </div>
+                  <h4 class="vỉewCart-title">giỏ hàng</h4>
+                  <span class="handle-product" id="countproductofcart"></span>
+                </div>
+                <!-- <div class="container-shopcard">
+                  <div class="clickoutside"></div>
+
+                  <div class="btn-close">
+                    <h5>giỏ hàng</h5>
+                    <button type="button" class="btn">close</button>
+                  </div>
+                  <hr />
+                  <div class="product-wrap" id="shopcart"></div>
+                  <hr />
+                  <div class="totail-cont">
+                    <h5>tổng số tiền là</h5>
+                    <span id="totail-cont"></span>
+                  </div>
+                  <hr />
+                  <div class="buttons">
+                    <button>xem giở hàng</button>
+                    <button>thanh toán</button>
+                    <button></button>
+                  </div>
+                </div> -->
+              </div>
+              <div class="header__buttons">
+                <button class="account">tài khoản</button>
+                <div class="from-wrap">
+                  <div class="singin-with-gg">
+                    <div class="logo"></div>
+                    <h3>đăng nhập bằng tải khoản google</h3>
+                  </div>
+                  <div class="form-active">
+                    <h4>đăng nhập</h4>
+                    <form action="#" class="form"></form>
+                  </div>
+                  <div class="singup">
+                    <a href="#">đăng ký tài khoản tại đây</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </header>
+      </section>
+      <!-- header end -->
+      <!-- banner start -->
+      <section id="banner" class="container-banner">
+        <section class="banner">
+          <section class="banner-left">
+            <ul class="list-option">
+              <a href="#" class="" id="">
+                <li class="option-item">
+                  <div class="item-icon">
+                    <img src="./image/icon/phone.png" alt="pizza" />
+                  </div>
+                  <h4 class="item-title">Điện thoại</h4>
+                  <div class="icon-chevron">
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </div>
+                </li>
+              </a>
+              <a href="#" class="" id="">
+                <li class="option-item">
+                  <div class="item-icon">
+                    <img src="./image/icon/laptop.png" alt="hamburger" />
+                  </div>
+                  <h4 class="item-title">máy tính</h4>
+                  <div class="icon-chevron">
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </div>
+                </li>
+              </a>
+              <a href="#" class="" id="">
+                <li class="option-item">
+                  <div class="item-icon">
+                    <img src="./image/icon/tainghe.png" alt="noodle" />
+                  </div>
+                  <h4 class="item-title">tại nghe</h4>
+                  <div class="icon-chevron">
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </div>
+                </li>
+              </a>
+              <a href="#" class="" id="">
+                <li class="option-item">
+                  <div class="item-icon">
+                    <img src="./image/icon/loa.png" alt="coca" />
+                  </div>
+                  <h4 class="item-title">loa</h4>
+                  <div class="icon-chevron">
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </div>
+                </li>
+              </a>
+              <a href="#" class="" id="">
+                <li class="option-item">
+                  <div class="item-icon">
+                    <img src="./image/icon/pc.png" alt="barbecue" />
+                  </div>
+                  <h4 class="item-title">màn hình</h4>
+                  <div class="icon-chevron">
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </div>
+                </li>
+              </a>
+              <a href="#" class="" id="">
+                <li class="option-item">
+                  <div class="item-icon">
+                    <img src="./image/icon/keyandmouse.png" alt="hotpot" />
+                  </div>
+                  <h4 class="item-title">bàn phím và chuột</h4>
+                  <div class="icon-chevron">
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </div>
+                </li>
+              </a>
+              <a href="#" class="" id="">
+                <li class="option-item">
+                  <div class="item-icon">
+                    <img src="./image/icon/mtbag.png" alt="hotpot" />
+                  </div>
+                  <h4 class="item-title">máy tỉnh bảng</h4>
+                  <div class="icon-chevron">
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </div>
+                </li>
+              </a>
+              <a href="#" class="" id="">
+                <li class="option-item">
+                  <div class="item-icon">
+                    <img src="./image/icon/dongho.png" alt="hotpot" />
+                  </div>
+                  <h4 class="item-title">đồng hồ</h4>
+                  <div class="icon-chevron">
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </div>
+                </li>
+              </a>
+            </ul>
+
+            <div class="banner-left__bottom">
+              <img src="./image/banner/leftBanner.png" alt="free_ship" />
+            </div>
+          </section>
+          <section class="banner-right">
+            <div class="banner-slider">
+              <ul class="slider__list">
+                <li class="slider-item" id="1" bgcolor="#FF7F50">
+                  <div class="slider-image">
+                    <img src="" alt="" />
+                  </div>
+                  <div class="slider-content">
+                    <h1>giảm giá 10%</h1>
+                    <h2>tử ngày 11/11 đến 20/11/2023</h2>
+                    <p></p>
+                    <h3></h3>
+                  </div>
+                  <button>đặt hàng ngay</button>
+                </li>
+                <li class="slider-item" id="2" bgcolor="#00BFFF">
+                  <div class="slider-image">
+                    <img src="" alt="" />
+                  </div>
+                  <div class="slider-content">
+                    <h1>giảm giá 10%</h1>
+                    <h2>tử ngày 11/11 đến 20/11/2023</h2>
+                    <p></p>
+                    <h3></h3>
+                  </div>
+                  <button>đặt hàng ngay</button>
+                </li>
+                <li class="slider-item" id="3" bgcolor="#ACE1AF">
+                  <div class="slider-image">
+                    <img src="" alt="" />
+                  </div>
+                  <div class="slider-content">
+                    <h1>giảm giá 10%</h1>
+                    <h2>tử ngày 11/11 đến 20/11/2023</h2>
+                    <p></p>
+                    <h3></h3>
+                  </div>
+                  <button>đặt hàng ngay</button>
+                </li>
+                <li class="slider-item" id="4" bgcolor="#89CFF0">
+                  <div class="slider-image">
+                    <img src="" alt="" />
+                  </div>
+                  <div class="slider-content">
+                    <h1>giảm giá 10%</h1>
+                    <h2>tử ngày 11/11 đến 20/11/2023</h2>
+                    <p></p>
+                    <h3></h3>
+                  </div>
+                  <button>đặt hàng ngay</button>
+                </li>
+                <li class="slider-item" id="5" bgcolor="#fff">
+                  <div class="slider-image">
+                    <img src="" alt="" />
+                  </div>
+                  <div class="slider-content">
+                    <h1>giảm giá 10%</h1>
+                    <h2>tử ngày 11/11 đến 20/11/2023</h2>
+                    <p></p>
+                    <h3></h3>
+                  </div>
+                  <button>đặt hàng ngay</button>
+                </li>
+              </ul>
+              <div class="buttons">
+                <button id="left"></button>
+                <button id="right"></button>
+              </div>
+            </div>
+          </section>
+        </section>
+      </section>
+      <!-- banner end  -->
+      <!-- main start  -->
+      <section id="main" class="container-main">
+        <main class="main">
+          <section class="content-logo">
+            <div class="content-logo-wrapper">
+              <div class="wrapper-logo">
+                <img src="./image/logo/iphone.png" alt="" />
+              </div>
+              <div class="wrapper-logo">
+                <img src="./image/logo/Logo-Huawei-750x422.png" alt="" />
+              </div>
+              <div class="wrapper-logo">
+                <img src="./image/logo/xiaomi.png" alt="" />
+              </div>
+              <div class="wrapper-logo">
+                <img src="./image/logo/logo_oppo.png" alt="" />
+              </div>
+              <div class="wrapper-logo">
+                <img src="./image/logo/lux.png" alt="" />
+              </div>
+              <div class="wrapper-logo">
+                <img src="./image/logo/asus3.png" alt="" />
+              </div>
+            </div>
+          </section>
+          <section class="content-phone">
+            <div class="content">
+              <div class="content-left">
+                <div class="newPhone">
+                  <div class="newphone-title">
+                    <h2>Điện thoại mới ra mắt 2023</h2>
+                  </div>
+                  <div class="newphone-img">
+                    <img src="./image/product/dien_thoai/app-img.png" alt="" />
+                  </div>
+                  <div class="newphone-description">
+                    <h3>Samsung Galaxy Z Fold5 5G</h3>
+                    <h4>44.990.000₫</h4>
+                    <p>
+                      Chip xử lý (CPU): Snapdragon 8 Gen 2 for Galaxy RAM: 12 GB
+                      Bộ nhớ trong: 512 GB Màn hình: Dynamic AMOLED 2X, Chính
+                      7.6 inch, QXGA+ & Phụ 6.2 inch, HD+ Pin, sạc: 4400 mAh, 25
+                      W
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="content-right">
+                <div class="title">
+                  <h3>một số sản phẩm khác</h3>
+                </div>
+                <div class="container-product">
+                  <div class="product-item">
+                    <div class="image">
+                      <img
+                        src="./image/product/dien_thoai/app-img.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="dexcription">
+                      <h3>Samsung Galaxy Z Fold5 5G</h3>
+                      <p>44.990.000₫</p>
+                    </div>
+                  </div>
+                  <div class="product-item">
+                    <div class="image">
+                      <img
+                        src="./image/product/dien_thoai/app-img.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="dexcription">
+                      <h3>Samsung Galaxy Z Fold5 5G</h3>
+                      <p>44.990.000₫</p>
+                    </div>
+                  </div>
+                  <div class="product-item">
+                    <div class="image">
+                      <img
+                        src="./image/product/dien_thoai/app-img.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="dexcription">
+                      <h3>Samsung Galaxy Z Fold5 5G</h3>
+                      <p>44.990.000₫</p>
+                    </div>
+                  </div>
+                  <div class="product-item">
+                    <div class="image">
+                      <img
+                        src="./image/product/dien_thoai/app-img.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="dexcription">
+                      <h3>Samsung Galaxy Z Fold5 5G</h3>
+                      <p>44.990.000₫</p>
+                    </div>
+                  </div>
+                  <div class="product-item">
+                    <div class="image">
+                      <img
+                        src="./image/product/dien_thoai/app-img.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="dexcription">
+                      <h3>Samsung Galaxy Z Fold5 5G</h3>
+                      <p>44.990.000₫</p>
+                    </div>
+                  </div>
+                  <div class="product-item">
+                    <div class="image">
+                      <img
+                        src="./image/product/dien_thoai/app-img.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="dexcription">
+                      <h3>Samsung Galaxy Z Fold5 5G</h3>
+                      <p>44.990.000₫</p>
+                    </div>
+                  </div>
+                  <div class="product-item">
+                    <div class="image">
+                      <img
+                        src="./image/product/dien_thoai/app-img.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="dexcription">
+                      <h3>Samsung Galaxy Z Fold5 5G</h3>
+                      <p>44.990.000₫</p>
+                    </div>
+                  </div>
+                  <div class="product-item">
+                    <div class="image">
+                      <img
+                        src="./image/product/dien_thoai/app-img.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="dexcription">
+                      <h3>Samsung Galaxy Z Fold5 5G</h3>
+                      <p>44.990.000₫</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="content-laptop">
+            <div class="content">
+              <div class="content-left"></div>
+              <div class="content-right"></div>
+            </div>
+          </section>
+          <section class="content-headPhone">
+            <div class="content"></div>
+          </section>
+          <section class="content-keyandmouse">
+            <div class="content"></div>
+          </section>
+          <section class="content-collection">
+            <div class="content">
+              <div class="content-left"></div>
+              <div class="content-right"></div>
+            </div>
+          </section>
+        </main>
+        <section class="content-review">
+          <div class="content">
+            <div class="content-left"></div>
+            <div class="content-right"></div>
+          </div>
+        </section>
+      </section>
+      <!-- main end  -->
+      <!-- footer start  -->
+      <section id="footer" class="container-footer">
+        <footer class="footer"></footer>
+      </section>
+      <!-- footer end  -->
+    </section>
+    <script src="./js/module/account.js"></script>
+    <script src="./js/module/slideShow.js"></script>
+  </body>
+</html>
