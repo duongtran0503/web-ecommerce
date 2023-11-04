@@ -88,3 +88,4 @@ const product = [
     trademark: "samsum",
   },
 ];
+export default product;
