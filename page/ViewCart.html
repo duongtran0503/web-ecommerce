@@ -13,7 +13,7 @@
     <title>ShopFoodie</title>
     <link rel="icon" type="image/x-icon" href="../image/logo/logo.png" />
     <link rel="stylesheet" href="../css/reset.css" />
-    <link rel="stylesheet" href="../css/shop.css" />
+    <link rel="stylesheet" href="../css/ViewCart.css" />
   </head>
   <body>
     <section class="container">
@@ -114,12 +114,16 @@
           </section>
         </header>
       </section>
-      <section
-        class="container-product"
-        style="margin: 0 auto; margin-top: 120px; width: 1200px"
-      >
-        <h1>không có sản phẩm nào</h1>
+      <section class="container-product">
+        <div class="content-left" id="ViewCart"></div>
+        <div class="content-right">
+          <div class="totail-cont">
+            <h5>tổng số tiền là</h5>
+            <span id="totail-cont">0 vnđ</span>
+          </div>
+        </div>
       </section>
     </section>
+    <script type="module" src="../js/library/index.js"></script>
   </body>
 </html>

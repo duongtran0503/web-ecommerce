@@ -1,5 +1,7 @@
 const product = [
   {
+    id: 0,
+    quantity: 1,
     productType: "điện thoại",
     title: "samsum galazxy",
     image: `../image/product/dien_thoai/app-img.png`,
@@ -9,6 +11,8 @@ const product = [
     trademark: "samsum",
   },
   {
+    id: 2,
+    quantity: 1,
     productType: "điện thoại",
     title: "samsum galazxy",
     image: `../image/product/dien_thoai/app-img.png`,
@@ -18,6 +22,8 @@ const product = [
     trademark: "samsum",
   },
   {
+    id: 3,
+    quantity: 1,
     productType: "điện thoại",
     title: "samsum galazxy",
     image: `../image/product/dien_thoai/app-img.png`,
@@ -27,6 +33,8 @@ const product = [
     trademark: "samsum",
   },
   {
+    id: 4,
+    quantity: 1,
     productType: "điện thoại",
     title: "samsum galazxy",
     image: `../image/product/dien_thoai/app-img.png`,
@@ -36,6 +44,8 @@ const product = [
     trademark: "samsum",
   },
   {
+    id: 5,
+    quantity: 1,
     productType: "điện thoại",
     title: "samsum galazxy",
     image: `../image/product/dien_thoai/app-img.png`,
@@ -45,6 +55,8 @@ const product = [
     trademark: "samsum",
   },
   {
+    id: 6,
+    quantity: 1,
     productType: "điện thoại",
     title: "samsum galazxy",
     image: `../image/product/dien_thoai/app-img.png`,
@@ -54,6 +66,8 @@ const product = [
     trademark: "samsum",
   },
   {
+    id: 7,
+    quantity: 1,
     productType: "điện thoại",
     title: "samsum galazxy",
     image: `../image/product/dien_thoai/app-img.png`,
@@ -63,6 +77,8 @@ const product = [
     trademark: "samsum",
   },
   {
+    id: 8,
+    quantity: 1,
     productType: "điện thoại",
     title: "samsum galazxy",
     image: `../image/product/dien_thoai/app-img.png`,

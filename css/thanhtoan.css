@@ -1,0 +1,36 @@
+.container {
+  margin: 0 auto;
+  width: 1200px;
+
+  height: auto;
+}
+.container .logo {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+.container .logo .logo-img {
+  width: 100px;
+  height: 100px;
+}
+.container .logo .logo-title {
+  font-size: 20px;
+  font-weight: 400;
+  margin-left: 20px;
+}
+.container-product {
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+.container-product .container-left {
+  width: 70%;
+  height: auto;
+  border: 1px solid black;
+}
+.container-product .container-right {
+  width: 30%;
+  height: auto;
+  border: 1px solid black;
+}
