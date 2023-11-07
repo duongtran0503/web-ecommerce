@@ -1,91 +1,46 @@
-const product = [
-  {
-    id: 0,
-    quantity: 1,
-    productType: "điện thoại",
-    title: "samsum galazxy",
-    image: `../image/product/dien_thoai/app-img.png`,
-    cont: 53000000,
-    detail:
-      "Mua Samsung Galaxy S23 giá rẻ, chính hãng, giảm ngay 1 triệu, thu cũ đổi mới đến 3 triệu, góp 0%, BH chính hãng 1 năm (đến hết 23/03)",
-    trademark: "samsum",
-  },
-  {
-    id: 2,
-    quantity: 1,
-    productType: "điện thoại",
-    title: "samsum galazxy",
-    image: `../image/product/dien_thoai/app-img.png`,
-    cont: 23000000,
-    detail:
-      "Mua Samsung Galaxy S23 giá rẻ, chính hãng, giảm ngay 1 triệu, thu cũ đổi mới đến 3 triệu, góp 0%, BH chính hãng 1 năm (đến hết 23/03)",
-    trademark: "samsum",
-  },
-  {
-    id: 3,
-    quantity: 1,
-    productType: "điện thoại",
-    title: "samsum galazxy",
-    image: `../image/product/dien_thoai/app-img.png`,
-    cont: 23000000,
-    detail:
-      "Mua Samsung Galaxy S23 giá rẻ, chính hãng, giảm ngay 1 triệu, thu cũ đổi mới đến 3 triệu, góp 0%, BH chính hãng 1 năm (đến hết 23/03)",
-    trademark: "samsum",
-  },
-  {
-    id: 4,
-    quantity: 1,
-    productType: "điện thoại",
-    title: "samsum galazxy",
-    image: `../image/product/dien_thoai/app-img.png`,
-    cont: 23000000,
-    detail:
-      "Mua Samsung Galaxy S23 giá rẻ, chính hãng, giảm ngay 1 triệu, thu cũ đổi mới đến 3 triệu, góp 0%, BH chính hãng 1 năm (đến hết 23/03)",
-    trademark: "samsum",
-  },
-  {
-    id: 5,
-    quantity: 1,
-    productType: "điện thoại",
-    title: "samsum galazxy",
-    image: `../image/product/dien_thoai/app-img.png`,
-    cont: 23000000,
-    detail:
-      "Mua Samsung Galaxy S23 giá rẻ, chính hãng, giảm ngay 1 triệu, thu cũ đổi mới đến 3 triệu, góp 0%, BH chính hãng 1 năm (đến hết 23/03)",
-    trademark: "samsum",
-  },
-  {
-    id: 6,
-    quantity: 1,
-    productType: "điện thoại",
-    title: "samsum galazxy",
-    image: `../image/product/dien_thoai/app-img.png`,
-    cont: 23000000,
-    detail:
-      "Mua Samsung Galaxy S23 giá rẻ, chính hãng, giảm ngay 1 triệu, thu cũ đổi mới đến 3 triệu, góp 0%, BH chính hãng 1 năm (đến hết 23/03)",
-    trademark: "samsum",
-  },
-  {
-    id: 7,
-    quantity: 1,
-    productType: "điện thoại",
-    title: "samsum galazxy",
-    image: `../image/product/dien_thoai/app-img.png`,
-    cont: 23000000,
-    detail:
-      "Mua Samsung Galaxy S23 giá rẻ, chính hãng, giảm ngay 1 triệu, thu cũ đổi mới đến 3 triệu, góp 0%, BH chính hãng 1 năm (đến hết 23/03)",
-    trademark: "samsum",
-  },
-  {
-    id: 8,
-    quantity: 1,
-    productType: "điện thoại",
-    title: "samsum galazxy",
-    image: `../image/product/dien_thoai/app-img.png`,
-    cont: 23000000,
-    detail:
-      "Mua Samsung Galaxy S23 giá rẻ, chính hãng, giảm ngay 1 triệu, thu cũ đổi mới đến 3 triệu, góp 0%, BH chính hãng 1 năm (đến hết 23/03)",
-    trademark: "samsum",
-  },
-];
+const product = {
+  keyandmouse: [
+    {
+      nameStore: "keyandmouse",
+      id: 0,
+      quantity: 1,
+      productType: "bàn phím",
+      title: "MonsGeek M1 QMK Black AKKO Switch v3 Cream Yellow Pro",
+      image: `app-img.png`,
+      price: 53000000,
+      detail:
+        "  Thiết kế	75% có núm xoay Kết nối	USB Type-C to USB, có thể tháo rời Keycap	Keycap PBT Double-Shot / OEM profile ,Loại switch	AKKO Switch v3 – Cream Yellow Pro Led,	LED nền RGB / South-Facing Mạch Xuôi (Backlit, 4028 SMD LED dạng SMD) với nhiều chế độHotswap 5 pin, mạch xuôi (South-Facing) – Hỗ trợ QMK / VIA Hỗ trợ	NKRO / Multimedia / Macro / Khóa phím windows Phụ kiện	Cover che bụi – Dây cáp – Phụ kiện backup Tương thích	Windows / MacOS / Linux Kích thước	332x147x33mm Trọng lượng	1.962kg ",
+      trademark: "Akko",
+    },
+    {
+      nameStore: "keyandmouse",
+      id: 2,
+      quantity: 1,
+      productType: "bàn phím",
+      title: "MonsGeek M1 QMK Black AKKO Switch v3 Cream Yellow Pro",
+      image: `app-img.png`,
+      price: 53000000,
+      detail:
+        "  Thiết kế	75% có núm xoay Kết nối	USB Type-C to USB, có thể tháo rời Keycap	Keycap PBT Double-Shot / OEM profile ,Loại switch	AKKO Switch v3 – Cream Yellow Pro Led,	LED nền RGB / South-Facing Mạch Xuôi (Backlit, 4028 SMD LED dạng SMD) với nhiều chế độHotswap 5 pin, mạch xuôi (South-Facing) – Hỗ trợ QMK / VIA Hỗ trợ	NKRO / Multimedia / Macro / Khóa phím windows Phụ kiện	Cover che bụi – Dây cáp – Phụ kiện backup Tương thích	Windows / MacOS / Linux Kích thước	332x147x33mm Trọng lượng	1.962kg ",
+      trademark: "Akko",
+    },
+    {
+      nameStore: "keyandmouse",
+      id: 3,
+      quantity: 1,
+      productType: "bàn phím",
+      title: "MonsGeek M1 QMK Black AKKO Switch v3 Cream Yellow Pro",
+      image: `app-img.png`,
+      price: 53000000,
+      detail:
+        "  Thiết kế	75% có núm xoay Kết nối	USB Type-C to USB, có thể tháo rời Keycap	Keycap PBT Double-Shot / OEM profile ,Loại switch	AKKO Switch v3 – Cream Yellow Pro Led,	LED nền RGB / South-Facing Mạch Xuôi (Backlit, 4028 SMD LED dạng SMD) với nhiều chế độHotswap 5 pin, mạch xuôi (South-Facing) – Hỗ trợ QMK / VIA Hỗ trợ	NKRO / Multimedia / Macro / Khóa phím windows Phụ kiện	Cover che bụi – Dây cáp – Phụ kiện backup Tương thích	Windows / MacOS / Linux Kích thước	332x147x33mm Trọng lượng	1.962kg ",
+      trademark: "Akko",
+    },
+  ],
+  phone: [],
+  watch: [],
+  speaker: [],
+  Laptop: [],
+  tivi: [],
+};
 export default product;

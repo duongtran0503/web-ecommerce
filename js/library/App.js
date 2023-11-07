@@ -3,21 +3,31 @@ import { connect } from "./core/store.js";
 const connector = connect((state) => ({
   product: state.data,
 }));
-function App(data) {
-  console.log();
+function App({ product }) {
   return html`
-    ${data.product.map(
+    ${product.keyandmouse.map(
       (element, index) =>
-        `<div class = "product-wrapper" key = "${index}">
-          <button class = "product-btn" onclick = "dispatch('add',${index})" >thêm vào giỏ hàng</button>
-       <div class = "image">
-        <img  src ="${element.image}"/>
-       </div>
-       <div>
-        <h3>${element.title}</h3>
-        <p>${element.cont}</p>
-        <p>${element.detail}</p>
-       </div>
+        `  <div class="card-cpc">
+        <div class="card-image-cpc">
+          <img src="../image/product/dien_thoai/${element.image}" alt="product" />
+        </div>
+        <div class="card-description-cpc">
+          <div class="card-des-content-cpc">
+            <div class="card-title">
+              <h3>${element.title}</h3>
+            </div>
+            <div class="card-des-cpc">
+              <p>${element.trademark}</p>
+            </div>
+            <div class="card-price-cpc">
+              <h3>${element.price}₫</h3>
+            </div>
+          </div>
+          <div class="card-button-cpc">
+            <button   onclick = "dispatch('add',${index},'${element.nameStore}')">Thêm vào giỏ hàng</button>
+            <button class="seemore">Show</button>
+          </div>
+        </div>
       </div>
       `
     )}

@@ -8,7 +8,9 @@ const init = {
 export default function reducer(state = init, action, args) {
   switch (action) {
     case "add": {
-      const newProduct = state.data[args];
+      let property = args[1];
+      console.log(state.data[property][args[0]]);
+      const newProduct = state.data[property][args[0]];
       const newProductList = [...state.shopcart, newProduct];
       localStorage.removeItem("product");
       localStorage.clear();

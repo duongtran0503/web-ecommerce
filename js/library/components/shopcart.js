@@ -3,9 +3,11 @@ import { connect } from "../core/store.js";
 const connector = connect((state) => ({
   cart: state.shopcart,
 }));
+
 const shopcart = ({ cart }) => {
+  console.log(cart);
   let totailcont = cart.reduce((totail, current) => {
-    return totail + current.cont * current.quantity;
+    return totail + current.price * current.quantity;
   }, 0);
   document.getElementById("totail-cont").innerText =
     totailcont.toLocaleString("de-DE") + " vnd";
@@ -15,9 +17,9 @@ const shopcart = ({ cart }) => {
     <div>
       ${cart.map(
         (product, index) => `<div> ${product.title}:${
-          product.cont * product.quantity
-        } 
-      
+          product.price * product.quantity
+        }
+
       <div onclick = "dispatch('delete',${index})">X</div>
       <div onclick = "dispatch('addProduct',${index},${
           product.quantity
@@ -29,11 +31,12 @@ const shopcart = ({ cart }) => {
       )}
     </div>
   `;
+  return html``;
 };
 const viewCart = ({ cart }) => {
   console.log(cart);
   let totailcont = cart.reduce((totail, current) => {
-    return totail + current.cont * current.quantity;
+    return totail + current.price * current.quantity;
   }, 0);
   console.log(document.getElementById("totail-cont"));
   document.getElementById("totail-cont").innerText =
@@ -42,9 +45,9 @@ const viewCart = ({ cart }) => {
     <div>
       ${cart.map(
         (product, index) => `<div> ${product.title}:${
-          product.cont * product.quantity
-        } 
-      
+          product.price * product.quantity
+        }
+
       <div onclick = "dispatch('delete',${index})">X</div>
       <div onclick = "dispatch('addProduct',${index},${
           product.quantity
@@ -57,6 +60,7 @@ const viewCart = ({ cart }) => {
       )}
     </div>
   `;
+  return html``;
 };
 const fuc1 = connector(shopcart);
 const fuc2 = connector(viewCart);

@@ -21,7 +21,9 @@
       <section id="header" class="container-header">
         <header class="header">
           <section class="header-top">
-            <h4 class="header-top__title-left">E-Commerce.com</h4>
+            <h4 class="header-top__title-left" onclick="localStorage.clear()">
+              E-Commerce.com
+            </h4>
             <div class="header-top-right">
               <h4 class="header-top__title-right-1">&copy; group 17</h4>
               <div class="header-top__title-right-2">
@@ -343,132 +345,164 @@
                 <div class="title">
                   <h3>một số sản phẩm khác</h3>
                 </div>
-                <div class="container-product">
-                  <div class="product-item">
-                    <div class="image">
-                      <img
-                        src="./image/product/dien_thoai/app-img.png"
-                        alt=""
-                      />
-                    </div>
-                    <div class="dexcription">
-                      <h3>Samsung Galaxy Z Fold5 5G</h3>
-                      <p>44.990.000₫</p>
-                    </div>
-                  </div>
-                  <div class="product-item">
-                    <div class="image">
-                      <img
-                        src="./image/product/dien_thoai/app-img.png"
-                        alt=""
-                      />
-                    </div>
-                    <div class="dexcription">
-                      <h3>Samsung Galaxy Z Fold5 5G</h3>
-                      <p>44.990.000₫</p>
-                    </div>
-                  </div>
-                  <div class="product-item">
-                    <div class="image">
-                      <img
-                        src="./image/product/dien_thoai/app-img.png"
-                        alt=""
-                      />
-                    </div>
-                    <div class="dexcription">
-                      <h3>Samsung Galaxy Z Fold5 5G</h3>
-                      <p>44.990.000₫</p>
-                    </div>
-                  </div>
-                  <div class="product-item">
-                    <div class="image">
-                      <img
-                        src="./image/product/dien_thoai/app-img.png"
-                        alt=""
-                      />
-                    </div>
-                    <div class="dexcription">
-                      <h3>Samsung Galaxy Z Fold5 5G</h3>
-                      <p>44.990.000₫</p>
-                    </div>
-                  </div>
-                  <div class="product-item">
-                    <div class="image">
-                      <img
-                        src="./image/product/dien_thoai/app-img.png"
-                        alt=""
-                      />
-                    </div>
-                    <div class="dexcription">
-                      <h3>Samsung Galaxy Z Fold5 5G</h3>
-                      <p>44.990.000₫</p>
-                    </div>
-                  </div>
-                  <div class="product-item">
-                    <div class="image">
-                      <img
-                        src="./image/product/dien_thoai/app-img.png"
-                        alt=""
-                      />
-                    </div>
-                    <div class="dexcription">
-                      <h3>Samsung Galaxy Z Fold5 5G</h3>
-                      <p>44.990.000₫</p>
-                    </div>
-                  </div>
-                  <div class="product-item">
-                    <div class="image">
-                      <img
-                        src="./image/product/dien_thoai/app-img.png"
-                        alt=""
-                      />
-                    </div>
-                    <div class="dexcription">
-                      <h3>Samsung Galaxy Z Fold5 5G</h3>
-                      <p>44.990.000₫</p>
-                    </div>
-                  </div>
-                  <div class="product-item">
-                    <div class="image">
-                      <img
-                        src="./image/product/dien_thoai/app-img.png"
-                        alt=""
-                      />
-                    </div>
-                    <div class="dexcription">
-                      <h3>Samsung Galaxy Z Fold5 5G</h3>
-                      <p>44.990.000₫</p>
-                    </div>
-                  </div>
+                <section class="content-phone">
+                  <div class="list-card l-c-p-w-r"></div>
+                </section>
+              </div>
+            </div>
+          </section>
+          <!-- laptop  -->
+          <section class="content-product">
+            <div class="content">
+              <div class="content-title">
+                <h2>LapTop</h2>
+              </div>
+              <div class="list-card l-c-p-w-r" id="listcardproduct-lap"></div>
+              <div class="buttons">
+                <div class="wrap">
+                  <button
+                    class="buttonleft"
+                    id="content-product-buttonleft-lap"
+                  >
+                    <
+                  </button>
+                  <button
+                    class="buttonright"
+                    id="content-product-buttonright-lap"
+                  >
+                    >
+                  </button>
                 </div>
               </div>
             </div>
           </section>
-          <section class="content-laptop">
+
+          <!-- dong ho  -->
+          <section class="content-product">
+            <div class="content">
+              <div class="content-title">
+                <h2>đồng hồ</h2>
+              </div>
+              <div
+                class="list-card l-c-p-w-r"
+                id="list-card-product-watch"
+              ></div>
+              <div class="buttons">
+                <div class="wrap">
+                  <button
+                    class="buttonleft"
+                    id="content-product-buttonleft-watch"
+                  >
+                    <
+                  </button>
+                  <button
+                    class="buttonright"
+                    id="content-product-buttonright-watch"
+                  >
+                    >
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- tivi  -->
+          <section class="content-product">
+            <div class="content">
+              <div class="content-title">
+                <h2>TIvi</h2>
+              </div>
+              <div
+                class="list-card l-c-p-w-r"
+                id="list-card-product-mouse"
+              ></div>
+              <div class="buttons">
+                <div class="wrap">
+                  <button
+                    class="buttonleft"
+                    id="content-product-buttonleft-mouse"
+                  >
+                    <
+                  </button>
+                  <button
+                    class="buttonright"
+                    id="content-product-buttonright-mouse"
+                  >
+                    >
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- may tinh ban  -->
+          <section class="content-product">
+            <div class="content">
+              <div class="content-title">
+                <h2>Máy tính bản</h2>
+              </div>
+              <div
+                class="list-card l-c-p-w-r"
+                id="list-card-product-tablet"
+              ></div>
+              <div class="buttons">
+                <div class="wrap">
+                  <button
+                    class="buttonleft"
+                    id="content-product-buttonleft-tablet"
+                  >
+                    <
+                  </button>
+                  <button
+                    class="buttonright"
+                    id="content-product-buttonright-tablet"
+                  >
+                    >
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- ban phim  -->
+          <section class="content-product">
+            <div class="content">
+              <div class="content-title">
+                <h2>Bàn phím</h2>
+              </div>
+              <div class="list-card l-c-p-w-r" id="list-card-product-key"></div>
+              <div class="buttons">
+                <div class="wrap">
+                  <button
+                    class="buttonleft"
+                    id="content-product-buttonleft-key"
+                  >
+                    <
+                  </button>
+                  <button
+                    class="buttonright"
+                    id="content-product-buttonright-key"
+                  >
+                    >
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- // ung dung  -->
+          <section class="content-review">
             <div class="content">
               <div class="content-left"></div>
               <div class="content-right"></div>
             </div>
           </section>
-          <section class="content-headPhone">
-            <div class="content"></div>
-          </section>
-          <section class="content-keyandmouse">
-            <div class="content"></div>
-          </section>
-          <section class="content-collection">
+          <!-- // support  -->
+          <section class="content-support">
             <div class="content">
-              <div class="content-left"></div>
+              <div class="content-left">
+                <img src="./image/support.png" alt="img suport" />
+              </div>
               <div class="content-right"></div>
             </div>
           </section>
         </main>
-        <section class="content-review">
-          <div class="content">
-            <div class="content-left"></div>
-            <div class="content-right"></div>
-          </div>
-        </section>
       </section>
       <!-- main end  -->
       <!-- footer start  -->
@@ -527,5 +561,6 @@
     </section>
     <script src="./js/module/account.js"></script>
     <script src="./js/module/slideShow.js"></script>
+    <script type="module" src="./js/library/index.js"></script>
   </body>
 </html>
