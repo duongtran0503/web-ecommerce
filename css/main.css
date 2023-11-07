@@ -469,6 +469,7 @@ body {
   border-radius: 8px;
   box-shadow: var(--primary-boxshadow);
   margin-bottom: 5px;
+  color: #000;
 }
 .banner .banner-left .list-option .option-item {
   width: 100%;
@@ -482,6 +483,7 @@ body {
   align-items: center;
   text-align: center;
   position: relative;
+  color: #000;
 }
 .banner .banner-left .list-option .option-item .icon-chevron {
   position: absolute;
