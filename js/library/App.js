@@ -8,3 +8,4 @@ function App(products) {
   return html` ${showProduct(products.product)} `;
 }
 export default connector(App);
+//delete app
