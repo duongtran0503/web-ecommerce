@@ -17,10 +17,12 @@
   </head>
   <body>
     <section class="container">
-      <section id="header" class="container-header">
+      <section class="container-header" style="height: 120px">
         <header class="header">
           <section class="header-top">
-            <h4 class="header-top__title-left">E-Commerce.com</h4>
+            <h4 class="header-top__title-left" onclick="localStorage.clear()">
+              E-Commerce.com
+            </h4>
             <div class="header-top-right">
               <h4 class="header-top__title-right-1">&copy; group 17</h4>
               <div class="header-top__title-right-2">
@@ -30,88 +32,263 @@
               </div>
             </div>
           </section>
-          <section class="header-bottom">
-            <div class="logo" onclick="location.href = `../index.html`">
-              <div class="logo-img">
-                <img src="../image/logo/logo.png" alt="" />
-              </div>
-              <div class="logo-title">
-                <h2><span>E</span>Commerce</h2>
-              </div>
+          <section class="header-middle">
+            <div class="header-menu" id="ele-header-menu-hdmn">
+              <div class="menu"><i class="fa-solid fa-bars"></i></div>
             </div>
-            <div class="search-box">
-              <form action="#" class="form">
+            <div class="menu-phone-wrap" id="ele-phone-menu-hdmn">
+              <div class="menu-phone-top">
+                <div class="phone-access-list">
+                  <div
+                    class="phone-access-item"
+                    titles="cửa hàng"
+                    onclick="location.href =`./Shop.html`"
+                  >
+                    <i class="fa-solid fa-shop"></i>
+                  </div>
+                  <div class="phone-access-item" titles="giỏ hàng">
+                    <i class="fa-solid fa-cart-plus"></i>
+                  </div>
+                </div>
+                <button class="menu-btn-close" id="ele-menu-btn-close-hdmn">
+                  close
+                </button>
+              </div>
+              <form class="search">
                 <div class="input-box">
-                  <label class="icon-search" for="input-search">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                  </label>
                   <input
                     type="text"
-                    id="input-search"
-                    class="input-search"
-                    placeholder="nhập tên sản phẩm bạn muốn mua"
+                    id="input"
+                    placeholder="nhập tên sản phẩm"
                   />
                 </div>
+                <button class="button-search">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
               </form>
-              <button class="search-btn">tìm kiếm</button>
+              <div class="selection-menu">
+                <div class="product-menu" id="ele-product-menu-hdmn">
+                  sản phẩm
+                </div>
+                <div class="main-menu" id="ele-main-menu-hdmn">menu</div>
+              </div>
+              <nav class="navigation-1" id="ele-navigation-1-hdmn">
+                <ul class="list-option">
+                  <li class="option-item">
+                    <div class="item-icon">
+                      <img src="../image/icon/phone.png" alt="" />
+                    </div>
+                    <h4 class="item-title">Điện thoại</h4>
+                    <div class="icon-chevron">
+                      <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                  </li>
+                  <li class="option-item">
+                    <div class="item-icon">
+                      <img src="../image/icon/laptop.png" alt="" />
+                    </div>
+                    <h4 class="item-title">máy tính</h4>
+                    <div class="icon-chevron">
+                      <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                  </li>
+                  <li class="option-item">
+                    <div class="item-icon">
+                      <img src="../image/icon/tainghe.png" alt="" />
+                    </div>
+                    <h4 class="item-title">tại nghe</h4>
+                    <div class="icon-chevron">
+                      <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                  </li>
+                  <li class="option-item">
+                    <div class="item-icon">
+                      <img src="../image/icon/loa.png" alt="" />
+                    </div>
+                    <h4 class="item-title">loa</h4>
+                    <div class="icon-chevron">
+                      <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                  </li>
+                  <li class="option-item">
+                    <div class="item-icon">
+                      <img src="../image/icon/pc.png" alt="" />
+                    </div>
+                    <h4 class="item-title">màn hình</h4>
+                    <div class="icon-chevron">
+                      <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                  </li>
+                  <li class="option-item">
+                    <div class="item-icon">
+                      <img src="../image/icon/keyandmouse.png" alt="" />
+                    </div>
+                    <h4 class="item-title">bàn phím và chuột</h4>
+                    <div class="icon-chevron">
+                      <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                  </li>
+                  <li class="option-item">
+                    <div class="item-icon">
+                      <img src="../image/icon/mtbag.png" alt="" />
+                    </div>
+                    <h4 class="item-title">máy tỉnh bảng</h4>
+                    <div class="icon-chevron">
+                      <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                  </li>
+                  <li class="option-item">
+                    <div class="item-icon">
+                      <img src="../image/icon/dongho.png" alt="" />
+                    </div>
+                    <h4 class="item-title">đồng hồ</h4>
+                    <div class="icon-chevron">
+                      <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                  </li>
+                </ul>
+              </nav>
+              <nav class="navigation-2" id="ele-navigation-2-hdmn">
+                <ul>
+                  <li>Home</li>
+                  <li>shop</li>
+                  <li>About</li>
+                  <li>contact</li>
+                </ul>
+              </nav>
             </div>
-            <div class="header__bottom-right">
-              <div class="header__shop-btn" onclick="window.scrollTo(0,0) ">
-                <div>
-                  <i class="fa-solid fa-shop"></i>
-                </div>
-                <h4 class="shop-title">đến cửa hàng</h4>
+            <div class="header-logo" onclick="location.href = `../index.html`">
+              <img src="../image/logo/logo.png" alt="logo" />
+              <h2><span>e</span>shop</h2>
+            </div>
+            <form action="#" class="header-search" autocomplete="off">
+              <div class="input-box">
+                <label for="input"
+                  ><i class="fa-solid fa-magnifying-glass"></i
+                ></label>
+                <input
+                  id="input"
+                  type="text"
+                  class="input"
+                  placeholder="nhập tên sản phẩm"
+                />
               </div>
-              <div class="header__viewCart-btn">
-                <div class="viewCart-btn">
-                  <div class="viewCart-icon">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                  </div>
-                  <h4 class="vỉewCart-title">giỏ hàng</h4>
-                  <span class="handle-product" id="countproductofcart"></span>
+              <div class="buttons">
+                <button>tìm kiếm</button>
+              </div>
+            </form>
+            <div class="header-access-list">
+              <div
+                class="header-access-item"
+                titles="cửa hàng"
+                onclick="location.href =`./page/Shop.html`"
+              >
+                <i class="fa-solid fa-shop"></i>
+              </div>
+              <div
+                class="header-access-item"
+                titles="giỏ hàng"
+                id="ele-shop-btn-open-shopcart"
+              >
+                <i class="fa-solid fa-cart-plus"></i>
+                <span id="countproductofcart"></span>
+              </div>
+              <div
+                class="container-shopcard"
+                id="ele-container-shopcart-shoppage"
+              >
+                <div class="clickoutside"></div>
+                <div class="btn-close">
+                  <h5>giỏ hàng</h5>
+                  <button
+                    type="button"
+                    class="btn"
+                    id="ele-button-close-shopcart"
+                  >
+                    close
+                  </button>
                 </div>
-                <div class="container-shopcard">
-                  <div class="clickoutside"></div>
-                  <div class="btn-close">
-                    <h5>giỏ hàng</h5>
-                    <button type="button" class="btn">close</button>
-                  </div>
-                  <hr />
-                  <div class="product-wrap" id="shopcart"></div>
-                  <hr />
-                  <div class="totail-cont">
-                    <h5>tổng số tiền là</h5>
-                    <span id="totail-cont">0 vnđ</span>
-                  </div>
-                  <hr />
-                  <div class="buttons">
-                    <button onclick="location.href = `./ViewCart.html`">
-                      xem giở hàng
-                    </button>
-                    <button onclick="location.href =`./formthanhtoan.html`">
-                      thanh toán
-                    </button>
-                    <button></button>
-                  </div>
+                <hr />
+                <div class="product-wrap" id="ele-show-product-shopcart"></div>
+                <hr />
+                <div class="totail-cont">
+                  <h5>tổng số tiền là</h5>
+                  <span id="totail-cont">0 vnđ</span>
+                </div>
+                <hr />
+                <div class="buttons">
+                  <button onclick="location.href = `./ViewCart.html`">
+                    xem giở hàng
+                  </button>
+                  <button onclick="location.href =`./formthanhtoan.html`">
+                    thanh toán
+                  </button>
+                  <button></button>
                 </div>
               </div>
-              <div class="header__buttons">
-                <button class="account">tài khoản</button>
-                <div class="from-wrap">
-                  <div class="singin-with-gg">
-                    <div class="logo"></div>
-                    <h3>đăng nhập bằng tải khoản google</h3>
-                  </div>
-                  <div class="form-active">
-                    <h4>đăng nhập</h4>
-                    <form action="#" class="form"></form>
-                  </div>
-                  <div class="singup">
-                    <a href="#">đăng ký tài khoản tại đây</a>
-                  </div>
-                </div>
+              <div class="header-access-item-3" titles="tài khoản">
+                <i class="fa-regular fa-user"></i>
+                <!-- <div class="user">
+                   <div class="option-1">đăng nhập</div>
+                   <div class="option-2"></div>
+                   <div class="option-3">đang ký</div>
+                </div> -->
               </div>
             </div>
+          </section>
+          <section class="header-bottom" style="display: none">
+            <nav class="header-bottom-nav">
+              <ul class="list-option">
+                <li class="option-item">
+                  <div class="item-icon">
+                    <img src="../image/icon/phone.png" alt=" " />
+                  </div>
+                  <h4 class="item-title">Điện thoại</h4>
+                </li>
+                <li class="option-item">
+                  <div class="item-icon">
+                    <img src="../image/icon/laptop.png" alt="" />
+                  </div>
+                  <h4 class="item-title">máy tính</h4>
+                </li>
+                <li class="option-item">
+                  <div class="item-icon">
+                    <img src="../image/icon/tainghe.png" alt="" />
+                  </div>
+                  <h4 class="item-title">tại nghe</h4>
+                </li>
+                <li class="option-item">
+                  <div class="item-icon">
+                    <img src="../image/icon/loa.png" alt="" />
+                  </div>
+                  <h4 class="item-title">loa</h4>
+                </li>
+                <li class="option-item">
+                  <div class="item-icon">
+                    <img src="../image/icon/pc.png" alt="" />
+                  </div>
+                  <h4 class="item-title">màn hình</h4>
+                </li>
+                <li class="option-item">
+                  <div class="item-icon">
+                    <img src="../image/icon/keyandmouse.png" alt="" />
+                  </div>
+                  <h4 class="item-title">bàn phím và chuột</h4>
+                </li>
+                <li class="option-item">
+                  <div class="item-icon">
+                    <img src="../image/icon/mtbag.png" alt="" />
+                  </div>
+                  <h4 class="item-title">máy tỉnh bảng</h4>
+                </li>
+                <li class="option-item">
+                  <div class="item-icon">
+                    <img src="../image/icon/dongho.png" alt="" />
+                  </div>
+                  <h4 class="item-title">đồng hồ</h4>
+                </li>
+              </ul>
+            </nav>
           </section>
         </header>
       </section>
@@ -230,9 +407,6 @@
       </section>
       <!-- footer end   -->
     </section>
-
-    <script src="../js/module/cart.js"></script>
-    <script src="../js/module/account.js"></script>
     <script type="module" src="../js/library/index.js"></script>
   </body>
 </html>

@@ -1,4 +1,4 @@
-import product from "../../Data/proudct.js";
+import product from "../../Data/Data.js";
 const init = {
   data: product,
   shopcart: localStorage.getItem("product")
@@ -9,15 +9,22 @@ export default function reducer(state = init, action, args) {
   switch (action) {
     case "add": {
       let property = args[1];
-      console.log(state.data[property][args[0]]);
       const newProduct = state.data[property][args[0]];
-      const newProductList = [...state.shopcart, newProduct];
+      const prevShopCart = [...state.shopcart];
+      let newProductList = [...state.shopcart];
+      let check = prevShopCart.some((cart) => {
+        return cart.id === newProduct.id;
+      });
+      if (check) {
+        alert("sản phẩm đã có trong giỏ hàng");
+      } else {
+        newProductList = [...state.shopcart, newProduct];
+      }
       localStorage.removeItem("product");
-      localStorage.clear();
       localStorage.setItem("product", JSON.stringify(newProductList));
       return {
         ...state,
-        shopcart: [...state.shopcart, newProduct],
+        shopcart: newProductList,
       };
     }
     case "delete": {
@@ -25,7 +32,6 @@ export default function reducer(state = init, action, args) {
       const elementDelete = templatearr[args];
       const newProductList = templatearr.filter((e) => e !== elementDelete);
       localStorage.removeItem("product");
-      localStorage.clear();
       localStorage.setItem("product", JSON.stringify(newProductList));
       return {
         ...state,

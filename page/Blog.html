@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Shop</title>
+    <link rel="icon" type="image/x-icon" href="../image/logo/logo.png" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/shop.css" />
+  </head>
+  <body>
+    <section class="container">
+      <section id="header" class="container-header">
+        <header class="header">
+          <section class="header-top">
+            <h4 class="header-top__title-left">E-Commerce.com</h4>
+            <div class="header-top-right">
+              <h4 class="header-top__title-right-1">&copy; group 17</h4>
+              <div class="header-top__title-right-2">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-square-instagram"></i>
+                <i class="fa-brands fa-tiktok"></i>
+              </div>
+            </div>
+          </section>
+          <section class="header-bottom">
+            <div class="logo" onclick="location.href = `../index.html`">
+              <div class="logo-img">
+                <img src="../image/logo/logo.png" alt="" />
+              </div>
+              <div class="logo-title">
+                <h2><span>E</span>Commerce</h2>
+              </div>
+            </div>
+            <div class="search-box">
+              <form action="#" class="form">
+                <div class="input-box">
+                  <label class="icon-search" for="input-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </label>
+                  <input
+                    type="text"
+                    id="input-search"
+                    class="input-search"
+                    placeholder="nhập tên sản phẩm bạn muốn mua"
+                  />
+                </div>
+              </form>
+              <button class="search-btn">tìm kiếm</button>
+            </div>
+            <div class="header__bottom-right">
+              <div class="header__shop-btn" onclick="window.scrollTo(0,0) ">
+                <div>
+                  <i class="fa-solid fa-shop"></i>
+                </div>
+                <h4 class="shop-title">đến cửa hàng</h4>
+              </div>
+              <div class="header__viewCart-btn">
+                <div class="viewCart-btn">
+                  <div class="viewCart-icon">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                  </div>
+                  <h4 class="vỉewCart-title">giỏ hàng</h4>
+                  <span class="handle-product" id="countproductofcart"></span>
+                </div>
+                <div class="container-shopcard">
+                  <div class="clickoutside"></div>
+                  <div class="btn-close">
+                    <h5>giỏ hàng</h5>
+                    <button type="button" class="btn">close</button>
+                  </div>
+                  <hr />
+                  <div class="product-wrap" id="shopcart"></div>
+                  <hr />
+                  <div class="totail-cont">
+                    <h5>tổng số tiền là</h5>
+                    <span id="totail-cont">0 vnđ</span>
+                  </div>
+                  <hr />
+                  <div class="buttons">
+                    <button onclick="location.href = `./ViewCart.html`">
+                      xem giở hàng
+                    </button>
+                    <button onclick="location.href =`./formthanhtoan.html`">
+                      thanh toán
+                    </button>
+                    <button></button>
+                  </div>
+                </div>
+              </div>
+              <div class="header__buttons">
+                <button class="account">tài khoản</button>
+                <div class="from-wrap">
+                  <div class="singin-with-gg">
+                    <div class="logo"></div>
+                    <h3>đăng nhập bằng tải khoản google</h3>
+                  </div>
+                  <div class="form-active">
+                    <h4>đăng nhập</h4>
+                    <form action="#" class="form"></form>
+                  </div>
+                  <div class="singup">
+                    <a href="#">đăng ký tài khoản tại đây</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </header>
+      </section>
+      <!-- banner start  -->
+
+      <!-- banner end  -->
+      <!-- main  start  -->
+
+      <section id="main" class="container-main">
+        <section class="navigation">
+          <form action="#" class="search-product">
+            <div class="input-box">
+              <label for="input-box">nhập tên sản phẩm</label>
+              <input type="text" id="input-box" placeholder="tên sản phẩm" />
+              <div class="icon-search"></div>
+            </div>
+            <button>tìm kiếm</button>
+          </form>
+          <form action="" class="filter-search">
+            <div class="search-option">
+              <h4 class="option-title">chọn sản phẩn có sẳn</h4>
+              <ul class="list">
+                <li class="item">máy tính</li>
+                <li class="item">Bàn phím,chuột</li>
+                <li class="item">điện thoại,tablet</li>
+                <li class="item">PC,màn hình</li>
+                <li class="item">đồng hồ,camera</li>
+                <li class="item">loa,tai nghe</li>
+              </ul>
+            </div>
+            <div class="search-level">
+              <div action="#" class="search-wrapper">
+                <div class="option-box">
+                  <label for="cont">lọc theo giá</label>
+                  <select name="giá" id="cont">
+                    <option value="1">dưới 1 triệu</option>
+                    <option value="6">tử 2 đến 6 triệu</option>
+                    <option value="10">từ 6 đến 10 triệu</option>
+                    <option value="15">từ 10 đến 15 triệu</option>
+                    <option value="20">từ 15 đến 20 triệu</option>
+                    <option value="" selected>toàn bộ</option>
+                  </select>
+                </div>
+                <div class="search-trademark">
+                  <label for="title">lọc theo thương hiệu</label>
+                  <select name="title" id="title">
+                    <option value="" selected>toàn bộ</option>
+                    <option value="samsum">samsum</option>
+                    <option value="apple">apple</option>
+                    <option value="xiaomi">xiaomi</option>
+                    <option value="asus">asus</option>
+                    <option value="sony">sony</option>
+                    <option value="	Logitech">Logitech</option>
+                    <option value="oppo">oppo</option>
+                    <option value="Acer">Acer</option>
+                  </select>
+                </div>
+              </div>
+              <div class="search-filter">
+                <div class="filter-select">
+                  <h3>lọc theo sản phẩm</h3>
+                  <input type="radio" name="select" id="phone" value="phone" />
+                  <label for="phone">điện thoại</label>
+                  <input
+                    type="radio"
+                    name="select"
+                    id="laptop"
+                    value="laptop"
+                  />
+                  <label for="laptop">laptop</label>
+                  <input
+                    type="radio"
+                    name="select"
+                    id="screen"
+                    value="screen"
+                  />
+                  <label for="screen"> màn hình</label>
+                  <input type="radio" name="select" id="pc" value="pc" />
+                  <label for="pc">máy tính</label>
+                </div>
+                <div class="filter-engine">
+                  <div class="option-phone">
+                    <div class="option-left">
+                      <input type="radio" name="ram" id="ram4g" />
+                      <label for="ram4g">ram 4gb, bộ nhớ 128gb</label>
+                      <input type="radio" name="ram" id="ram8g" />
+                      <label for="ram8g">ram 8gb bộ nhở 512gb</label>
+                    </div>
+                    <div class="option-right"></div>
+                  </div>
+                  <div class="option-latop"></div>
+                  <div class="option-screen"></div>
+                  <div class="option-pc"></div>
+                </div>
+              </div>
+            </div>
+            <button>lọc sản phẩm</button>
+          </form>
+        </section>
+        <main class="main" id="root-product"></main>
+      </section>
+      <section class="nav">
+        <div class="nav-list">
+          <div class="nav-item active">1</div>
+          <div class="nav-item">2</div>
+          <div class="nav-item">3</div>
+          <div class="nav-item">4</div>
+          <div class="nav-item">5</div>
+          <div class="nav-icon">></div>
+        </div>
+      </section>
+      <!-- main  start end -->
+      <!-- footer start  -->
+      <section id="footer" class="container-footer">
+        <footer class="footer"></footer>
+      </section>
+      <!-- footer end   -->
+    </section>
+
+    <script src="../js/module/cart.js"></script>
+    <script src="../js/module/account.js"></script>
+    <script type="module" src="../js/library/index.js"></script>
+  </body>
+</html>
