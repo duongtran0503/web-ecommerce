@@ -43,7 +43,7 @@ function slideOfContent(elementContent, elementButtonLeft, elementButtonRight) {
   const content = document.getElementById(elementContent);
   const contentBtnLeft = document.getElementById(elementButtonLeft);
   const contentBtnRight = document.getElementById(elementButtonRight);
-  const widthOfContent = content.offsetWidth;
+  const widthOfContent = 950;
   if (window.innerWidth > 1024) {
     content.addEventListener("wheel", function (e) {
       e.preventDefault();

@@ -10,7 +10,6 @@ const showProduct = (products) => {
         (element, index) =>
           `<div class="card-cpc">
               <div class="card-image-cpc">
-                <img src="../image/product/dien_thoai/${element.image}" alt="product" />
               </div>
               <div class="card-description-cpc">
                 <div class="card-des-content-cpc">

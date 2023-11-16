@@ -14,8 +14,11 @@
     <link rel="icon" type="image/x-icon" href="./image/logo/logo.png" />
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/main.css" />
+    <script type="module" src="./js/library/index.js" defer></script>
   </head>
   <body>
+    <div id="messageBox"></div>
+
     <!-- header start  -->
     <section class="container">
       <section class="container-header">
@@ -44,6 +47,7 @@
                     class="phone-access-item"
                     titles="cửa hàng"
                     onclick="location.href =`./page/Shop.html`"
+                    id="ele-shopPage"
                   >
                     <i class="fa-solid fa-shop"></i>
                   </div>
@@ -168,11 +172,11 @@
             </div>
             <form action="#" class="header-search" autocomplete="off">
               <div class="input-box">
-                <label for="input"
+                <label for="ele-input-heađer-global"
                   ><i class="fa-solid fa-magnifying-glass"></i
                 ></label>
                 <input
-                  id="input"
+                  id="ele-input-heađer-global"
                   type="text"
                   class="input"
                   placeholder="nhập tên sản phẩm"
@@ -183,6 +187,9 @@
               </div>
             </form>
             <div class="header-access-list">
+              <div class="header-access-item active" titles="Trang chủ">
+                <i class="fa-solid fa-house"></i>
+              </div>
               <div
                 class="header-access-item"
                 titles="cửa hàng"
@@ -196,6 +203,7 @@
                 onclick="location.href =`./page/ViewCart.html`"
               >
                 <i class="fa-solid fa-cart-plus"></i>
+                <span id="ele-countproductincart-Home"></span>
               </div>
               <div class="header-access-item-3" titles="tài khoản">
                 <i class="fa-regular fa-user"></i>
@@ -406,7 +414,7 @@
                   <h3>một số sản phẩm khác</h3>
                 </div>
                 <section class="content-phone">
-                  <div class="list-card l-c-p-w-r"></div>
+                  <div class="list-card" id="ele-listcardproduct-phone"></div>
                 </section>
               </div>
             </div>
@@ -463,13 +471,15 @@
               </div>
             </div>
           </section>
+          <!-- hot sale  -->
+
           <!-- laptop  -->
-          <section class="content-product">
+          <section class="content-product bgred">
             <div class="content">
               <div class="content-title">
-                <h2>LapTop</h2>
+                <h2>LapTop bán chạy nhất</h2>
               </div>
-              <div class="list-card l-c-p-w-r" id="listcardproduct-lap"></div>
+              <div class="list-card" id="ele-listcardproduct-lap"></div>
               <div class="buttons">
                 <div class="wrap">
                   <button
@@ -498,10 +508,7 @@
               <div class="content-title">
                 <h2>đồng hồ</h2>
               </div>
-              <div
-                class="list-card l-c-p-w-r"
-                id="list-card-product-watch"
-              ></div>
+              <div class="list-card" id="list-card-product-watch"></div>
               <div class="buttons">
                 <div class="wrap">
                   <button
@@ -526,10 +533,7 @@
               <div class="content-title">
                 <h2>TIvi</h2>
               </div>
-              <div
-                class="list-card l-c-p-w-r"
-                id="list-card-product-mouse"
-              ></div>
+              <div class="list-card" id="list-card-product-mouse"></div>
               <div class="buttons">
                 <div class="wrap">
                   <button
@@ -555,21 +559,19 @@
               </div>
               <div class="content-sale-right">
                 <div class="item-time-sale">
-                  <div class="time">
-                    <h3>27</h3>
-                  </div>
+                  <div class="time" id="ele-sale-day-Home"></div>
                   <h3>Ngày</h3>
                 </div>
                 <div class="item-time-sale">
-                  <div class="time"></div>
+                  <div class="time" id="ele-sale-hour-Home"></div>
                   <h3>Giờ</h3>
                 </div>
                 <div class="item-time-sale">
-                  <div class="time"></div>
+                  <div class="time" id="ele-sale-minutes-Home"></div>
                   <h3>phút</h3>
                 </div>
                 <div class="item-time-sale">
-                  <div class="time"></div>
+                  <div class="time" id="ele-sale-second-Home"></div>
                   <h3>Giây</h3>
                 </div>
               </div>
@@ -581,10 +583,7 @@
               <div class="content-title">
                 <h2>Máy tính bản</h2>
               </div>
-              <div
-                class="list-card l-c-p-w-r"
-                id="list-card-product-tablet"
-              ></div>
+              <div class="list-card" id="list-card-product-tablet"></div>
               <div class="buttons">
                 <div class="wrap">
                   <button
@@ -607,9 +606,9 @@
           <section class="content-product">
             <div class="content">
               <div class="content-title">
-                <h2>Bàn phím</h2>
+                <h2>Bàn phím và chuột</h2>
               </div>
-              <div class="list-card l-c-p-w-r" id="list-card-product-key"></div>
+              <div class="list-card" id="list-card-product-key"></div>
               <div class="buttons">
                 <div class="wrap">
                   <button
@@ -701,6 +700,6 @@
       </section>
       <!-- footer end  -->
     </section>
-    <script type="module" src="./js/library/index.js"></script>
   </body>
+  <script></script>
 </html>
