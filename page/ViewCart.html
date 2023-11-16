@@ -17,10 +17,7 @@
   </head>
   <body>
     <section class="container">
-      <section
-        class="container-header"
-        style="height: 120px; min-height: 120px"
-      >
+      <section class="container-header" style="max-height: 120px">
         <header class="header">
           <section class="header-top">
             <h4 class="header-top__title-left" onclick="localStorage.clear()">
@@ -83,7 +80,7 @@
                 <ul class="list-option">
                   <li class="option-item">
                     <div class="item-icon">
-                      <img src="../image/icon/phone.png" alt="" />
+                      <img src="./image/icon/phone.png" alt="" />
                     </div>
                     <h4 class="item-title">Điện thoại</h4>
                     <div class="icon-chevron">
@@ -92,7 +89,7 @@
                   </li>
                   <li class="option-item">
                     <div class="item-icon">
-                      <img src="../image/icon/laptop.png" alt="" />
+                      <img src="./image/icon/laptop.png" alt="" />
                     </div>
                     <h4 class="item-title">máy tính</h4>
                     <div class="icon-chevron">
@@ -101,7 +98,7 @@
                   </li>
                   <li class="option-item">
                     <div class="item-icon">
-                      <img src="../image/icon/tainghe.png" alt="" />
+                      <img src="./image/icon/tainghe.png" alt="" />
                     </div>
                     <h4 class="item-title">tại nghe</h4>
                     <div class="icon-chevron">
@@ -110,7 +107,7 @@
                   </li>
                   <li class="option-item">
                     <div class="item-icon">
-                      <img src="../image/icon/loa.png" alt="" />
+                      <img src="./image/icon/loa.png" alt="" />
                     </div>
                     <h4 class="item-title">loa</h4>
                     <div class="icon-chevron">
@@ -119,7 +116,7 @@
                   </li>
                   <li class="option-item">
                     <div class="item-icon">
-                      <img src="../image/icon/pc.png" alt="" />
+                      <img src="./image/icon/pc.png" alt="" />
                     </div>
                     <h4 class="item-title">màn hình</h4>
                     <div class="icon-chevron">
@@ -128,7 +125,7 @@
                   </li>
                   <li class="option-item">
                     <div class="item-icon">
-                      <img src="../image/icon/keyandmouse.png" alt="" />
+                      <img src="./image/icon/keyandmouse.png" alt="" />
                     </div>
                     <h4 class="item-title">bàn phím và chuột</h4>
                     <div class="icon-chevron">
@@ -137,7 +134,7 @@
                   </li>
                   <li class="option-item">
                     <div class="item-icon">
-                      <img src="../image/icon/mtbag.png" alt="" />
+                      <img src="./image/icon/mtbag.png" alt="" />
                     </div>
                     <h4 class="item-title">máy tỉnh bảng</h4>
                     <div class="icon-chevron">
@@ -146,7 +143,7 @@
                   </li>
                   <li class="option-item">
                     <div class="item-icon">
-                      <img src="../image/icon/dongho.png" alt="" />
+                      <img src="./image/icon/dongho.png" alt="" />
                     </div>
                     <h4 class="item-title">đồng hồ</h4>
                     <div class="icon-chevron">
@@ -165,7 +162,7 @@
               </nav>
             </div>
             <div class="header-logo">
-              <img src="../image/logo/logo.png" alt="logo" />
+              <img src="./image/logo/logo.png" alt="logo" />
               <h2><span>e</span>shop</h2>
             </div>
             <form action="#" class="header-search" autocomplete="off">
@@ -187,17 +184,21 @@
             <div class="header-access-list">
               <div
                 class="header-access-item"
-                titles="cửa hàng"
-                onclick="location.href =`.Shop.html`"
+                titles="Trang chủ"
+                onclick="location.href = `../index.html`"
               >
-                <i class="fa-solid fa-shop"></i>
+                <i class="fa-solid fa-house"></i>
               </div>
               <div
                 class="header-access-item"
-                titles="giỏ hàng"
-                onclick="location.href =`./page/ViewCart.html`"
+                titles="cửa hàng"
+                onclick="location.href =`./page/Shop.html`"
               >
+                <i class="fa-solid fa-shop"></i>
+              </div>
+              <div class="header-access-item active" titles="giỏ hàng">
                 <i class="fa-solid fa-cart-plus"></i>
+                <span id="ele-countproductincart-Home"></span>
               </div>
               <div class="header-access-item-3" titles="tài khoản">
                 <i class="fa-regular fa-user"></i>
@@ -208,6 +209,60 @@
                 </div> -->
               </div>
             </div>
+          </section>
+          <section class="header-bottom" style="display: none">
+            <nav class="header-bottom-nav">
+              <ul class="list-option">
+                <li class="option-item">
+                  <div class="item-icon">
+                    <img src="./image/icon/phone.png" alt=" " />
+                  </div>
+                  <h4 class="item-title">Điện thoại</h4>
+                </li>
+                <li class="option-item">
+                  <div class="item-icon">
+                    <img src="./image/icon/laptop.png" alt="" />
+                  </div>
+                  <h4 class="item-title">máy tính</h4>
+                </li>
+                <li class="option-item">
+                  <div class="item-icon">
+                    <img src="./image/icon/tainghe.png" alt="" />
+                  </div>
+                  <h4 class="item-title">tại nghe</h4>
+                </li>
+                <li class="option-item">
+                  <div class="item-icon">
+                    <img src="./image/icon/loa.png" alt="" />
+                  </div>
+                  <h4 class="item-title">loa</h4>
+                </li>
+                <li class="option-item">
+                  <div class="item-icon">
+                    <img src="./image/icon/pc.png" alt="" />
+                  </div>
+                  <h4 class="item-title">màn hình</h4>
+                </li>
+                <li class="option-item">
+                  <div class="item-icon">
+                    <img src="./image/icon/keyandmouse.png" alt="" />
+                  </div>
+                  <h4 class="item-title">bàn phím và chuột</h4>
+                </li>
+                <li class="option-item">
+                  <div class="item-icon">
+                    <img src="./image/icon/mtbag.png" alt="" />
+                  </div>
+                  <h4 class="item-title">máy tỉnh bảng</h4>
+                </li>
+                <li class="option-item">
+                  <div class="item-icon">
+                    <img src="./image/icon/dongho.png" alt="" />
+                  </div>
+                  <h4 class="item-title">đồng hồ</h4>
+                </li>
+              </ul>
+            </nav>
           </section>
         </header>
       </section>

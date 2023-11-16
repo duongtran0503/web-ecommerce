@@ -4,27 +4,31 @@ const connector = connect((state) => ({
   cart: state.shopcart,
 }));
 let i = 1;
+
 const shopcart = ({ cart }) => {
   console.log("lan chay", i++);
   console.log(cart);
   let totailcont = cart.reduce((totail, current) => {
-    return totail + current.price * current.quantity;
+    return totail + current.price * current.quantify;
   }, 0);
   document.getElementById("totail-cont").innerText =
     totailcont.toLocaleString("de-DE") + " vnd";
-  document.getElementById("countproductofcart").innerText =
-    cart.length === 0 ? "" : cart.length;
+
   return html`
-    <div>
-      ${cart.map(
-        (product, index) => `
+    ${cart.map(
+      (product, index) => `
         <div class="container-cpsitem">
       <button class="deletebtn-cpsitem"  onclick = "dispatch('delete',${index})">X</button>
 
 
       <div class="content-cpsitem">
         <div class="image-cpsitem">
-          <img src="../image/product/dien_thoai/${product.image}" alt="" />
+        <div class="card-image-cpc">
+        ${
+          product.productType
+            ? ` <img src="../image/product/${product.productType}/${product.image}" alt="" />`
+            : ""
+        }
         </div>
         <div class="title-cpsitem">
                  ${product.title}
@@ -32,18 +36,17 @@ const shopcart = ({ cart }) => {
       </div>
       <div class="buttons-cpsitem">
         <div class="add-cpsitem"  onclick = "dispatch('addProduct',${index},${
-          product.quantity
-        })">+</div>
-        <div class="quantity-cpsitem">${product.quantity}</div>
+        product.quantify
+      })">+</div>
+        <div class="quantity-cpsitem">${product.quantify}</div>
         <div class="sub-cpsitem"  ${
-          product.quantity === 1 ? `style =" pointer-events: none;"` : ""
+          product.quantify === 1 ? `style =" pointer-events: none;"` : ""
         } onclick = "dispatch('deleteProduct',${index})" >-</div>
       </div>
-      <div class="price-cpsitem"> ${product.price * product.quantity}d</div>
+      <div class="price-cpsitem"> ${product.price * product.quantify}d</div>
     </div>
         `
-      )}
-    </div>
+    )}
   `;
   return html``;
 };

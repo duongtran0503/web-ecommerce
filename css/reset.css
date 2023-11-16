@@ -85,6 +85,111 @@ h6 {
   --primary-boxshadow: 0 0 5px rgba(0, 0, 0, 0.3);
   --primary-color-button: #db4444;
 }
+/* message box css  */
+#messageBox {
+  position: fixed;
+  top: 32px;
+  right: 32px;
+  z-index: 1000;
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 2px;
+  padding: 20px 0;
+  min-width: 400px;
+  max-width: 450px;
+  border-left: 4px solid;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);
+  transition: all linear 0.3s;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(calc(100% + 32px));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+.toast--success {
+  border-color: #47d864;
+}
+
+.toast--success .toast__icon {
+  color: #47d864;
+}
+
+.toast--info {
+  border-color: #2f86eb;
+}
+
+.toast--info .toast__icon {
+  color: #2f86eb;
+}
+
+.toast--warning {
+  border-color: #ffc021;
+}
+
+.toast--warning .toast__icon {
+  color: #ffc021;
+}
+
+.toast--error {
+  border-color: #ff623d;
+}
+
+.toast--error .toast__icon {
+  color: #ff623d;
+}
+
+.toast + .toast {
+  margin-top: 24px;
+}
+
+.toast__icon {
+  font-size: 24px;
+}
+
+.toast__icon,
+.toast__close {
+  padding: 0 16px;
+}
+
+.toast__body {
+  flex-grow: 1;
+}
+
+.toast__title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.toast__msg {
+  font-size: 14px;
+  color: #888;
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+.toast__close {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
 /* global header css  */
 .container-header {
   width: 100%;
@@ -101,7 +206,7 @@ h6 {
   height: 100%;
 }
 .container-header .header {
-  max-width: 1200px;
+  max-width: 1440px;
   width: 100%;
   height: 180px;
   margin: 0 auto;
@@ -152,6 +257,7 @@ h6 {
   align-items: center;
   background: white;
   padding: 0 20px;
+  box-shadow: var(--primary-boxshadow);
 }
 .container-header .header .header-middle .header-menu {
   display: none;
@@ -207,6 +313,13 @@ h6 {
   .header
   .header-middle
   .header-access-list
+  .header-access-item.active {
+  color: #2f86eb;
+}
+.container-header
+  .header
+  .header-middle
+  .header-access-list
   .header-access-item:hover,
 .header-access-item-3:hover {
   font-size: 26px;
@@ -241,6 +354,7 @@ h6 {
   width: 100%;
   border: none;
   outline: none;
+  padding-left: 20px;
 }
 .container-header .header .header-middle .header-search .buttons {
   width: 94px;
@@ -397,9 +511,23 @@ h6 {
   font-size: clamp(0.5rem, 0.375rem + 0.6667vw, 0.875rem);
   font-weight: 400;
 }
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 1320px) {
   .container-header .header .header-middle .header-access-list {
-    column-gap: 70px;
+    column-gap: 80px;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .container-header .header .header-middle .header-access-list {
+    column-gap: 50px;
+    margin-left: 5px;
+  }
+  .container-header .header .header-middle .header-search {
+    min-width: 480px;
+    width: 480px;
+  }
+  .container-header .header .header-middle .header-search .input-box {
+    width: 380px;
   }
 }
 @media only screen and (max-width: 1024px) {
@@ -674,24 +802,83 @@ h6 {
   border-radius: 10px;
   overflow: hidden;
   scroll-snap-align: start;
+  background: #fff;
+  color: black;
 }
+
 .card-cpc:hover {
   box-shadow: unset;
 }
 .card-cpc .card-image-cpc {
+  min-height: 250px;
   margin: 5px;
   width: 100%;
-  height: 45%;
+  max-height: 45%;
   text-align: center;
+  position: relative;
 }
+.card-cpc .card-image-cpc .sale-1 {
+  position: absolute;
+  top: 5px;
+  left: -10px;
+  padding-left: 10px;
+  border-radius: 8px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  width: max-content;
+  height: 20px;
+  background: red;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+}
+.card-cpc .card-image-cpc .sale-2 {
+  position: absolute;
+  top: 220px;
+  left: -10px;
+  padding-left: 10px;
+  border-radius: 8px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  width: max-content;
+
+  height: 20px;
+  background: red;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+}
+.card-cpc .card-image-cpc .sale-3 {
+  position: absolute;
+  top: 190px;
+  left: -10px;
+  padding-left: 10px;
+  border-radius: 8px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  width: max-content;
+
+  height: 20px;
+  background: red;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+}
+
 .card-cpc .card-image-cpc img {
   width: 90%;
   height: 90%;
   object-fit: contain;
+  transition: all 0.7s ease;
+}
+.card-cpc .card-image-cpc:hover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .card-cpc .card-description-cpc {
   width: 100%;
-  height: 50%;
+  height: 60%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -712,7 +899,8 @@ h6 {
 }
 
 .card-cpc .card-description-cpc .card-des-content-cpc .card-title-cpc h3 {
-  font-size: clamp(0.625rem, 0.5rem + 0.4vw, 0.875rem);
+  font-size: clamp(0.5rem, 0.4013rem + 0.5263vw, 0.875rem);
+  font-weight: 600;
 }
 
 .card-cpc .card-description-cpc .card-des-content-cpc .card-des-cpc {
@@ -723,6 +911,7 @@ h6 {
 }
 .card-cpc .card-description-cpc .card-des-content-cpc .card-des-cpc h3 {
   font-size: clamp(0.5rem, 0.375rem + 0.4vw, 0.75rem);
+  font-weight: 400;
   height: 100%;
   word-wrap: break-word;
   word-break: break-all;
@@ -734,7 +923,7 @@ h6 {
 }
 
 .card-cpc .card-description-cpc .card-des-content-cpc .card-price-cpc h3 {
-  font-size: clamp(1rem, 0.875rem + 0.4vw, 1.25rem);
+  font-size: clamp(0.5rem, 0.4013rem + 0.5263vw, 0.875rem);
   color: #ff0040;
   font-weight: 500;
 }
@@ -748,6 +937,7 @@ h6 {
 .card-cpc .card-description-cpc .card-button-cpc button:first-child {
   width: 70%;
   height: 100%;
+  min-height: 40px;
   text-align: center;
   font-size: clamp(0.75rem, 0.625rem + 0.4vw, 1rem);
   border: none;
@@ -764,6 +954,8 @@ h6 {
 }
 .card-cpc .card-description-cpc .card-button-cpc button:last-child {
   width: 29%;
+  min-height: 40px;
+
   height: 100%;
   text-align: center;
   font-size: clamp(0.75rem, 0.625rem + 0.4vw, 1rem);
