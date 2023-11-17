@@ -7,9 +7,8 @@ let i = 1;
 
 const shopcart = ({ cart }) => {
   console.log("lan chay", i++);
-  console.log(cart);
   let totailcont = cart.reduce((totail, current) => {
-    return totail + current.price * current.quantify;
+    return totail + current.price * current.quantity;
   }, 0);
   document.getElementById("totail-cont").innerText =
     totailcont.toLocaleString("de-DE") + " vnd";
@@ -36,14 +35,14 @@ const shopcart = ({ cart }) => {
       </div>
       <div class="buttons-cpsitem">
         <div class="add-cpsitem"  onclick = "dispatch('addProduct',${index},${
-        product.quantify
+        product.quantity
       })">+</div>
-        <div class="quantity-cpsitem">${product.quantify}</div>
+        <div class="quantity-cpsitem">${product.quantity}</div>
         <div class="sub-cpsitem"  ${
-          product.quantify === 1 ? `style =" pointer-events: none;"` : ""
+          product.quantity === 1 ? `style =" pointer-events: none;"` : ""
         } onclick = "dispatch('deleteProduct',${index})" >-</div>
       </div>
-      <div class="price-cpsitem"> ${product.price * product.quantify}d</div>
+      <div class="price-cpsitem"> ${product.price * product.quantity}đ</div>
     </div>
         `
     )}

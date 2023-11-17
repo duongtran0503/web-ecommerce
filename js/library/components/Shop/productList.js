@@ -18,6 +18,9 @@ const productlist = ({ searchProduct, productlist, item, start, end }) => {
   } else if (searchProduct.length !== 0) {
     item = searchProduct;
   }
+  function converJson(obj) {
+    return JSON.stringify(obj);
+  }
 
   return html`
     ${item.map(
@@ -45,12 +48,12 @@ const productlist = ({ searchProduct, productlist, item, start, end }) => {
            </div>
           </div>
           <div class="card-button-cpc">
-           <button   onclick = "dispatch('add',${index},'${
-          element.productType
+           <button   onclick = "dispatch('add',${element.id},'${
+          element.nameStore
         }')">Thêm vào giỏ hàng</button>
-           <button class="seemore" onclick ="dispatch('show','${
-             element.nameStore
-           }','${element.id}')">Show</button>
+           <button class="seemore" onclick ="dispatch('show','${element.id}','${
+          element.nameStore
+        }')">Show</button>
             </div>
            </div>
              </div>

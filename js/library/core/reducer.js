@@ -181,10 +181,13 @@ export default function reducer(state = init, action, args) {
     case "add": {
       let property = args[1];
       const newProduct = state.data[property][args[0]];
+      console.log(newProduct);
       const prevShopCart = [...state.shopcart];
       let newProductList = [...state.shopcart];
       let check = prevShopCart.some((cart) => {
-        return cart.id === newProduct.id;
+        return (
+          cart.id === newProduct.id && cart.nameStore === newProduct.nameStore
+        );
       });
       if (check) {
         MessageBox("thông báo", "sản phẩm đã có trong giỏ hàng", "warning");
@@ -235,6 +238,16 @@ export default function reducer(state = init, action, args) {
       return {
         ...state,
         shopcart: [...state.shopcart],
+      };
+    }
+    case "show": {
+      let property = args[1];
+
+      const Product = state.data[property][args[0]];
+      console.log(Product);
+
+      return {
+        ...state,
       };
     }
     default:
