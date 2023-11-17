@@ -12,6 +12,8 @@ import ShowPhone from "./components/Home/ShowPhone.js";
 import ShowTivi from "./components/Home/ShowTivi.js";
 import ShowKey from "./components/Home/ShowKey.js";
 import ShowWatch from "./components/Home/ShowWatch.js";
+import MessageBox from "./module/MessageBox.js";
+window.MessageBox = MessageBox;
 const globalMessageBox = document.getElementById("messageBox");
 const globalCountProductHome = document.getElementById(
   "ele-countproductincart-Home"
@@ -20,6 +22,7 @@ const globalCountProductShop = document.getElementById(
   "ele-countproductincart-Shop"
 );
 const globalInputSearch = document.getElementById("ele-input-heađer-global"); //header
+const globalbtnSearch = document.getElementById("ele-btn-header-search"); //header
 //HOne page start get element wrapper
 const contentHome = document.getElementsByClassName("l-c-p-w-r");
 const phoneHeaderBtn = document.getElementById("ele-header-menu-hdmn"); // header
@@ -35,6 +38,10 @@ const phoneHeaderMenuOptionOne = document.getElementById(
 const phoneHeaderMenuOptionTow = document.getElementById(
   "ele-navigation-2-hdmn"
 ); // header
+const phoneInputsearch = document.getElementById("ele-input-phone-search");
+const phoneBtnSearch = document.getElementById("ele-btn-phone-search");
+const HomebtnOpenAcount = document.getElementById("ele-btn-open-account");
+const HomeMainAcount = document.getElementById("ele-accout");
 const BannerHomePage = document.getElementById("ele-banner-home-bn");
 const MainHomePage = document.getElementById("ele-main-home-mh");
 const HomeShowPhone = document.getElementById("ele-listcardproduct-phone");
@@ -53,30 +60,26 @@ const shopContainerShopCart = document.getElementById(
 const shopBtnCloseShopCart = document.getElementById(
   "ele-button-close-shopcart"
 );
-const root = document.getElementById("root-product"); //shop page
 const shopShowProduct = document.getElementById("ele-show-product-shopcart"); //shop page
 const viewCartE = document.getElementById("ViewCart"); //shop page
 const shopShowProductList = document.getElementById(
   "ele-show-productList-shopPage"
 );
+const shopPagination = document.getElementById("ele-pagination");
 const shopPaginationBtnPrev = document.getElementById(
   "ele-pagination-prev-shopPage"
 );
 const shopPaginationBtnNext = document.getElementById(
   "ele-pagination-next-shopPage"
 );
-const shopNavBarMainLeftInput = document.getElementById(
-  "ele-input-navbar-main-left-shopPage"
-);
+
 // global
 export { globalMessageBox };
 if (globalCountProductHome) {
   attach(CountProduct, globalCountProductHome);
-  console.log(4);
 }
 if (globalCountProductShop) {
   attach(CountProduct, globalCountProductShop);
-  console.log(4);
 }
 //HOme
 countDow(
@@ -91,6 +94,12 @@ countDow(
   "ele-sale-minutes-Home",
   "ele-sale-second-Home"
 );
+if (HomebtnOpenAcount) {
+  HomebtnOpenAcount.onclick = () => {
+    HomebtnOpenAcount.classList.toggle("active");
+    HomeMainAcount.classList.toggle("active");
+  };
+}
 
 window.addEventListener("resize", function () {
   if (this.innerWidth > 1023) {
@@ -112,7 +121,57 @@ if (phoneHeaderBtn) {
     phoneHeaderMenuOptionOne.style.display = "none";
     phoneHeaderMenuOptionTow.style.display = "block";
   };
+  if (phoneInputsearch) {
+    const pagi = document.getElementById("ele-pagination");
+    const btnback = document.getElementById("ele-pagination-ch");
+    if (btnback) {
+      btnback.onclick = function () {
+        pagi.classList.remove("active");
+        this.parentElement.classList.add("active");
+        dispatch("changePage", 1, this);
+      };
+    }
+    phoneBtnSearch.onclick = (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      console.log(
+        window.location.href.includes("index.html") &&
+          phoneInputsearch.value.length !== 0
+      );
+      if (
+        window.location.href.includes("index.html") &&
+        phoneInputsearch.value.length !== 0
+      ) {
+        localStorage.setItem("searchKey", phoneInputsearch.value);
+        window.location.href = "./page/Shop.html";
+      }
+      if (pagi) {
+        pagi.classList.add("active");
+
+        btnback.parentElement.classList.remove("active");
+      }
+      dispatch("searchItem", phoneInputsearch.value);
+      phoneInputsearch.value = "";
+      phoneInputsearch.blur();
+      phoneHeaderMenu.style.display = "none";
+    };
+    let check = localStorage.getItem("searchKey")
+      ? localStorage.getItem("searchKey")
+      : "";
+    if (phoneInputsearch.value.length === 0 && check.length !== 0) {
+      dispatch("searchItem", check);
+      localStorage.setItem("searchKey", "");
+      phoneHeaderMenu.style.display = "none";
+
+      if (pagi) {
+        pagi.classList.add("active");
+
+        btnback.parentElement.classList.remove("active");
+      }
+    }
+  }
 }
+
 if (BannerHomePage) {
   slideOfBanner(
     ".banner .banner-right .buttons #left",
@@ -185,8 +244,26 @@ if (shopShowProduct) {
 }
 
 if (globalInputSearch) {
+  let searchKey = "";
   globalInputSearch.onfocus = () => {
     window.scrollTo(0, 0);
+  };
+  globalbtnSearch.onclick = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    searchKey = globalInputSearch.value;
+    if (
+      window.location.href.includes("index.html") &&
+      globalInputSearch.value.length !== 0
+    ) {
+      localStorage.setItem("searchKey", globalInputSearch.value);
+      window.location.href = "./page/Shop.html";
+    }
+
+    dispatch("searchItem", searchKey);
+    searchKey = "";
+    globalInputSearch.value = "";
+    globalInputSearch.blur();
   };
 
   const pagi = document.getElementById("ele-pagination");
@@ -194,6 +271,13 @@ if (globalInputSearch) {
   const handleKeyDown = (e) => {
     window.scrollTo(0, 0);
     if (e.keyCode === 13) {
+      if (
+        window.location.href.includes("index.html") &&
+        globalInputSearch.value.length !== 0
+      ) {
+        localStorage.setItem("searchKey", globalInputSearch.value);
+        window.location.href = "./page/Shop.html";
+      }
       if (pagi) {
         pagi.classList.add("active");
 
@@ -212,17 +296,16 @@ if (globalInputSearch) {
     };
   }
   HandleEvent("keydown", handleKeyDown, globalInputSearch);
+  let check = localStorage.getItem("searchKey")
+    ? localStorage.getItem("searchKey")
+    : "";
+  console.log(check);
+  if (globalInputSearch.value.length === 0 && check.length !== 0) {
+    dispatch("searchItem", check);
+    localStorage.setItem("searchKey", "");
+  }
 }
-if (shopNavBarMainLeftInput) {
-  const handleKeyDown = (e) => {
-    if (e.keyCode === 13) {
-      dispatch("searchItem", shopNavBarMainLeftInput.value);
-      shopNavBarMainLeftInput.value = "";
-      shopNavBarMainLeftInput.blur();
-    }
-  };
-  HandleEvent("keydown", handleKeyDown, shopNavBarMainLeftInput);
-}
+
 if (viewCartE) {
   attach(fuc2, viewCartE);
 }

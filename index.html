@@ -18,7 +18,7 @@
   </head>
   <body>
     <div id="messageBox"></div>
-
+    <div id="btnGoToTop" onclick="window.scrollTo(0,0)">&uarr;</div>
     <!-- header start  -->
     <section class="container">
       <section class="container-header">
@@ -67,6 +67,7 @@
                     onclick="location.href =`./page/ViewCart.html`"
                   >
                     <i class="fa-solid fa-cart-plus"></i>
+                    <span id="ele-countproductincart-Home"></span>
                   </div>
                 </div>
                 <button class="menu-btn-close" id="ele-menu-btn-close-hdmn">
@@ -77,11 +78,11 @@
                 <div class="input-box">
                   <input
                     type="text"
-                    id="input"
+                    id="ele-input-phone-search"
                     placeholder="nhập tên sản phẩm"
                   />
                 </div>
-                <button class="button-search">
+                <button class="button-search" id="ele-btn-phone-search">
                   <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
               </form>
@@ -111,7 +112,10 @@
                       <i class="fa-solid fa-chevron-right"></i>
                     </div>
                   </li>
-                  <li class="option-item">
+                  <li
+                    class="option-item"
+                    onclick="MessageBox('thông báo','sản phẩm chưa có trên cữa hàng','warning')"
+                  >
                     <div class="item-icon">
                       <img src="./image/icon/tainghe.png" alt="" />
                     </div>
@@ -120,7 +124,10 @@
                       <i class="fa-solid fa-chevron-right"></i>
                     </div>
                   </li>
-                  <li class="option-item">
+                  <li
+                    class="option-item"
+                    onclick="MessageBox('thông báo','sản phẩm chưa có trên cữa hàng','warning')"
+                  >
                     <div class="item-icon">
                       <img src="./image/icon/loa.png" alt="" />
                     </div>
@@ -168,11 +175,26 @@
                 </ul>
               </nav>
               <nav class="navigation-2" id="ele-navigation-2-hdmn">
-                <ul>
-                  <li>Home</li>
-                  <li>shop</li>
-                  <li>About</li>
-                  <li>contact</li>
+                <ul class="list">
+                  <li class="item active">Home</li>
+                  <li
+                    class="item"
+                    onclick="location.href = `../page/Shop.html`"
+                  >
+                    shop
+                  </li>
+                  <li
+                    class="item"
+                    onclick="MessageBox('thông báo','tính năng chưa được cập nhật','warning')"
+                  >
+                    About
+                  </li>
+                  <li
+                    class="item"
+                    onclick="MessageBox('thông báo','tính năng chưa được cập nhật','warning')"
+                  >
+                    contact
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -193,7 +215,7 @@
                 />
               </div>
               <div class="buttons">
-                <button>tìm kiếm</button>
+                <button id="ele-btn-header-search">tìm kiếm</button>
               </div>
             </form>
             <div class="header-access-list">
@@ -215,13 +237,23 @@
                 <i class="fa-solid fa-cart-plus"></i>
                 <span id="ele-countproductincart-Home"></span>
               </div>
-              <div class="header-access-item-3" titles="tài khoản">
+              <div
+                class="header-access-item-3"
+                id="ele-btn-open-account"
+                titles="tài khoản"
+              >
                 <i class="fa-regular fa-user"></i>
-                <!-- <div class="user">
-                   <div class="option-1">đăng nhập</div>
-                   <div class="option-2"></div>
-                   <div class="option-3">đang ký</div>
-                </div> -->
+                <div class="main-account" id="ele-accout">
+                  <div class="option option-1" id="ele-account-singin">
+                    <span>&bull;</span> đăng nhập
+                  </div>
+                  <div class="option option-2" id="ele-account-singout">
+                    <span>&bull;</span> đăng xuất
+                  </div>
+                  <div class="option option-3" id="ele-account-create">
+                    <span>&bull;</span> đang ký
+                  </div>
+                </div>
               </div>
             </div>
           </section>
@@ -240,13 +272,19 @@
                   </div>
                   <h4 class="item-title">máy tính</h4>
                 </li>
-                <li class="option-item">
+                <li
+                  class="option-item"
+                  onclick="MessageBox('thông báo','sản phẩm chưa có trên cữa hàng','warning')"
+                >
                   <div class="item-icon">
                     <img src="./image/icon/tainghe.png" alt="" />
                   </div>
                   <h4 class="item-title">tại nghe</h4>
                 </li>
-                <li class="option-item">
+                <li
+                  class="option-item"
+                  onclick="MessageBox('thông báo','sản phẩm chưa có trên cữa hàng','warning')"
+                >
                   <div class="item-icon">
                     <img src="./image/icon/loa.png" alt="" />
                   </div>
@@ -264,13 +302,19 @@
                   </div>
                   <h4 class="item-title">bàn phím và chuột</h4>
                 </li>
-                <li class="option-item">
+                <li
+                  class="option-item"
+                  onclick="MessageBox('thông báo','sản phẩm chưa có trên cữa hàng','warning')"
+                >
                   <div class="item-icon">
                     <img src="./image/icon/mtbag.png" alt="" />
                   </div>
                   <h4 class="item-title">máy tỉnh bảng</h4>
                 </li>
-                <li class="option-item">
+                <li
+                  class="option-item"
+                  onclick="MessageBox('thông báo','sản phẩm chưa có trên cữa hàng','warning')"
+                >
                   <div class="item-icon">
                     <img src="./image/icon/dongho.png" alt="" />
                   </div>
