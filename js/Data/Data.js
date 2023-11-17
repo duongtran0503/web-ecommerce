@@ -3,7 +3,7 @@ const DATA = {
     {
       id: 0,
       nameStore: "keyandmouse",
-      quantify: 1,
+      quantity: 1,
       productType: "keyandmouse",
       title: "Bàn phím Bluetooth Logitech K380",
       image: "ban-phim-bluetooth-logitechk380-den-1.png",
@@ -15,7 +15,7 @@ const DATA = {
     {
       id: 1,
       nameStore: "keyandmouse",
-      quantify: 1,
+      quantity: 1,
       productType: "keyandmouse",
       title: "Bàn Phím Cơ Bluetooth Rapoo V700 - 8A",
       image: "ban-phim-co-bluetooth-rapoo-v700-8a-trang-xam-1.png",
@@ -27,7 +27,7 @@ const DATA = {
     {
       id: 2,
       nameStore: "keyandmouse",
-      quantify: 1,
+      quantity: 1,
       productType: "keyandmouse",
       title: "Bàn Phím Bluetooth DareU EK868",
       image: "bluetooth-dareu-ek868.png",
@@ -39,7 +39,7 @@ const DATA = {
     {
       id: 3,
       nameStore: "keyandmouse",
-      quantify: 1,
+      quantity: 1,
       productType: "keyandmouse",
       title: "Bàn Phím Cơ Gaming MSI Vigor GK50 Elite ",
       image: "ban-phim-co-gaming-msi-vigor-gk50-elite-3.png",
@@ -51,7 +51,7 @@ const DATA = {
     {
       id: 4,
       nameStore: "keyandmouse",
-      quantify: 1,
+      quantity: 1,
       productType: "keyandmouse",
       title: "Chuột Không Dây Gaming Rapoo VT960 Pro ",
       image: "chuot-khong-day-gaming-rapoo-vt960-pro-1.png",
@@ -63,7 +63,7 @@ const DATA = {
     {
       id: 5,
       nameStore: "keyandmouse",
-      quantify: 1,
+      quantity: 1,
       productType: "keyandmouse",
       title: "Chuột Có dây Gaming Asus TUF M3",
       image: "chuot-gaming-asus-tuf-m3.png",
@@ -75,7 +75,7 @@ const DATA = {
     {
       id: 6,
       nameStore: "keyandmouse",
-      quantify: 1,
+      quantity: 1,
       productType: "keyandmouse",
       title: "Chuột Có dây DareU EM908",
       image: "chuot-co-day-dareu-em908.png",
@@ -87,7 +87,7 @@ const DATA = {
     {
       id: 7,
       nameStore: "keyandmouse",
-      quantify: 1,
+      quantity: 1,
       productType: "keyandmouse",
       title: "Chuột Có dây Gaming MSI Clutch GM20 Elite",
       image: "chuot-co-day-gaming-msi-clutch-gm20.png",
@@ -99,7 +99,7 @@ const DATA = {
     {
       id: 8,
       nameStore: "keyandmouse",
-      quantify: 1,
+      quantity: 1,
       productType: "keyandmouse",
       title: "Chuột Gaming Zadez G156M ",
       image: "chuot-gaming-zadez-g156m.png",
@@ -111,7 +111,7 @@ const DATA = {
     {
       id: 9,
       nameStore: "keyandmouse",
-      quantify: 1,
+      quantity: 1,
       productType: "keyandmouse",
       title: "Bàn Phím Cơ Có Dây Dareu EK75",
       image: "ban-phim-co-co-day-dareu-ek75.png",
@@ -123,7 +123,7 @@ const DATA = {
     {
       id: 10,
       nameStore: "keyandmouse",
-      quantify: 1,
+      quantity: 1,
       productType: "keyandmouse",
       title: "Bàn Phím Không Dây Bluetooth Rapoo E9050",
       image: "ban-phim-khong-day-bluetooth-rapoo-e9050g.png",
@@ -135,7 +135,7 @@ const DATA = {
     {
       id: 11,
       nameStore: "keyandmouse",
-      quantify: 1,
+      quantity: 1,
       productType: "keyandmouse",
       title: "Bàn Phím Cơ Có Dây Gaming Razer BlackWidow ",
       image: "co-co-day-gaming-razer-blackwidow-3-org.png",
@@ -147,7 +147,7 @@ const DATA = {
     {
       id: 12,
       nameStore: "keyandmouse",
-      quantify: 1,
+      quantity: 1,
       productType: "keyandmouse",
       title: "Chuột Gaming ASUS ROG Gladius II Core",
       image: "chuot-gaming-asus-rog-gladius-ii-core-1.png",
@@ -159,7 +159,7 @@ const DATA = {
     {
       id: 13,
       nameStore: "keyandmouse",
-      quantify: 1,
+      quantity: 1,
       productType: "keyandmouse",
       title: "Chuột Có dây Gaming Genius Scorpion M700",
       image: "chuot-co-day-gaming-genius-scorpion-m700.png",
@@ -171,7 +171,7 @@ const DATA = {
     {
       id: 14,
       nameStore: "keyandmouse",
-      quantify: 1,
+      quantity: 1,
       productType: "keyandmouse",
       title: "Bàn Phím Có Dây Gaming Asus TUF K1",
       image: "chuot-co-day-gaming-genius-scorpion-m700.png",
@@ -185,7 +185,7 @@ const DATA = {
     {
       id: 0,
       nameStore: "phone",
-      quantify: 1,
+      quantity: 1,
       productType: "phone",
       title: "Điện thoại iPhone 15 Pro Max 256GB",
       image: "iphone-15.png",
@@ -197,7 +197,7 @@ const DATA = {
     {
       id: 1,
       nameStore: "phone",
-      quantify: 1,
+      quantity: 1,
       productType: "phone",
       title: "Điện thoại Xiaomi Redmi 12",
       image: "xiaomi-redmi-12.png",
@@ -209,7 +209,7 @@ const DATA = {
     {
       id: 2,
       nameStore: "phone",
-      quantify: 1,
+      quantity: 1,
       productType: "phone",
       title: "Điện thoại iPhone 15",
       image: "iphone-15.png",
@@ -221,7 +221,7 @@ const DATA = {
     {
       id: 3,
       nameStore: "phone",
-      quantify: 1,
+      quantity: 1,
       productType: "phone",
       title: "Điện thoại iPhone 14 Pro Max",
       image: "iphone-14-pro-max.png",
@@ -233,7 +233,7 @@ const DATA = {
     {
       id: 4,
       nameStore: "phone",
-      quantify: 1,
+      quantity: 1,
       productType: "phone",
       title: "Điện thoại Xiaomi 13T 5G",
       image: "xiaomi-13t.png",
@@ -245,7 +245,7 @@ const DATA = {
     {
       id: 5,
       nameStore: "phone",
-      quantify: 1,
+      quantity: 1,
       productType: "phone",
       title: "Điện thoại OPPO Reno10 5G",
       image: "oppo-reno10.png",
@@ -257,7 +257,7 @@ const DATA = {
     {
       id: 6,
       nameStore: "phone",
-      quantify: 1,
+      quantity: 1,
       productType: "phone",
       title: "Điện thoại Samsung Galaxy S23 Ultra 5G",
       image: "samsung-galaxy-s23-ultra.png",
@@ -269,7 +269,7 @@ const DATA = {
     {
       id: 7,
       nameStore: "phone",
-      quantify: 1,
+      quantity: 1,
       productType: "phone",
       title: "Điện thoại Samsung Galaxy Z Fold4 5G",
       image: "samsung-galaxy-z-fold4.png",
@@ -281,7 +281,7 @@ const DATA = {
     {
       id: 8,
       nameStore: "phone",
-      quantify: 1,
+      quantity: 1,
       productType: "phone",
       title: "Điện thoại OPPO Find N2 Flip 5G",
       image: "oppo-n2-flip.png",
@@ -293,7 +293,7 @@ const DATA = {
     {
       id: 9,
       nameStore: "phone",
-      quantify: 1,
+      quantity: 1,
       productType: "phone",
       title: "Điện thoại realme 11 Pro+ 5G",
       image: "realme-11-pro-plus.png",
@@ -305,7 +305,7 @@ const DATA = {
     {
       id: 10,
       nameStore: "phone",
-      quantify: 1,
+      quantity: 1,
       productType: "phone",
       title: "Điện thoại Samsung Galaxy A54 5G",
       image: "samsung-galaxy-a54.png",
@@ -317,7 +317,7 @@ const DATA = {
     {
       id: 11,
       nameStore: "phone",
-      quantify: 1,
+      quantity: 1,
       productType: "phone",
       title: "Điện thoại Xiaomi Redmi Note 12 Pro 5G",
       image: "xiaomi-redmi-note-12-pro.png",
@@ -329,7 +329,7 @@ const DATA = {
     {
       id: 12,
       nameStore: "phone",
-      quantify: 1,
+      quantity: 1,
       productType: "phone",
       title: "Điện thoại OPPO Find X5 Pro 5G",
       image: "oppo-find-x5-pro.png",
@@ -341,7 +341,7 @@ const DATA = {
     {
       id: 13,
       nameStore: "phone",
-      quantify: 1,
+      quantity: 1,
       productType: "phone",
       title: "Điện thoại iPhone 14",
       image: "iphone-14.png",
@@ -353,7 +353,7 @@ const DATA = {
     {
       id: 14,
       nameStore: "phone",
-      quantify: 1,
+      quantity: 1,
       productType: "phone",
       title: "Điện thoại iPhone 11",
       image: "iphone-11.png",
@@ -369,7 +369,7 @@ const DATA = {
     {
       id: 0,
       nameStore: "Laptop",
-      quantify: 1,
+      quantity: 1,
       productType: "Laptop",
 
       title: "Laptop Gaming MSI Katana 15 B13VEK 1205VN",
@@ -382,7 +382,7 @@ const DATA = {
     {
       id: 1,
       nameStore: "Laptop",
-      quantify: 1,
+      quantity: 1,
       productType: "Laptop",
 
       title: "Laptop gaming Gigabyte G5 MF F2PH333SH",
@@ -395,7 +395,7 @@ const DATA = {
     {
       id: 2,
       nameStore: "Laptop",
-      quantify: 1,
+      quantity: 1,
       productType: "Laptop",
 
       title: "Laptop gaming ASUS ROG Strix G16 G614JU N3135W",
@@ -408,7 +408,7 @@ const DATA = {
     {
       id: 3,
       nameStore: "Laptop",
-      quantify: 1,
+      quantity: 1,
       productType: "Laptop",
 
       title: "Laptop gaming Acer Predator Helios 300 PH315 55 76KG",
@@ -421,7 +421,7 @@ const DATA = {
     {
       id: 4,
       nameStore: "Laptop",
-      quantify: 1,
+      quantity: 1,
       productType: "Laptop",
 
       title: "Laptop Gaming Acer Aspire 7 A715 42G R05G",
@@ -434,7 +434,7 @@ const DATA = {
     {
       id: 5,
       nameStore: "Laptop",
-      quantify: 1,
+      quantity: 1,
       productType: "Laptop",
 
       title: "Laptop gaming ASUS TUF F15 FX507ZC4 HN074W",
@@ -447,7 +447,7 @@ const DATA = {
     {
       id: 6,
       nameStore: "Laptop",
-      quantify: 1,
+      quantity: 1,
       productType: "Laptop",
 
       title: "Laptop gaming ASUS TUF Gaming A15 FA507NU LP034W",
@@ -460,7 +460,7 @@ const DATA = {
     {
       id: 7,
       nameStore: "Laptop",
-      quantify: 1,
+      quantity: 1,
       productType: "Laptop",
 
       title: "Laptop gaming ASUS TUF A15 FA507NU LP031W",
@@ -473,7 +473,7 @@ const DATA = {
     {
       id: 8,
       nameStore: "Laptop",
-      quantify: 1,
+      quantity: 1,
       productType: "Laptop",
 
       title: "Laptop gaming Lenovo Legion 5 15ARH7H 82RE0036VN",
@@ -486,7 +486,7 @@ const DATA = {
     {
       id: 9,
       nameStore: "Laptop",
-      quantify: 1,
+      quantity: 1,
       productType: "Laptop",
 
       title: "Laptop Gaming Acer Nitro 5 Eagle AN515 57 53F9",
@@ -499,7 +499,7 @@ const DATA = {
     {
       id: 10,
       nameStore: "Laptop",
-      quantify: 1,
+      quantity: 1,
       productType: "Laptop",
 
       title: "Laptop gaming ASUS TUF Gaming F15 FX506HE HN377W",
@@ -512,7 +512,7 @@ const DATA = {
     {
       id: 11,
       nameStore: "Laptop",
-      quantify: 1,
+      quantity: 1,
       productType: "Laptop",
 
       title: "Laptop Acer Aspire 7 A715 43G R8GA",
@@ -525,7 +525,7 @@ const DATA = {
     {
       id: 12,
       nameStore: "Laptop",
-      quantify: 1,
+      quantity: 1,
       productType: "Laptop",
 
       title: "Laptop gaming MSI GF63 12UC 887VN",
@@ -538,7 +538,7 @@ const DATA = {
     {
       id: 13,
       nameStore: "Laptop",
-      quantify: 1,
+      quantity: 1,
       productType: "Laptop",
 
       title: "Laptop Gaming MSI Cyborg 15 A12UCX 281VN",
@@ -551,7 +551,7 @@ const DATA = {
     {
       id: 14,
       nameStore: "Laptop",
-      quantify: 1,
+      quantity: 1,
       productType: "Laptop",
       title: "Laptop gaming ASUS ROG Strix SCAR 16 G634JZ N4029W",
       image: "Laptop_gaming_ASUS_ROG_Strix_SCAR_16_G634JZ_N4029W.png",
@@ -565,9 +565,9 @@ const DATA = {
     {
       id: 0,
       nameStore: "monitor",
-      quantify: 1,
+      quantity: 1,
       productType: "man_hinh",
-      title: "Asus TUF GAMING VG249Q3A 24 Fast IPS 180Hz Gsync",
+      title: "Màn hình Asus TUF GAMING VG249Q3A 24 Fast IPS 180Hz Gsync",
       image: "Asus_TUF_GAMING_VG249Q3A_24__Fast_IPS_180Hz_Gsync.png",
       price: 3790000,
       detail:
@@ -577,9 +577,9 @@ const DATA = {
     {
       id: 1,
       nameStore: "monitor",
-      quantify: 1,
+      quantity: 1,
       productType: "man_hinh",
-      title: "AOC Q24G2 24 IPS 2K 165Hz G-Sync",
+      title: "Màn hình AOC Q24G2 24 IPS 2K 165Hz G-Sync",
       image: "ASUS_VZ27EHF_27__IPS_100Hz.png",
       price: 5090000,
       detail:
@@ -589,9 +589,9 @@ const DATA = {
     {
       id: 2,
       nameStore: "monitor",
-      quantify: 1,
+      quantity: 1,
       productType: "man_hinh",
-      title: "ViewSonic VA2209-H 22 IPS FHD 75Hz",
+      title: "Màn hình ViewSonic VA2209-H 22 IPS FHD 75Hz",
       image: "ViewSonic_VX2479-HD-PRO_24__IPS_165Hz.png",
       price: 1890000,
       detail:
@@ -601,9 +601,9 @@ const DATA = {
     {
       id: 3,
       nameStore: "monitor",
-      quantify: 1,
+      quantity: 1,
       productType: "man_hinh",
-      title: "Viewsonic VA2432-H 24 IPS 100Hz",
+      title: "Màn hình Viewsonic VA2432-H 24 IPS 100Hz",
       image: "Viewsonic_VA2432-H_24__IPS_100Hz.png",
       price: 2390000,
       detail:
@@ -613,9 +613,9 @@ const DATA = {
     {
       id: 4,
       nameStore: "monitor",
-      quantify: 1,
+      quantity: 1,
       productType: "man_hinh",
-      title: "ASUS VZ27EHF 27 IPS 100Hz",
+      title: "Màn hình ASUS VZ27EHF 27 IPS 100Hz",
       image: "ASUS_ProArt_PA248QV-P_24__IPS_75Hz.png",
       price: 3190000,
       detail:
@@ -625,9 +625,9 @@ const DATA = {
     {
       id: 5,
       nameStore: "monitor",
-      quantify: 1,
+      quantity: 1,
       productType: "man_hinh",
-      title: "LG 24GN65R-B 24 IPS 144Hz HDR10 Freesync",
+      title: "Màn hình LG 24GN65R-B 24 IPS 144Hz HDR10 Freesync",
       image: "LG_24GN65R-B_24__IPS_144Hz_HDR10_Freesync.png",
       price: 3390000,
       detail:
@@ -637,9 +637,9 @@ const DATA = {
     {
       id: 6,
       nameStore: "monitor",
-      quantify: 1,
+      quantity: 1,
       productType: "man_hinh",
-      title: "Lenovo L24q-35 24 IPS 2K 75Hz",
+      title: "Màn hình Lenovo L24q-35 24 IPS 2K 75Hz",
       image: "Lenovo_L24q-35_24__IPS_2K_75Hz.png",
       price: 3990000,
       detail:
@@ -649,9 +649,9 @@ const DATA = {
     {
       id: 7,
       nameStore: "monitor",
-      quantify: 1,
+      quantity: 1,
       productType: "man_hinh",
-      title: "ACER EK221Q H 22 100Hz",
+      title: "Màn hình ACER EK221Q H 22 100Hz",
       image: "AOC_Q24G2_24__IPS_2K_165Hz_G-Sync.png",
       price: 1890000,
       detail:
@@ -661,9 +661,9 @@ const DATA = {
     {
       id: 8,
       nameStore: "monitor",
-      quantify: 1,
+      quantity: 1,
       productType: "man_hinh",
-      title: "HKC MB24V9 24 IPS 75Hz",
+      title: "Màn hình HKC MB24V9 24 IPS 75Hz",
       image: "HKC_MB24V9_24__IPS_75Hz.png",
       price: 2090000,
       detail:
@@ -673,9 +673,9 @@ const DATA = {
     {
       id: 9,
       nameStore: "monitor",
-      quantify: 1,
+      quantity: 1,
       productType: "man_hinh",
-      title: "ViewSonic VX2479-HD-PRO 24 IPS 165Hz",
+      title: "Màn hình ViewSonic VX2479-HD-PRO 24 IPS 165Hz",
       image: "ViewSonic_VA2209-H_22__IPS_FHD_75Hz.png",
       price: 3090000,
       detail:
@@ -685,9 +685,9 @@ const DATA = {
     {
       id: 10,
       nameStore: "monitor",
-      quantify: 1,
+      quantity: 1,
       productType: "man_hinh",
-      title: "MSI OPTIX G2422 24IPS 170Hz",
+      title: "Màn hình MSI OPTIX G2422 24IPS 170Hz",
       image: "MSI_OPTIX_G2422_24__IPS_170Hz.png",
       price: 3390000,
       detail:
@@ -697,9 +697,9 @@ const DATA = {
     {
       id: 11,
       nameStore: "monitor",
-      quantify: 1,
+      quantity: 1,
       productType: "man_hinh",
-      title: "Cooler Master GM238-FFS 24 IPS 144Hz",
+      title: "Màn hình Cooler Master GM238-FFS 24 IPS 144Hz",
       image: "Cooler_Master_GM238-FFS_24__IPS_144Hz.png",
       price: 3390000,
       detail:
@@ -709,9 +709,9 @@ const DATA = {
     {
       id: 12,
       nameStore: "monitor",
-      quantify: 1,
+      quantity: 1,
       productType: "man_hinh",
-      title: "GIGABYTE G24F 2 24 IPS 180Hz",
+      title: "Màn hình GIGABYTE G24F 2 24 IPS 180Hz",
       image: "GIGABYTE_G24F_2_24__IPS_180Hz.png",
       price: 3590000,
       detail:
@@ -721,9 +721,9 @@ const DATA = {
     {
       id: 13,
       nameStore: "monitor",
-      quantify: 1,
+      quantity: 1,
       productType: "man_hinh",
-      title: "ASUS ROG Strix XG249CM 24IPS 270Hz 1ms G-Sync",
+      title: "Màn hình ASUS ROG Strix XG249CM 24IPS 270Hz 1ms G-Sync",
       image: "ASUS_ROG_Strix_XG249CM_24__IPS_270Hz_1ms_G-Sync.png",
       price: 7490000,
       detail:
@@ -733,9 +733,9 @@ const DATA = {
     {
       id: 14,
       nameStore: "monitor",
-      quantify: 1,
+      quantity: 1,
       productType: "man_hinh",
-      title: "ASUS ProArt PA248QV-P 24 IPS 75Hz 16:10",
+      title: "Màn hình ASUS ProArt PA248QV-P 24 IPS 75Hz 16:10",
       image: "ASUS_ProArt_PA248QV-P_24__IPS_75Hz.png",
       price: 5090000,
       detail:

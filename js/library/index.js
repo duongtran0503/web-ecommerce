@@ -211,7 +211,7 @@ if (globalInputSearch) {
       dispatch("changePage", 1, this);
     };
   }
-  HandleEvent("keyup", handleKeyDown, globalInputSearch);
+  HandleEvent("keydown", handleKeyDown, globalInputSearch);
 }
 if (shopNavBarMainLeftInput) {
   const handleKeyDown = (e) => {
