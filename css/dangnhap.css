@@ -3,7 +3,53 @@ body {
   height: 100%;
 }
 .container {
-  width: 1200px;
+  width: 400px;
   height: auto;
   margin: 0 auto;
+  border: 2px solid #f1f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form {
+  width: 90%;
+  margin: 0 10px;
+}
+.form-title h3 {
+  text-align: center;
+  font-size: 30px;
+  margin: 10px auto;
+}
+label {
+  font-weight: 600;
+  font-size: 18px;
+}
+input[type="text"],
+input[type="password"] {
+  padding: 15px;
+  border: none;
+  background-color: #f1f1f1f1;
+  width: 100%;
+  margin: 10px auto;
+}
+.loginbtn {
+  width: 100%;
+  font-size: 18px;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 2px solid #008cba;
+  background-color: #008cba;
+  color: whitesmoke;
+  opacity: 0.9;
+  margin: 20px auto;
+  transition-duration: 0.4s;
+}
+.loginbtn:hover {
+  background-color: white;
+  color: black;
+}
+hr {
+  margin: 10px auto;
 }

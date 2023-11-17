@@ -14,9 +14,11 @@
     <link rel="icon" type="image/x-icon" href="../image/logo/logo.png" />
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/shop.css" />
+    <script type="module" src="../js/library/index.js" defers></script>
   </head>
   <body>
     <div id="messageBox"></div>
+    <div id="btnGoToTop" onclick="window.scrollTo(0,0)">&uarr;</div>
     <section class="container">
       <section class="container-header" style="height: 120px">
         <header class="header">
@@ -47,8 +49,13 @@
                   >
                     <i class="fa-solid fa-shop"></i>
                   </div>
-                  <div class="phone-access-item" titles="giỏ hàng">
+                  <div
+                    class="phone-access-item"
+                    titles="giỏ hàng"
+                    onclick="location.href =`./ViewCart.html`"
+                  >
                     <i class="fa-solid fa-cart-plus"></i>
+                    <span id="ele-countproductincart-Home"></span>
                   </div>
                 </div>
                 <button class="menu-btn-close" id="ele-menu-btn-close-hdmn">
@@ -57,9 +64,13 @@
               </div>
               <form class="search">
                 <div class="input-box">
-                  <input type="text" placeholder="nhập tên sản phẩm" />
+                  <input
+                    type="text"
+                    id="ele-input-phone-search"
+                    placeholder="nhập tên sản phẩm"
+                  />
                 </div>
-                <button class="button-search">
+                <button class="button-search" id="ele-btn-phone-search">
                   <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
               </form>
@@ -146,11 +157,23 @@
                 </ul>
               </nav>
               <nav class="navigation-2" id="ele-navigation-2-hdmn">
-                <ul>
-                  <li>Home</li>
-                  <li>shop</li>
-                  <li>About</li>
-                  <li>contact</li>
+                <ul class="list">
+                  <li class="item" onclick="location.href = `../index.html`">
+                    Home
+                  </li>
+                  <li class="item active">shop</li>
+                  <li
+                    class="item"
+                    onclick="MessageBox('thông báo','tính năng chưa được cập nhật','warning')"
+                  >
+                    About
+                  </li>
+                  <li
+                    class="item"
+                    onclick="MessageBox('thông báo','tính năng chưa được cập nhật','warning')"
+                  >
+                    contact
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -171,7 +194,7 @@
                 />
               </div>
               <div class="buttons">
-                <button>tìm kiếm</button>
+                <button id="ele-btn-header-search">tìm kiếm</button>
               </div>
             </form>
             <div class="header-access-list">
@@ -298,7 +321,53 @@
       <!-- main  start  -->
 
       <section id="main" class="container-main">
-        <section class="navigation"></section>
+        <section class="navigation">
+          <div class="nav-top">
+            <div
+              class="item"
+              onclick="
+               dispatch('searchItem','Điện thoại')"
+            >
+              <div class="item-icon">
+                <img src="../image/icon/phone.png" alt=" " />
+              </div>
+              <h4 class="item-title">Điện thoại</h4>
+            </div>
+            <div
+              class="item"
+              onclick="
+            dispatch('searchItem','máy tính') "
+            >
+              <div class="item-icon">
+                <img src="../image/icon/laptop.png" alt="" />
+              </div>
+              <h4 class="item-title">máy tính</h4>
+            </div>
+            <div
+              class="item"
+              onclick="
+            dispatch('searchItem','tại nghe')"
+            >
+              <div class="item-icon">
+                <img src="../image/icon/tainghe.png" alt="" />
+              </div>
+              <h4 class="item-title">tại nghe</h4>
+            </div>
+            <div
+              class="item"
+              onclick="
+            dispatch('searchItem','màn hình')
+            "
+            >
+              <div class="item-icon">
+                <img src="../image/icon/pc.png" alt="" />
+              </div>
+              <h4 class="item-title">màn hình</h4>
+            </div>
+          </div>
+
+          <div class="nav-bottom"></div>
+        </section>
         <main class="main" id="ele-show-productList-shopPage"></main>
       </section>
       <section class="nav"></section>
@@ -338,6 +407,5 @@
       </section>
       <!-- footer end   -->
     </section>
-    <script type="module" src="../js/library/index.js"></script>
   </body>
 </html>

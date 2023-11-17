@@ -3,48 +3,65 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>đăng ký</title>
+    <title>Đăng nhập</title>
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/dangnhap.css" />
+              
   </head>
   <body>
     <div class="container">
-      <div class="logo">
-        <div class="logo-img">
-          <img src="../image/logo/logo-header.png" alt="" />
-        </div>
-        <div class="logo-title">
-          <h2><span>Shop</span> foodie</h2>
-        </div>
-      </div>
-      <form action="#" class="form">
+      <form action="#" class="form" onsubmit="return check()">
         <div class="form-title">
-          <h3>đăng ký tài khoản shop foodie</h3>
+          <h3>Đăng nhập</h3>
+          <hr>
         </div>
         <div class="form-goup">
           <div class="input-box">
             <label for="name">Nhập tên người dùng</label>
-            <input id="name" type="text" placeholder="user name" value="" />
+            <input id="name" type="text" placeholder="User name" value="" />
             <span class="handle-error"></span>
           </div>
           <div class="input-box">
             <label for="password">Nhập mật khẩu</label>
             <input
               id="password"
-              type="text"
-              placeholder="nhập mật khẩu"
+              type="password"
+              placeholder="Password"
               value=""
             />
-            <span class="handle-erro"></span>
+            <span class="handle-error"></span>
           </div>
+          <hr>
         </div>
-        <button>đăng ký</button>
-        <div class="selection">
-          <h4>phương thức đăng nhập khác khác</h4>
-          <!-- logo 4 cái -->
-          <div class="logo"></div>
-        </div>
+        <input type="submit" class="loginbtn" value="Đăng nhập"></input>
       </form>
     </div>
   </body>
+  <script>
+    function check(){
+    var tendn = document.getElementById("name");
+    var error=document.getElementsByClassName("handle-error");
+    if(tendn.value==""){  
+        error[0].innerText = "Hãy điền tên đăng nhập !";
+        error[0].style="color: red";
+        tendn.focus();
+        tendn.addEventListener("keydown",function(){
+            error[0].innerText="";
+        })
+        return false;
+    }
+    var mk = document.getElementById("password");
+    if(mk.value==""){
+        error[1].innerText="Hãy điền mật khẩu !";
+        error[1].style="color:red";
+        mk.focus();
+        mk.addEventListener("keydown",function(){
+            error[1].innerText="";
+        })
+        return false;
+    }
+    return true;
+}
+
+  </script>
 </html>

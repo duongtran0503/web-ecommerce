@@ -104,8 +104,30 @@ h6 {
   border-left: 4px solid;
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);
   transition: all linear 0.3s;
+  position: relative;
 }
-
+@media only screen and (max-width: 520px) {
+  #messageBox {
+    right: 5px;
+  }
+  .toast {
+    min-width: 350px;
+  }
+}
+.toast::before {
+  content: "";
+  position: absolute;
+  border: 2px solid;
+  width: 100%;
+  border-color: inherit;
+  bottom: 0;
+  animation: amin 3s linear forwards;
+}
+@keyframes amin {
+  100% {
+    width: 0;
+  }
+}
 @keyframes slideInLeft {
   from {
     opacity: 0;
@@ -189,6 +211,25 @@ h6 {
   font-size: 20px;
   color: rgba(0, 0, 0, 0.3);
   cursor: pointer;
+}
+/* btn to top  */
+#btnGoToTop {
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: var(--primary-color-button);
+  color: #dcdde0;
+  border-radius: 50%;
+  z-index: 100;
+  font-size: 20px;
+  border: 4px solid rgb(8, 8, 8);
+  font-weight: 400;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
 }
 /* global header css  */
 .container-header {
@@ -320,6 +361,13 @@ h6 {
   .header
   .header-middle
   .header-access-list
+  .header-access-item-3.active {
+  color: #2f86eb;
+}
+.container-header
+  .header
+  .header-middle
+  .header-access-list
   .header-access-item:hover,
 .header-access-item-3:hover {
   font-size: 26px;
@@ -418,6 +466,58 @@ h6 {
   color: rgb(0, 0, 0);
   cursor: pointer;
   position: relative;
+}
+.container-header
+  .header
+  .header-middle
+  .header-access-list
+  .header-access-item-3
+  .main-account {
+  position: absolute;
+  bottom: -100px;
+  right: -10px;
+  min-width: 200px;
+  width: max-content;
+  padding: 10px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 5px 0 black;
+  row-gap: 5px;
+  z-index: 10;
+  display: none;
+  color: #333;
+}
+.container-header
+  .header
+  .header-middle
+  .header-access-list
+  .header-access-item-3
+  .main-account.active {
+  display: block;
+}
+.container-header
+  .header
+  .header-middle
+  .header-access-list
+  .header-access-item-3
+  .main-account
+  .option {
+  font-size: 14px;
+  font-weight: 400;
+  color: #0f172a;
+}
+.container-header
+  .header
+  .header-middle
+  .header-access-list
+  .header-access-item-3
+  .main-account
+  .option:hover {
+  background: #333;
+  color: white;
 }
 .container-header
   .header
@@ -582,6 +682,11 @@ h6 {
     width: auto;
     height: 100%;
     padding: 0 5px;
+    border: none;
+    box-shadow: var(--primary-boxshadow);
+    background: var(--primary-color-button);
+    color: white;
+    cursor: pointer;
   }
   .container-header
     .header
@@ -592,6 +697,7 @@ h6 {
     display: flex;
     align-items: center;
     column-gap: 20px;
+    cursor: pointer;
   }
   .container-header
     .header
@@ -623,6 +729,7 @@ h6 {
     width: 100%;
     height: 100%;
     outline: none;
+    padding-left: 10px;
   }
   .container-header
     .header
@@ -635,6 +742,10 @@ h6 {
     display: flex;
     justify-content: center;
     align-items: center;
+    background: var(--primary-color-button);
+    border: none;
+    color: white;
+    border-radius: 4px;
   }
   .container-header .header .header-middle .menu-phone-wrap .selection-menu {
     display: flex;
@@ -653,12 +764,78 @@ h6 {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+  }
+  .container-header
+    .header
+    .header-middle
+    .menu-phone-wrap
+    .selection-menu
+    div:hover {
+    background: #dcdde0;
+  }
+  .container-header
+    .header
+    .header-middle
+    .menu-phone-wrap
+    .selection-menu
+    .product-menu {
+    position: relative;
+  }
+  .container-header
+    .header
+    .header-middle
+    .menu-phone-wrap
+    .selection-menu
+    .product-menu::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background: #0f172a;
+    left: 100%;
   }
   .container-header .header .header-middle .menu-phone-wrap .navigation-1 {
     width: 100%;
     height: auto;
     padding: 0 20px;
     margin-top: 20px;
+  }
+  .container-header
+    .header
+    .header-middle
+    .menu-phone-wrap
+    .navigation-1
+    .option-item {
+    position: relative;
+    cursor: pointer;
+  }
+  .container-header
+    .header
+    .header-middle
+    .menu-phone-wrap
+    .navigation-1
+    .option-item
+    h4 {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .container-header
+    .header
+    .header-middle
+    .menu-phone-wrap
+    .navigation-1
+    .option-item:hover {
+    background: #dbdbde;
+  }
+  .container-header
+    .header
+    .header-middle
+    .menu-phone-wrap
+    .navigation-1
+    .icon-chevron {
+    position: absolute;
+    left: 94%;
   }
   .container-header .header .header-middle .menu-phone-wrap .navigation-1 ul {
     width: 100%;
@@ -713,6 +890,29 @@ h6 {
     li {
     width: 100%;
     height: 48px;
+    font-size: 16px;
+    font-weight: 400;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+  }
+  .container-header
+    .header
+    .header-middle
+    .menu-phone-wrap
+    .navigation-2
+    .list
+    .item.active {
+    background: #dbdbde;
+  }
+  .container-header
+    .header
+    .header-middle
+    .menu-phone-wrap
+    .navigation-2
+    .list
+    .item:hover {
+    background: #dbdbde;
   }
   .container-header .header .header-middle .header-menu {
     display: block;
