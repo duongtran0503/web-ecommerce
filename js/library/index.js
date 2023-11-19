@@ -13,6 +13,7 @@ import ShowTivi from "./components/Home/ShowTivi.js";
 import ShowKey from "./components/Home/ShowKey.js";
 import ShowWatch from "./components/Home/ShowWatch.js";
 import MessageBox from "./module/MessageBox.js";
+import purcharedProduct from "./components/Shop/purchasedProduct.js";
 window.MessageBox = MessageBox;
 const globalMessageBox = document.getElementById("messageBox");
 const globalCountProductHome = document.getElementById(
@@ -23,6 +24,7 @@ const globalCountProductShop = document.getElementById(
 );
 const globalInputSearch = document.getElementById("ele-input-heađer-global"); //header
 const globalbtnSearch = document.getElementById("ele-btn-header-search"); //header
+const globalTotailCont = document.getElementById("totail-cont");
 //HOne page start get element wrapper
 const contentHome = document.getElementsByClassName("l-c-p-w-r");
 const phoneHeaderBtn = document.getElementById("ele-header-menu-hdmn"); // header
@@ -61,7 +63,7 @@ const shopBtnCloseShopCart = document.getElementById(
   "ele-button-close-shopcart"
 );
 const shopShowProduct = document.getElementById("ele-show-product-shopcart"); //shop page
-const viewCartE = document.getElementById("ViewCart"); //shop page
+const viewCartE = document.getElementById("ele-viewCart-cartpage"); //shop page
 const shopShowProductList = document.getElementById(
   "ele-show-productList-shopPage"
 );
@@ -72,9 +74,10 @@ const shopPaginationBtnPrev = document.getElementById(
 const shopPaginationBtnNext = document.getElementById(
   "ele-pagination-next-shopPage"
 );
-
+//  viewCart
+const ViewCartHis = document.getElementById("ele-history-shop");
 // global
-export { globalMessageBox };
+export { globalMessageBox, globalTotailCont };
 if (globalCountProductHome) {
   attach(CountProduct, globalCountProductHome);
 }
@@ -313,4 +316,8 @@ if (contentHome) {
   [...contentHome].forEach((element) => {
     attach(Home, element);
   });
+}
+// viewCart
+if (ViewCartHis) {
+  attach(purcharedProduct, ViewCartHis);
 }

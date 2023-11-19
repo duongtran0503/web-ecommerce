@@ -8,7 +8,6 @@ let tmp = [...list];
 for (let i = 0; i < 5; i++) {
   list = list.concat(tmp);
 }
-console.log(list);
 const init = {
   data: DATA,
   shopcart: localStorage.getItem("product")
@@ -18,6 +17,7 @@ const init = {
   searchProductList: [],
 
   limitPage: { start: 0, end: 49, itemperpage: 50, item: [], currentpage: 1 },
+  purcharedProduct: [],
 };
 export default function reducer(state = init, action, args) {
   switch (action) {
@@ -64,7 +64,6 @@ export default function reducer(state = init, action, args) {
         window.scrollTo(0, 0);
       }, 200);
 
-      console.log(args[1]);
       const element = args[1];
       const pagination = [...element.parentElement.children];
       pagination.forEach((element) => {
@@ -100,7 +99,6 @@ export default function reducer(state = init, action, args) {
       window.scrollTo(0, 0);
 
       const element = args[0];
-      console.log(element);
       const pagination = [...element.parentElement.parentElement.children];
       console.log(pagination);
       let index = 1;
@@ -181,7 +179,6 @@ export default function reducer(state = init, action, args) {
     case "add": {
       let property = args[1];
       const newProduct = state.data[property][args[0]];
-      console.log(newProduct);
       const prevShopCart = [...state.shopcart];
       let newProductList = [...state.shopcart];
       let check = prevShopCart.some((cart) => {
@@ -248,6 +245,34 @@ export default function reducer(state = init, action, args) {
 
       return {
         ...state,
+      };
+    }
+    case "payment": {
+      let buyProduct = [...state.shopcart];
+      buyProduct = buyProduct.map((item) => {
+        let temp = item;
+        let now = new Date();
+        let month = now.getMonth() + 1;
+        let day = now.getDate();
+        let hours = now.getHours();
+        let minutes = now.getMinutes();
+        let time = `${hours}:${minutes} ngày ${day} tháng ${month}`;
+        return {
+          ...temp,
+          date: time,
+        };
+      });
+      let check = localStorage.getItem("buyProduct")
+        ? JSON.parse(localStorage.getItem("buyProduct"))
+        : [];
+
+      buyProduct = [...buyProduct, ...check];
+      localStorage.setItem("buyProduct", JSON.stringify(buyProduct));
+      localStorage.removeItem("product");
+      return {
+        ...state,
+        shopcart: [],
+        purcharedProduct: buyProduct,
       };
     }
     default:
