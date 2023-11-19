@@ -10,7 +10,7 @@ function slideOfBanner(
   const containerBanner = document.querySelector(containerBanners);
   let autoNextSlide = setInterval(() => {
     buttonRight.click();
-  }, 3000);
+  }, 5000);
   const handleNextSlide = () => {
     const listSlide = document.querySelectorAll(listSlides);
     const slider = document.querySelector(sliders);
@@ -20,7 +20,7 @@ function slideOfBanner(
     clearInterval(autoNextSlide);
     autoNextSlide = setInterval(() => {
       buttonRight.click();
-    }, 3000);
+    }, 5000);
   };
   const handlePrevSlide = () => {
     const listSlide = document.querySelectorAll(listSlides);
@@ -31,7 +31,7 @@ function slideOfBanner(
     clearInterval(autoNextSlide);
     autoNextSlide = setInterval(() => {
       buttonRight.click();
-    }, 3000);
+    }, 5000);
   };
   buttonRight.addEventListener("click", handleNextSlide);
   buttonLeft.addEventListener("click", handlePrevSlide);

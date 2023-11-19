@@ -6,7 +6,7 @@ const connector = connect((state) => ({
 let i = 0;
 const ShowPhone = ({ product }) => {
   let list = [];
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 12; i++) {
     if (product[i]) {
       list.push(product[i]);
     }
