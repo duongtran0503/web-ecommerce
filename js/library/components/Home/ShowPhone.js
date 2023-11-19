@@ -36,7 +36,7 @@ const ShowPhone = ({ product }) => {
         </div>
         <div class="card-button-cpc">
          <button   onclick = "dispatch('add',${index},'${element.nameStore}')">Thêm vào giỏ hàng</button>
-         <button class="seemore" onclick ="dispatch('show','${element.nameStore}','${element.id}')">Show</button>
+         <button class="seemore" onclick ="HandleEvent('show',this,'${element.nameStore}','${element.id}')">Show</button>
           </div>
          </div>
            </div>

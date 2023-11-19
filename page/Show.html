@@ -42,14 +42,14 @@
                   <div
                     class="phone-access-item"
                     titles="cửa hàng"
-                    onclick="location.href =`./page/Shop.html`"
+                    onclick="location.href =`./Shop.html`"
                   >
                     <i class="fa-solid fa-shop"></i>
                   </div>
                   <div
                     class="phone-access-item"
                     titles="giỏ hàng"
-                    onclick="location.href =`./page/ViewCart.html`"
+                    onclick="location.href =`./ViewCart.html`"
                   >
                     <i class="fa-solid fa-cart-plus"></i>
                   </div>
@@ -80,7 +80,7 @@
                 <ul class="list-option">
                   <li class="option-item">
                     <div class="item-icon">
-                      <img src="./image/icon/phone.png" alt="" />
+                      <img src="../image/icon/phone.png" alt="" />
                     </div>
                     <h4 class="item-title">Điện thoại</h4>
                     <div class="icon-chevron">
@@ -89,7 +89,7 @@
                   </li>
                   <li class="option-item">
                     <div class="item-icon">
-                      <img src="./image/icon/laptop.png" alt="" />
+                      <img src="../image/icon/laptop.png" alt="" />
                     </div>
                     <h4 class="item-title">máy tính</h4>
                     <div class="icon-chevron">
@@ -98,7 +98,7 @@
                   </li>
                   <li class="option-item">
                     <div class="item-icon">
-                      <img src="./image/icon/tainghe.png" alt="" />
+                      <img src="../image/icon/tainghe.png" alt="" />
                     </div>
                     <h4 class="item-title">tại nghe</h4>
                     <div class="icon-chevron">
@@ -107,7 +107,7 @@
                   </li>
                   <li class="option-item">
                     <div class="item-icon">
-                      <img src="./image/icon/loa.png" alt="" />
+                      <img src="../image/icon/loa.png" alt="" />
                     </div>
                     <h4 class="item-title">loa</h4>
                     <div class="icon-chevron">
@@ -116,7 +116,7 @@
                   </li>
                   <li class="option-item">
                     <div class="item-icon">
-                      <img src="./image/icon/pc.png" alt="" />
+                      <img src="../image/icon/pc.png" alt="" />
                     </div>
                     <h4 class="item-title">màn hình</h4>
                     <div class="icon-chevron">
@@ -125,7 +125,7 @@
                   </li>
                   <li class="option-item">
                     <div class="item-icon">
-                      <img src="./image/icon/keyandmouse.png" alt="" />
+                      <img src="../image/icon/keyandmouse.png" alt="" />
                     </div>
                     <h4 class="item-title">bàn phím và chuột</h4>
                     <div class="icon-chevron">
@@ -134,7 +134,7 @@
                   </li>
                   <li class="option-item">
                     <div class="item-icon">
-                      <img src="./image/icon/mtbag.png" alt="" />
+                      <img src="../image/icon/mtbag.png" alt="" />
                     </div>
                     <h4 class="item-title">máy tỉnh bảng</h4>
                     <div class="icon-chevron">
@@ -143,7 +143,7 @@
                   </li>
                   <li class="option-item">
                     <div class="item-icon">
-                      <img src="./image/icon/dongho.png" alt="" />
+                      <img src="../image/icon/dongho.png" alt="" />
                     </div>
                     <h4 class="item-title">đồng hồ</h4>
                     <div class="icon-chevron">
@@ -154,11 +154,10 @@
               </nav>
               <nav class="navigation-2" id="ele-navigation-2-hdmn">
                 <ul class="list">
-                  <li class="item active">Home</li>
-                  <li
-                    class="item"
-                    onclick="location.href = `../page/Shop.html`"
-                  >
+                  <li class="item" onclick="location.href = `../index.html`">
+                    Home
+                  </li>
+                  <li class="item" onclick="location.href = `./Shop.html`">
                     shop
                   </li>
                   <li
@@ -211,73 +210,29 @@
               >
                 <i class="fa-solid fa-shop"></i>
               </div>
-              <div class="header-access-item" titles="giỏ hàng">
+              <div
+                class="header-access-item"
+                titles="giỏ hàng"
+                onclick="location.href =`./ViewCart.html`"
+              >
                 <i class="fa-solid fa-cart-plus"></i>
                 <span id="ele-countproductincart-Home"></span>
               </div>
               <div class="header-access-item-3" titles="tài khoản">
                 <i class="fa-regular fa-user"></i>
-                <!-- <div class="user">
-                   <div class="option-1">đăng nhập</div>
-                   <div class="option-2"></div>
-                   <div class="option-3">đang ký</div>
-                </div> -->
+                <div class="main-account" id="ele-accout">
+                  <div class="option option-1" id="ele-account-singin">
+                    <span>&bull;</span> đăng nhập
+                  </div>
+                  <div class="option option-2" id="ele-account-singout">
+                    <span>&bull;</span> đăng xuất
+                  </div>
+                  <div class="option option-3" id="ele-account-create">
+                    <span>&bull;</span> đang ký
+                  </div>
+                </div>
               </div>
             </div>
-          </section>
-          <section class="header-bottom" style="display: none">
-            <nav class="header-bottom-nav">
-              <ul class="list-option">
-                <li class="option-item">
-                  <div class="item-icon">
-                    <img src="./image/icon/phone.png" alt=" " />
-                  </div>
-                  <h4 class="item-title">Điện thoại</h4>
-                </li>
-                <li class="option-item">
-                  <div class="item-icon">
-                    <img src="./image/icon/laptop.png" alt="" />
-                  </div>
-                  <h4 class="item-title">máy tính</h4>
-                </li>
-                <li class="option-item">
-                  <div class="item-icon">
-                    <img src="./image/icon/tainghe.png" alt="" />
-                  </div>
-                  <h4 class="item-title">tại nghe</h4>
-                </li>
-                <li class="option-item">
-                  <div class="item-icon">
-                    <img src="./image/icon/loa.png" alt="" />
-                  </div>
-                  <h4 class="item-title">loa</h4>
-                </li>
-                <li class="option-item">
-                  <div class="item-icon">
-                    <img src="./image/icon/pc.png" alt="" />
-                  </div>
-                  <h4 class="item-title">màn hình</h4>
-                </li>
-                <li class="option-item">
-                  <div class="item-icon">
-                    <img src="./image/icon/keyandmouse.png" alt="" />
-                  </div>
-                  <h4 class="item-title">bàn phím và chuột</h4>
-                </li>
-                <li class="option-item">
-                  <div class="item-icon">
-                    <img src="./image/icon/mtbag.png" alt="" />
-                  </div>
-                  <h4 class="item-title">máy tỉnh bảng</h4>
-                </li>
-                <li class="option-item">
-                  <div class="item-icon">
-                    <img src="./image/icon/dongho.png" alt="" />
-                  </div>
-                  <h4 class="item-title">đồng hồ</h4>
-                </li>
-              </ul>
-            </nav>
           </section>
         </header>
       </section>
@@ -286,20 +241,21 @@
       <!-- banner end  -->
       <!-- main  start  -->
 
-      <section id="main" class="container-main">
+      <section id="main-showProductPage" class="container-main">
         <main class="main" id="ele-show-product-showpage">
-          <div class="content-left">
+          <div class="content-left" id="ele-image-product-showProduct">
             <div class="image">
               <img src="../image/product/phone/iphone-15-pro-max.png" alt="" />
             </div>
-            <div class="banner-bottom">
-              <img src="../image/banner/leftBanner.png" alt="" />
-            </div>
           </div>
           <div class="content-middle">
-            <div class="title">iphone 15 pro max</div>
-            <div class="tramake">Apple</div>
-            <div class="price">28.000.000 vnd</div>
+            <div class="title" id="ele-title-showProduct">
+              iphone-15-pro-max
+            </div>
+            <div class="tramake" id="ele-tramake-showProductPage">Apple</div>
+            <div class="price" id="ele-price-showProductPage">
+              28.000.000 vnd
+            </div>
             <div class="detail">
               <h3>
                 ✔️ Được hỗ trợ 1 đổi 1 trong 30 ngày nếu có lỗi từ nhà sản xuất
@@ -312,11 +268,13 @@
               </h3>
             </div>
             <div class="count">
-              <div class="add">+</div>
-              <div class="quantity"></div>
-              <div class="sub">-</div>
+              <div class="add" onclick="HandleEvent('showAdd',this)">+</div>
+              <div class="quantity" id="ele-quantity-showProductPage">1</div>
+              <div class="sub" onclick="HandleEvent('showSub',this)">-</div>
             </div>
-            <div class="addProduct">Thêm vào giỏ hàm</div>
+            <div class="addProduct" onclick="HandleEvent('addProduct')">
+              Thêm vào giỏ hàng
+            </div>
           </div>
           <div class="content-right">
             <div class="banner-top">
@@ -339,67 +297,54 @@
                 </div>
               </div>
             </div>
-            <div class="banner-bottom"></div>
+            <div class="banner-middle">
+              <img src="../image/banner/leftBanner.png" alt="" />
+            </div>
+            <div class="banner-bottom">
+              <img src="../image/logo/pâyment.png" alt="" />
+            </div>
           </div>
         </main>
         <section class="description">
-          <table>
+          <table id="customers">
             <thead>
               <tr>
-                <th>thành phần</th>
-                <th>thông số</th>
+                <th>Thông số kỹ thuật</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>RAM</td>
-                <td>6gb</td>
-              </tr>
-              <tr>
-                <td>RAM</td>
-                <td>6gb</td>
-              </tr>
-              <tr>
-                <td>RAM</td>
-                <td>6gb</td>
-              </tr>
-              <tr>
-                <td>RAM</td>
-                <td>6gb</td>
-              </tr>
-              <tr>
-                <td>RAM</td>
-                <td>6gb</td>
-              </tr>
-            </tbody>
+            <tbody id="ele-deltail-Specifications-showProductPage"></tbody>
           </table>
         </section>
-        <section class="salle">
+        <section class="sale">
           <div class="title">phụ kiện đi kèm theo</div>
-          <div class="content" style="display: flex">
+          <div class="content">
             <div class="item">
-              <img
-                src="../image/product/phone/iphone-15.png"
-                alt=""
-                width="230px"
-                height="300px"
-              />
+              <div class="image">
+                <img src="../image/lotchuot.png" alt="" />
+              </div>
+              <div class="content">
+                <div class="title">Lót chuột GEARVN Da Pu Đen (800x400x3)</div>
+              </div>
             </div>
             <div class="item">
-              <img
-                src="../image/product/phone/iphone-15.png"
-                alt=""
-                width="230px"
-                height="300px"
-              />
+              <div class="image">
+                <img src="../image/pin.png" alt="" />
+              </div>
+              <div class="content">
+                <div class="title">
+                  pin sạc dự phòng Polymer 10000mAh Type C
+                </div>
+              </div>
             </div>
             <div class="item">
-              <img
-                src="../image/product/phone/iphone-15.png"
-                alt=""
-                width="230px"
-                height="300px"
-              />
+              <div class="image">
+                <img src="../image/op.png" alt="" />
+              </div>
+              <div class="content">
+                <div class="title">
+                  Ốp lưng iPhone 15 Pro Nhựa cứng viền dẻo JM Bayer II
+                </div>
+              </div>
             </div>
           </div>
         </section>

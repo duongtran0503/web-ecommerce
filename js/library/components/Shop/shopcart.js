@@ -65,6 +65,10 @@ const viewCart = ({ cart }) => {
   if (globalTotailCont) {
     globalTotailCont.innerText = totailcont.toLocaleString("de-DE") + " vnd";
   }
+  const VND = new Intl.NumberFormat("vi-VN", {
+    style: "currency",
+    currency: "VND",
+  });
   let check = cart.length === 0;
   return html`
     ${check &&
@@ -96,7 +100,9 @@ const viewCart = ({ cart }) => {
           product.quantity === 1 ? `style =" pointer-events: none;"` : ""
         } onclick = "dispatch('deleteProduct',${index})" >-</div>
       </div>
-      <div class="price-cpsitem"> ${product.price * product.quantity}d</div>
+      <div class="price-cpsitem"> ${VND.format(
+        product.price * product.quantity
+      )}</div>
     </div>
         `
     )}

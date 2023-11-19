@@ -18,6 +18,9 @@ const init = {
 
   limitPage: { start: 0, end: 49, itemperpage: 50, item: [], currentpage: 1 },
   purcharedProduct: [],
+  showProduct: localStorage.getItem("showProduct")
+    ? JSON.parse(localStorage.getItem("showProduct"))
+    : {},
 };
 export default function reducer(state = init, action, args) {
   switch (action) {
@@ -196,7 +199,6 @@ export default function reducer(state = init, action, args) {
           "success"
         );
       }
-      localStorage.removeItem("product");
       localStorage.setItem("product", JSON.stringify(newProductList));
 
       return {
@@ -219,7 +221,6 @@ export default function reducer(state = init, action, args) {
       const templatearr = state.shopcart;
       templatearr[args[0]].quantity++;
       const newProductList = templatearr;
-      localStorage.removeItem("product");
       localStorage.setItem("product", JSON.stringify(newProductList));
       return {
         ...state,
@@ -230,7 +231,6 @@ export default function reducer(state = init, action, args) {
       const templatearr = state.shopcart;
       templatearr[args[0]].quantity--;
       const newProductList = templatearr;
-      localStorage.removeItem("product");
       localStorage.setItem("product", JSON.stringify(newProductList));
       return {
         ...state,
@@ -238,13 +238,36 @@ export default function reducer(state = init, action, args) {
       };
     }
     case "show": {
-      let property = args[1];
-
-      const Product = state.data[property][args[0]];
-      console.log(Product);
+      let quantity = args[0] ? args[0] : 1;
+      let item = localStorage.getItem("showPIndex");
+      let index = item ? JSON.parse(item) : "";
+      let property;
+      let Product;
+      if (index) {
+        property = index[0];
+        Product = state.data[property][index[1]];
+        Product.quantity = quantity;
+        localStorage.setItem("showProduct", JSON.stringify(Product));
+        console.log(Product);
+      } else {
+        return {
+          ...state,
+        };
+      }
 
       return {
         ...state,
+        showProduct: Product,
+      };
+    }
+    case "addProductShow": {
+      const item = JSON.parse(args[0]);
+      const { prop, ...product } = item;
+      const newProduct = [...state.shopcart, product];
+      localStorage.setItem("product", JSON.stringify(newProduct));
+      return {
+        ...state,
+        shopcart: newProduct,
       };
     }
     case "payment": {
