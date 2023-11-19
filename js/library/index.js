@@ -7,6 +7,7 @@ import productList from "./components/Shop/productList.js";
 import { pagNext, pagPrev } from "./components/Shop/pagination.js";
 import HandleEvent from "./middleware/HandleEvent.js";
 import CountProduct from "./components/build/CountProduct.js";
+import showProduct from "./components/build/showProduct.js";
 import ShowLaptop from "./components/Home/ShowLaptop.js";
 import ShowPhone from "./components/Home/ShowPhone.js";
 import ShowTivi from "./components/Home/ShowTivi.js";
@@ -15,6 +16,7 @@ import ShowWatch from "./components/Home/ShowWatch.js";
 import MessageBox from "./module/MessageBox.js";
 import purcharedProduct from "./components/Shop/purchasedProduct.js";
 window.MessageBox = MessageBox;
+window.HandleEvent = HandleEvent;
 const globalMessageBox = document.getElementById("messageBox");
 const globalCountProductHome = document.getElementById(
   "ele-countproductincart-Home"
@@ -76,6 +78,24 @@ const shopPaginationBtnNext = document.getElementById(
 );
 //  viewCart
 const ViewCartHis = document.getElementById("ele-history-shop");
+// show product
+const deltailMain = document.getElementById("main-showProductPage");
+const deltaliProdcutImage = document.getElementById(
+  "ele-image-product-showProduct"
+);
+const deltailProdcutTitle = document.getElementById("ele-title-showProduct");
+const deltailProductPrice = document.getElementById(
+  "ele-price-showProductPage"
+);
+const deltailProdcutTramake = document.getElementById(
+  "ele-tramake-showProductPage"
+);
+const deltailProductSpecifi = document.getElementById(
+  "ele-deltail-Specifications-showProductPage"
+);
+const deltailProductQuantity = document.getElementById(
+  "ele-quantity-showProductPage"
+);
 // global
 export { globalMessageBox, globalTotailCont };
 if (globalCountProductHome) {
@@ -298,7 +318,8 @@ if (globalInputSearch) {
       dispatch("changePage", 1, this);
     };
   }
-  HandleEvent("keydown", handleKeyDown, globalInputSearch);
+  // HandleEvent("keydown", handleKeyDown, globalInputSearch);
+  globalInputSearch.addEventListener("keydown", handleKeyDown);
   let check = localStorage.getItem("searchKey")
     ? localStorage.getItem("searchKey")
     : "";
@@ -320,4 +341,14 @@ if (contentHome) {
 // viewCart
 if (ViewCartHis) {
   attach(purcharedProduct, ViewCartHis);
+}
+if (deltailMain) {
+  showProduct(
+    deltaliProdcutImage,
+    deltailProdcutTitle,
+    deltailProdcutTramake,
+    deltailProductPrice,
+    deltailProductSpecifi,
+    deltailProductQuantity
+  );
 }

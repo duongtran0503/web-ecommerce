@@ -21,7 +21,10 @@ const productlist = ({ searchProduct, productlist, item, start, end }) => {
   function converJson(obj) {
     return JSON.stringify(obj);
   }
-
+  const VND = new Intl.NumberFormat("vi-VN", {
+    style: "currency",
+    currency: "VND",
+  });
   return html`
     ${item.map(
       (element, index) =>
@@ -44,16 +47,16 @@ const productlist = ({ searchProduct, productlist, item, start, end }) => {
           <p>${element.trademark}</p>
            </div>
          <div class="card-price-cpc">
-          <h3>${element.price}₫</h3>
+          <h3>${VND.format(element.price)}</h3>
            </div>
           </div>
           <div class="card-button-cpc">
            <button   onclick = "dispatch('add',${element.id},'${
           element.nameStore
         }')">Thêm vào giỏ hàng</button>
-           <button class="seemore" onclick ="dispatch('show','${element.id}','${
+        <button class="seemore" onclick ="HandleEvent('show',this,'${
           element.nameStore
-        }')">Show</button>
+        }','${element.id}')">Show</button>
             </div>
            </div>
              </div>
