@@ -260,6 +260,28 @@ export default function reducer(state = init, action, args) {
         showProduct: Product,
       };
     }
+    case "showProductIncrease": {
+      const Product = state.showProduct;
+      Product.quantity++;
+
+      localStorage.setItem("showProduct", JSON.stringify(Product));
+
+      return {
+        ...state,
+        showProduct: Product,
+      };
+    }
+    case "showProductDecrease": {
+      const Product = state.showProduct;
+      Product.quantity--;
+
+      localStorage.setItem("showProduct", JSON.stringify(Product));
+
+      return {
+        ...state,
+        showProduct: Product,
+      };
+    }
     case "addProductShow": {
       const item = JSON.parse(args[0]);
       const { prop, ...product } = item;

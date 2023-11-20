@@ -8,6 +8,7 @@ import { pagNext, pagPrev } from "./components/Shop/pagination.js";
 import HandleEvent from "./middleware/HandleEvent.js";
 import CountProduct from "./components/build/CountProduct.js";
 import showProduct from "./components/build/showProduct.js";
+import { loadQ } from "./components/build/showProduct.js";
 import ShowLaptop from "./components/Home/ShowLaptop.js";
 import ShowPhone from "./components/Home/ShowPhone.js";
 import ShowTivi from "./components/Home/ShowTivi.js";
@@ -342,13 +343,14 @@ if (contentHome) {
 if (ViewCartHis) {
   attach(purcharedProduct, ViewCartHis);
 }
+// deltail product page
 if (deltailMain) {
   showProduct(
     deltaliProdcutImage,
     deltailProdcutTitle,
     deltailProdcutTramake,
     deltailProductPrice,
-    deltailProductSpecifi,
-    deltailProductQuantity
+    deltailProductSpecifi
   );
+  attach(loadQ, deltailProductQuantity);
 }

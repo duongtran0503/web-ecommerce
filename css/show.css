@@ -93,6 +93,11 @@
   justify-content: space-around;
   min-height: 50px;
   margin-top: 20px;
+  position: relative;
+}
+#totail {
+  position: absolute;
+  top: 100%;
 }
 .container-main .main .content-middle .count .add {
   width: 60px;

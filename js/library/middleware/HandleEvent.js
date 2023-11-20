@@ -20,29 +20,7 @@ export default function HandleEvent(action, element, ...args) {
         dispatch("show");
       }
       break;
-    case "showAdd":
-      {
-        let item = localStorage.getItem("showProduct");
-        let product = item ? JSON.parse(item) : null;
-        let count = product.quantity + 1;
-        console.log(count);
-        dispatch("show", count);
-        window.location.href = "./Show.html";
-      }
-      break;
-    case "showSub":
-      {
-        let item = localStorage.getItem("showProduct");
-        let product = item ? JSON.parse(item) : null;
-        let count = product.quantity - 1;
-        if (count === 0) {
-          return;
-        }
-        console.log(count);
-        dispatch("show", count);
-        window.location.href = "./Show.html";
-      }
-      break;
+
     case "addProduct":
       {
         let item = localStorage.getItem("showProduct");

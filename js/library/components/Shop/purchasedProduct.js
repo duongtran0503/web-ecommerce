@@ -22,7 +22,9 @@ const purcharedProduct = ({ product }) => {
            (element) =>
              `  <tr>
              <td>${element.date}</td>
-                 <td>${element.title}</td>
+                 <td>${element.title} x <span style = "color:red;">${
+               element.quantity
+             }</span></td>
                  <td>${VND.format(element.price * element.quantity)}</td>
                  <td>đang vận chuyển</td>
                </tr>`
