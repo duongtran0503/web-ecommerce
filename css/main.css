@@ -905,10 +905,11 @@ body {
   font-weight: 600;
 }
 .content-news {
-  background-image: url("/image/Rectangle.png");
+  background-image: url("../image/Rectangle.png");
   width: 100%;
   height: 700px;
 }
+
 .content-news h3 {
   width: 100%;
   height: 50px;
@@ -967,9 +968,12 @@ body {
   animation-iteration-count: infinite;
 }
 @media only screen and (max-width: 720px) {
+  .content-news {
+    height: 800px;
+  }
   .content-news .content {
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
   }
   .content-news .content .content-left {
     width: 100%;
@@ -980,8 +984,17 @@ body {
   }
 }
 @media only screen and (max-width: 520px) {
+  .content-news {
+    height: 600px;
+  }
   .content-news .content .content-right {
     display: none;
+  }
+  .content-news .content {
+    flex-direction: column;
+    justify-content: unset;
+    row-gap: 20px;
+    padding: 10px;
   }
 }
 @keyframes am {

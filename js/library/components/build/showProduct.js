@@ -18,14 +18,7 @@ const getData = ({ product }) => {
   return product;
 };
 let state;
-const showProduct = (
-  eleImage,
-  eleTitle,
-  eleTramake,
-  elePrice,
-  eleProp,
-  eleQuantity
-) => {
+const showProduct = (eleImage, eleTitle, eleTramake, elePrice, eleProp) => {
   state = connetor(getData)();
   console.log(state);
   if (state === null) {
@@ -49,7 +42,6 @@ const showProduct = (
       ${state.price.toLocaleString("de-DE")} vnd
    </div>
      `;
-  eleQuantity.innerHTML = `${state.quantity}`;
   eleProp.innerHTML = html`${state.prop.map(
     (prop) => `
           <tr>
@@ -60,4 +52,33 @@ const showProduct = (
         `
   )}`;
 };
+
+const loadQuantity = ({ showProduct }) => {
+  const VND = new Intl.NumberFormat("Vi-VN", {
+    style: "currency",
+    currency: "VND",
+  });
+  return html`
+    <div class="add" onclick="dispatch('showProductIncrease')">+</div>
+    <div class="quantity">${showProduct.quantity}</div>
+    <div
+      class="sub"
+      onclick="dispatch('showProductDecrease')"
+      ${showProduct.quantity === 1 ? `style =" pointer-events: none;"` : ""}
+    >
+      -
+    </div>
+    <div
+      id="totail"
+      ${showProduct.quantity === 1 ? 'style = "display:none;"' : ""}
+    >
+      tổng tiền cho ${showProduct.quantity} là :
+      ${VND.format(showProduct.quantity * showProduct.price)}
+    </div>
+  `;
+};
+const loadQ = connect((state) => ({
+  showProduct: state.showProduct,
+}))(loadQuantity);
+export { loadQ };
 export default showProduct;
