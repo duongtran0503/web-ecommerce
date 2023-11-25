@@ -11,6 +11,10 @@ const ShowKeyanhmouse = ({ product }) => {
       list.push(product[i]);
     }
   }
+  const VND = new Intl.NumberFormat("vi-VN", {
+    style: "currency",
+    currency: "VND",
+  });
   return html`
     ${list.map(
       (element, index) =>
@@ -31,12 +35,16 @@ const ShowKeyanhmouse = ({ product }) => {
         <p>${element.trademark}</p>
          </div>
        <div class="card-price-cpc">
-        <h3>${element.price}₫</h3>
+        <h3>${VND.format(element.price)}</h3>
          </div>
         </div>
         <div class="card-button-cpc">
-         <button   onclick = "dispatch('add',${index},'${element.nameStore}')">Thêm vào giỏ hàng</button>
-         <button class="seemore" onclick ="HandleEvent('show',this,'${element.nameStore}','${element.id}')">Show</button>
+         <button   onclick = "dispatch('add',${index},'${
+          element.nameStore
+        }')">Thêm vào giỏ hàng</button>
+         <button class="seemore" onclick ="HandleEvent('show',this,'${
+           element.nameStore
+         }','${element.id}')">Show</button>
           </div>
          </div>
            </div>

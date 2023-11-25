@@ -21,17 +21,16 @@ export default function HandleEvent(action, element, ...args) {
       }
       break;
 
-    case "addProduct":
-      {
-        let item = localStorage.getItem("showProduct");
-        let product = item ? JSON.parse(item) : null;
-        if (product === null) {
-          return;
-        }
-        dispatch("addProductShow", item);
-        window.location.href = `./ViewCart.html`;
+    case "addProduct": {
+      let item = localStorage.getItem("showProduct");
+      let product = item ? JSON.parse(item) : null;
+      if (product === null) {
+        return;
       }
-      break;
+      dispatch("addProductShow", item);
+      window.location.href = `./ViewCart.html`;
+    }
+
     default:
       return;
   }

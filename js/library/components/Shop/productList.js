@@ -36,7 +36,9 @@ const productlist = ({ searchProduct, productlist, item, start, end }) => {
               ? ` <img src="../image/product/${element.productType}/${element.image}" alt="" />`
               : ""
           }
-
+          <span class ="sale-1">Giảm 12%</span>
+          <span class = "sale-2">Bảo hành 12 tháng</span>
+          <span class = "sale-3">Trả góp 4%</span>
            </div>
              <div class="card-description-cpc">
           <div class="card-des-content-cpc">
