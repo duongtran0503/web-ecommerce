@@ -1,11 +1,9 @@
 import { attach } from "./core/store.js";
 import { fuc1, fuc2 } from "./components/Shop/shopcart.js";
 import Home from "./components/Home/Home.js";
-import { slideOfBanner, slideOfContent } from "./module/slideShow.js";
-import countDow from "./module/countDow.js";
+import HandleEvent from "./middleware/HandleEvent.js";
 import productList from "./components/Shop/productList.js";
 import { pagNext, pagPrev } from "./components/Shop/pagination.js";
-import HandleEvent from "./middleware/HandleEvent.js";
 import CountProduct from "./components/build/CountProduct.js";
 import showProduct from "./components/build/showProduct.js";
 import { loadQ } from "./components/build/showProduct.js";
@@ -14,8 +12,11 @@ import ShowPhone from "./components/Home/ShowPhone.js";
 import ShowTivi from "./components/Home/ShowTivi.js";
 import ShowKey from "./components/Home/ShowKey.js";
 import ShowWatch from "./components/Home/ShowWatch.js";
-import MessageBox from "./module/MessageBox.js";
 import purcharedProduct from "./components/Shop/purchasedProduct.js";
+import MessageBox from "./module/MessageBox.js";
+import countDow from "./module/countDow.js";
+import { slideOfBanner, slideOfContent } from "./module/slideShow.js";
+import Login from "./module/login.js";
 window.MessageBox = MessageBox;
 window.HandleEvent = HandleEvent;
 const globalMessageBox = document.getElementById("messageBox");
@@ -28,6 +29,18 @@ const globalCountProductShop = document.getElementById(
 const globalInputSearch = document.getElementById("ele-input-heađer-global"); //header
 const globalbtnSearch = document.getElementById("ele-btn-header-search"); //header
 const globalTotailCont = document.getElementById("totail-cont");
+const globaLLogin = document.getElementById("ele-account-singin");
+const globalBtnCloseLogin = document.getElementById("ele-account-singin-close");
+const globalFormLogin = document.getElementById("ele-form-login");
+const globalInputEmailLogin = document.getElementById(
+  "ele-form-input-email-login"
+);
+const globalInputPassLogin = document.getElementById(
+  "ele-form-input-pass-login"
+);
+const globalBtnSubmitLogin = document.getElementById(
+  "ele-form-btn-submit-login"
+);
 //HOne page start get element wrapper
 const contentHome = document.getElementsByClassName("l-c-p-w-r");
 const phoneHeaderBtn = document.getElementById("ele-header-menu-hdmn"); // header
@@ -104,6 +117,23 @@ if (globalCountProductHome) {
 }
 if (globalCountProductShop) {
   attach(CountProduct, globalCountProductShop);
+}
+if (globaLLogin) {
+  globaLLogin.onclick = (e) => {
+    e.stopPropagation();
+    globalFormLogin.style.display = "block";
+    globaLLogin.classList.toggle("active");
+  };
+}
+if (globalBtnCloseLogin) {
+  globalBtnCloseLogin.onclick = function () {
+    globalFormLogin.style.display = "none";
+    globaLLogin.classList.toggle("active");
+    globaLLogin.parentElement.classList.toggle("active");
+  };
+}
+if (globalFormLogin) {
+  Login(globalInputEmailLogin, globalInputPassLogin, globalBtnSubmitLogin);
 }
 //HOme
 countDow(

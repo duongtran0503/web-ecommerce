@@ -76,6 +76,32 @@ body {
   height: 100%;
   position: relative;
   overflow: hidden;
+  background-image: url("../image/top_banner2.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.banner .banner-right .banner-slider .slider__list::after {
+  position: absolute;
+  content: "";
+  top: 0px;
+  right: 5px;
+  width: 300px;
+  height: 380px;
+  background-image: url("../image/masthead-premium-tablet-2-q75.png");
+  z-index: 0;
+  background-size: cover;
+  background-size: cover;
+  background-position: center;
+}
+.banner .banner-right .banner-slider .slider__list::before {
+  position: absolute;
+  content: "";
+  top: -30px;
+  bottom: 0;
+  left: -150px;
+  background-image: url("../image/5e56e11faffa5d76c1db48833fe8637b-black-friday-promotional-price-tag.png");
+  width: 400px;
+  background-size: cover;
 }
 .banner .banner-right .banner-slider .slider__list .slider-item .slider-image {
   max-width: 500px;
@@ -90,8 +116,9 @@ body {
   .slider-item
   .slider-image
   img {
-  text-shadow: 2px 2px 4px #000000;
-  filter: drop-shadow(30px 20px 4px #444);
+  text-shadow: 2px 2px 4px #898989;
+  filter: drop-shadow(10px 10px 4px #bbbaba9e);
+  object-fit: cover;
 }
 .banner
   .banner-right
@@ -101,7 +128,9 @@ body {
   .slider-content
   h1 {
   font-size: clamp(0.625rem, 0.2232rem + 2.1429vw, 1.5625rem);
-  font-weight: 500;
+  font-weight: 600;
+  color: white;
+  display: none;
 }
 .banner
   .banner-right
@@ -110,6 +139,7 @@ body {
   .slider-item
   .slider-content
   button {
+  margin-top: 100px;
   width: 178px;
   height: 52px;
   background-color: var(--primary-color);
@@ -119,6 +149,7 @@ body {
   border-radius: 4px;
   position: relative;
   font-size: 16px;
+  cursor: pointer;
 }
 .banner
   .banner-right
@@ -127,7 +158,7 @@ body {
   .slider-item
   .slider-content
   button:hover {
-  border: 1px solid white;
+  border: 2px solid white;
 }
 .banner
   .banner-right
@@ -269,6 +300,17 @@ body {
   .banner .banner-left .list-option .option-item .icon-chevron {
     display: none;
   }
+  .banner
+    .banner-right
+    .banner-slider
+    .slider__list
+    .slider-item
+    .slider-image
+    img {
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+  }
 }
 @media only screen and (max-width: 767.98px) {
   .container-banner {
@@ -297,6 +339,9 @@ body {
   }
 }
 @media only screen and (max-width: 575.98px) {
+  .banner .banner-right .banner-slider .slider__list::before {
+    display: none;
+  }
   .banner .banner-left .list-option .option-item .item-icon {
     width: 20px;
     height: 20px;
@@ -549,7 +594,9 @@ body {
 .main .content-sale-wrap {
   width: 100%;
   height: auto;
-  background: linear-gradient(135deg, #fd80a8, #fcce42);
+  background-image: url("../image/banner-salse-ic.png");
+  background-size: cover;
+  box-shadow: var(--primary-boxshadow);
 }
 .main .content-sale-wrap .content-sale {
   max-width: 1440px;
@@ -597,10 +644,15 @@ body {
   background: #fff;
   box-shadow: var(--primary-boxshadow);
 }
-.main .content-sale-wrap .content-sale .content-sale-right .item-time-sale h3 {
+.main .content-sale-wrap .content-sale .content-sale-right .item-time-sale div {
   font-size: 20px;
   font-weight: 600;
-  background: linear-gradient(to right, #30cfd0 0%, #330867 100%);
+  color: #080e67;
+}
+.main .content-sale-wrap .content-sale .content-sale-right .item-time-sale h3 {
+  font-size: 20px;
+  font-weight: 800;
+  background: linear-gradient(to right, #30cfd0 0%, #a5ee07 100%);
   background-clip: text;
   color: transparent;
   -webkit-background-clip: text;

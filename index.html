@@ -19,6 +19,53 @@
   <body>
     <div id="messageBox"></div>
     <div id="btnGoToTop" onclick="window.scrollTo(0,0)">&uarr;</div>
+    <div id="formLogin-global">
+      <section class="container-formlogin" id="ele-form-login">
+        <div class="title">
+          <h3>Đăng nhập</h3>
+          <span class="btn-close" id="ele-account-singin-close">x</span>
+        </div>
+        <form action="#" class="form">
+          <div class="input-box">
+            <label for="">Tên người dùng</label>
+            <input
+              type="text"
+              placeholder="vui lòng nhập email đăng nhập"
+              id="ele-form-input-email-login"
+            />
+            <span id="ele-form-message-email"></span>
+          </div>
+          <div class="input-box">
+            <label for="">mật khẩu</label>
+            <input
+              type="password"
+              placeholder="vui lòng nhập mật khẩu"
+              id="ele-form-input-pass-login"
+            />
+            <span id="ele-form-message-pass"></span>
+          </div>
+          <button class="buttons" disabled id="ele-form-btn-submit-login">
+            đăng nhập
+          </button>
+        </form>
+        <div class="sub-title">
+          <h3>các phương thưc đăng nhập khác</h3>
+        </div>
+        <div class="icon-list">
+          <div class="icon-item">
+            <i class="fa-brands fa-facebook"></i>
+            <span>facebook</span>
+          </div>
+          <div class="icon-item">
+            <i class="fa-brands fa-google"> <span>Google</span></i>
+          </div>
+          <div class="icon-item">
+            <i class="fa-brands fa-github"></i>
+            <span>Github</span>
+          </div>
+        </div>
+      </section>
+    </div>
     <!-- header start  -->
     <section class="container">
       <section class="container-header">
@@ -265,11 +312,8 @@
                   <div class="option option-1" id="ele-account-singin">
                     <span>&bull;</span> đăng nhập
                   </div>
-                  <div class="option option-2" id="ele-account-singout">
-                    <span>&bull;</span> đăng xuất
-                  </div>
                   <div class="option option-3" id="ele-account-create">
-                    <span>&bull;</span> đang ký
+                    <span>&bull;</span> đăng ký
                   </div>
                 </div>
               </div>
@@ -362,7 +406,7 @@
           <section class="banner-right">
             <div class="banner-slider">
               <ul class="slider__list">
-                <li class="slider-item" id="1" bgcolor="#00008B">
+                <li class="slider-item" id="1" bgcolor="#1a1921">
                   <div class="slider-image">
                     <img
                       src="./image/product/keyandmouse/ban-phim-bluetooth-logitechk380-den-1.png"
@@ -377,7 +421,7 @@
                     </button>
                   </div>
                 </li>
-                <li class="slider-item" id="2" bgcolor="#00BFFF">
+                <li class="slider-item" id="2" bgcolor="#1a194b">
                   <div class="slider-image">
                     <img
                       src="./image/product/Laptop/Laptop_Gaming_Acer_Nitro_5_Eagle_AN515_57_53F9.png"
@@ -395,7 +439,7 @@
                 <li
                   class="slider-item"
                   id="3"
-                  bgcolor="#ACE1AF"
+                  bgcolor="#62120f"
                   style="color: aliceblue"
                 >
                   <div class="slider-image">
@@ -412,7 +456,7 @@
                     </button>
                   </div>
                 </li>
-                <li class="slider-item" id="4" bgcolor="#89CFF0">
+                <li class="slider-item" id="4" bgcolor="#141312">
                   <div class="slider-image">
                     <img
                       src="./image/product/man_hinh/Lenovo_L24q-35_24__IPS_2K_75Hz.png"
@@ -427,7 +471,7 @@
                     </button>
                   </div>
                 </li>
-                <li class="slider-item" id="5" bgcolor="#E6E6FA">
+                <li class="slider-item" id="5" bgcolor="#62120f">
                   <div class="slider-image">
                     <img
                       src="./image/product/phone/samsung-galaxy-s23-ultra.png"
@@ -488,7 +532,7 @@
           <section class="content-sale-wrap">
             <section class="content-sale">
               <div class="content-sale-left">
-                <img src="./image/logo/saleof.png" alt="" />
+                <img src="./image/banner-salse-1.png" alt="" />
               </div>
               <div class="content-sale-right">
                 <div class="item-time-sale">

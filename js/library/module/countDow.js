@@ -3,7 +3,7 @@ function countDow(
   IdEHour,
   IdEMinutes,
   IdESecond,
-  timeStart = "2023-11-24"
+  timeStart = "2023-11-26"
 ) {
   const eDay = document.getElementById(idEDays);
   const eHour = document.getElementById(IdEHour);
