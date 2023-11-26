@@ -1,4 +1,5 @@
 import DATA from "../../Data/Data.js";
+import Acount from "../../Data/Acount.js";
 import MessageBox from "../module/MessageBox.js";
 let list = [];
 for (const property in DATA) {
@@ -7,6 +8,11 @@ for (const property in DATA) {
 let tmp = [...list];
 for (let i = 0; i < 5; i++) {
   list = list.concat(tmp);
+}
+localStorage.setItem("Acount", JSON.stringify(Acount));
+let check = localStorage.getItem("user");
+if (!check) {
+  localStorage.setItem("user", JSON.stringify({}));
 }
 const init = {
   data: DATA,
@@ -41,6 +47,9 @@ export default function reducer(state = init, action, args) {
       });
       if (result.length === 0) {
         MessageBox("thông báo", "sản không có trong giỏ hàng", "warning");
+        return {
+          ...state,
+        };
       } else {
         MessageBox(
           "thông báo",
@@ -60,6 +69,19 @@ export default function reducer(state = init, action, args) {
         ...state,
         searchProductList: result,
         limitPage: newLimitPage,
+      };
+    }
+    case "filterPr": {
+      const newList = state.productList;
+      const condition = args[0];
+      if (condition === "highttolow") {
+        newList.sort((p1, p2) => parseFloat(p2.price) - parseFloat(p1.price));
+      } else if (condition === "lowtohight") {
+        newList.sort((p1, p2) => parseFloat(p1.price) - parseFloat(p2.price));
+      }
+      return {
+        ...state,
+        searchProductList: newList,
       };
     }
     case "changePage": {
@@ -293,7 +315,21 @@ export default function reducer(state = init, action, args) {
       };
     }
     case "payment": {
+      let stateUser = JSON.parse(localStorage.getItem("state"));
+      if (!stateUser) {
+        MessageBox("Thông báo", "Hãy đang nhập để thanh toán đơn hàng");
+        return {
+          ...state,
+        };
+      }
+
       let buyProduct = [...state.shopcart];
+      if (buyProduct.length === 0) {
+        MessageBox("Thông báo", "không còn đơn hàng nào trong giở hàng");
+        return {
+          ...state,
+        };
+      }
       buyProduct = buyProduct.map((item) => {
         let temp = item;
         let now = new Date();
@@ -314,10 +350,58 @@ export default function reducer(state = init, action, args) {
       buyProduct = [...buyProduct, ...check];
       localStorage.setItem("buyProduct", JSON.stringify(buyProduct));
       localStorage.removeItem("product");
+      let user = JSON.parse(localStorage.getItem("user"));
+      let item = localStorage.getItem("order");
+      let order = item ? JSON.parse(item) : [];
+      order = [
+        ...order,
+        {
+          user,
+          buyProduct,
+        },
+      ];
+      localStorage.setItem("order", JSON.stringify(order));
+      MessageBox("Thông báo", "thanh toán thành công");
       return {
         ...state,
         shopcart: [],
         purcharedProduct: buyProduct,
+      };
+    }
+    case "login": {
+      let check = false;
+      let data = args[0];
+      Acount.forEach((value) => {
+        if (
+          value.userName === data.userName &&
+          value.passWorld === data.passWorld
+        ) {
+          check = true;
+          data = value;
+        }
+      });
+      if (check) {
+        localStorage.setItem("user", JSON.stringify(data));
+        const state = { state: 404, mess: 1 };
+        localStorage.setItem("state", JSON.stringify(state));
+        const url = window.location.href;
+        if (data.permisson === "customer") {
+          window.location.href = url;
+        } else {
+          window.location.href = "./page/AdminPage.html";
+        }
+      }
+      return {
+        ...state,
+      };
+    }
+    case "logout": {
+      localStorage.removeItem("user");
+      localStorage.removeItem("state");
+      localStorage.removeItem("buyProduct");
+      window.location.href = "../index.html";
+      return {
+        ...state,
       };
     }
     default:

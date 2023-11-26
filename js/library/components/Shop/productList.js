@@ -42,7 +42,7 @@ const productlist = ({ searchProduct, productlist, item, start, end }) => {
            </div>
              <div class="card-description-cpc">
           <div class="card-des-content-cpc">
-              <div class="card-title">
+              <div class="card-title-cpc">
           <h3>${element.title}</h3>
              </div>
             <div class="card-des-cpc">

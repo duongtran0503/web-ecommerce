@@ -3,7 +3,7 @@ function countDow(
   IdEHour,
   IdEMinutes,
   IdESecond,
-  timeStart = "2023-11-26"
+  timeStart = "2023-12-1"
 ) {
   const eDay = document.getElementById(idEDays);
   const eHour = document.getElementById(IdEHour);
@@ -29,7 +29,7 @@ function countDow(
     eSecond.innerText = seconds;
 
     if (distance < 0) {
-      clearInterval(x);
+      clearInterval(start);
       eDay.innerText = 0;
       eHour.innerText = 0;
       eMinutes.innerText = 0;

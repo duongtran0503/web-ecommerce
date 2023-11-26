@@ -17,6 +17,54 @@
     <script type="module" src="../js/library/index.js" defer></script>
   </head>
   <body>
+    <div id="messageBox"></div>
+    <div id="formLogin-global">
+      <section class="container-formlogin" id="ele-form-login">
+        <div class="title-fm">
+          <h3 id="title-form">Đăng nhập</h3>
+          <span class="btn-close" id="ele-account-singin-close">x</span>
+        </div>
+        <form action="#" class="form">
+          <div class="input-box">
+            <label for="">Tên người dùng</label>
+            <input
+              type="text"
+              placeholder="vui lòng nhập email đăng nhập"
+              id="ele-form-input-email-login"
+            />
+            <span id="ele-form-message-email"></span>
+          </div>
+          <div class="input-box">
+            <label for="">mật khẩu</label>
+            <input
+              type="password"
+              placeholder="vui lòng nhập mật khẩu"
+              id="ele-form-input-pass-login"
+            />
+            <span id="ele-form-message-pass"></span>
+          </div>
+          <button class="buttons" disabled id="ele-form-btn-submit-login">
+            đăng nhập
+          </button>
+        </form>
+        <div class="sub-title">
+          <h3>các phương thưc đăng nhập khác</h3>
+        </div>
+        <div class="icon-list">
+          <div class="icon-item">
+            <i class="fa-brands fa-facebook"></i>
+            <span>facebook</span>
+          </div>
+          <div class="icon-item">
+            <i class="fa-brands fa-google"> <span>Google</span></i>
+          </div>
+          <div class="icon-item">
+            <i class="fa-brands fa-github"></i>
+            <span>Github</span>
+          </div>
+        </div>
+      </section>
+    </div>
     <section class="container">
       <section class="container-header" style="max-height: 120px">
         <header class="header">
@@ -239,9 +287,7 @@
                   <div class="option option-1" id="ele-account-singin">
                     <span>&bull;</span> đăng nhập
                   </div>
-                  <div class="option option-2" id="ele-account-singout">
-                    <span>&bull;</span> đăng xuất
-                  </div>
+
                   <div class="option option-3" id="ele-account-create">
                     <span>&bull;</span> đang ký
                   </div>
@@ -269,7 +315,7 @@
           <div
             class="payment"
             id="ele-btn-payment"
-            onclick="dispatch('payment')"
+            onclick="HandleEvent('payment',this)"
           >
             Thanh Toán
           </div>

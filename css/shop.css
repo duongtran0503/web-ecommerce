@@ -118,7 +118,7 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
-  min-width: 450px;
+  min-width: 250px;
   height: auto;
   margin-bottom: 5px;
   background-color: rgb(255, 255, 255);
@@ -213,6 +213,8 @@ body {
   padding: 5px;
   border-radius: 5px;
 }
+@media only screen and (max-width: 540px) {
+}
 .container-main
   .navigation
   .header-bottm-nav
@@ -275,9 +277,8 @@ body {
 }
 @media only screen and (max-width: 650px) {
   .main {
-    max-width: calc(2 * 235px);
-
-    grid-template-columns: repeat(2, 230px);
+    max-width: calc(100% - 10px);
+    grid-template-columns: repeat(2, 1fr);
     margin: 0 auto;
   }
 }
