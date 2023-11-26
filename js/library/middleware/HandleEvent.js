@@ -21,16 +21,26 @@ export default function HandleEvent(action, element, ...args) {
       }
       break;
 
-    case "addProduct": {
-      let item = localStorage.getItem("showProduct");
-      let product = item ? JSON.parse(item) : null;
-      if (product === null) {
-        return;
+    case "addProduct":
+      {
+        let item = localStorage.getItem("showProduct");
+        let product = item ? JSON.parse(item) : null;
+        if (product === null) {
+          return;
+        }
+        dispatch("addProductShow", item);
+        window.location.href = `./ViewCart.html`;
       }
-      dispatch("addProductShow", item);
-      window.location.href = `./ViewCart.html`;
+      break;
+    case "payment": {
+      let stateUser = JSON.parse(localStorage.getItem("state"));
+      if (!stateUser) {
+        MessageBox("Thông báo", "Hãy đang nhập để thanh toán đơn hàng");
+        return;
+      } else {
+        window.location.href = "./formthanhtoan.html";
+      }
     }
-
     default:
       return;
   }

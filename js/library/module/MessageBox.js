@@ -1,5 +1,10 @@
 import { globalMessageBox } from "../index.js";
-const MessageBox = (title = "", message = "", type = "", duration = 3000) => {
+const MessageBox = (
+  title = "",
+  message = "",
+  type = "success",
+  duration = 3000
+) => {
   const main = globalMessageBox;
   if (main) {
     const toast = document.createElement("div");

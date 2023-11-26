@@ -1,6 +1,5 @@
 import Acount from "../../Data/Acount.js";
 const Login = (inputEmail, inputPass, btnSubmit) => {
-  localStorage.setItem("Acount", JSON.stringify(Acount));
   const checkEmail = (email) => {
     const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     return regex.test(email.trim());
@@ -38,12 +37,15 @@ const Login = (inputEmail, inputPass, btnSubmit) => {
     console.log(4);
   };
   btnSubmit.onclick = function (e) {
+    e.preventDefault();
     infor.userName = inputEmail.value;
     infor.passWorld = inputPass.value;
-    infor.permisson = "admin";
-    if (Acount.includes(infor)) {
-      console.log("danh nhap thanh cong");
+    if (infor.userName.includes("admin@gmail.com")) {
+      infor.permisson = "admin";
+    } else {
+      infor.permisson = "customer";
     }
+    dispatch("login", infor);
   };
 };
 export default Login;

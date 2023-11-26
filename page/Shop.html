@@ -19,6 +19,53 @@
   <body>
     <div id="messageBox"></div>
     <div id="btnGoToTop" onclick="window.scrollTo(0,0)">&uarr;</div>
+    <div id="formLogin-global">
+      <section class="container-formlogin" id="ele-form-login">
+        <div class="title-fm">
+          <h3>Đăng nhập</h3>
+          <span class="btn-close" id="ele-account-singin-close">x</span>
+        </div>
+        <form action="#" class="form">
+          <div class="input-box">
+            <label for="">Tên người dùng</label>
+            <input
+              type="text"
+              placeholder="vui lòng nhập email đăng nhập"
+              id="ele-form-input-email-login"
+            />
+            <span id="ele-form-message-email"></span>
+          </div>
+          <div class="input-box">
+            <label for="">mật khẩu</label>
+            <input
+              type="password"
+              placeholder="vui lòng nhập mật khẩu"
+              id="ele-form-input-pass-login"
+            />
+            <span id="ele-form-message-pass"></span>
+          </div>
+          <button class="buttons" disabled id="ele-form-btn-submit-login">
+            đăng nhập
+          </button>
+        </form>
+        <div class="sub-title">
+          <h3>các phương thưc đăng nhập khác</h3>
+        </div>
+        <div class="icon-list">
+          <div class="icon-item">
+            <i class="fa-brands fa-facebook"></i>
+            <span>facebook</span>
+          </div>
+          <div class="icon-item">
+            <i class="fa-brands fa-google"> <span>Google</span></i>
+          </div>
+          <div class="icon-item">
+            <i class="fa-brands fa-github"></i>
+            <span>Github</span>
+          </div>
+        </div>
+      </section>
+    </div>
     <section class="container">
       <section class="container-header" style="height: 120px">
         <header class="header">
@@ -239,18 +286,25 @@
                   <button onclick="location.href = `./ViewCart.html`">
                     xem giở hàng
                   </button>
-                  <button onclick="location.href =`./formthanhtoan.html`">
+                  <button onclick="HandleEvent('payment',this)">
                     thanh toán
                   </button>
                 </div>
               </div>
-              <div class="header-access-item-3" titles="tài khoản">
+              <div
+                class="header-access-item-3"
+                id="ele-btn-open-account"
+                titles="tài khoản"
+              >
                 <i class="fa-regular fa-user"></i>
-                <!-- <div class="user">
-                   <div class="option-1">đăng nhập</div>
-                   <div class="option-2"></div>
-                   <div class="option-3">đang ký</div>
-                </div> -->
+                <div class="main-account" id="ele-accout">
+                  <div class="option option-1" id="ele-account-singin">
+                    <span>&bull;</span> đăng nhập
+                  </div>
+                  <div class="option option-3" id="ele-account-create">
+                    <span>&bull;</span> đăng ký
+                  </div>
+                </div>
               </div>
             </div>
           </section>
@@ -365,8 +419,18 @@
             <div class="selector-1">
               <h3 class="title">Sắp xếp theo</h3>
               <div class="buttons">
-                <button class="button-1">giá tử cao đến thấp</button>
-                <button class="button-2">giá từ thấp đến cao</button>
+                <button
+                  class="button-1"
+                  onclick="dispatch('filterPr','highttolow')"
+                >
+                  giá tử cao đến thấp
+                </button>
+                <button
+                  class="button-2"
+                  onclick="dispatch('filterPr','lowtohight')"
+                >
+                  giá từ thấp đến cao
+                </button>
               </div>
             </div>
           </nav>

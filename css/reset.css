@@ -287,20 +287,20 @@ h6 {
     top: 100px;
   }
 }
-.container-formlogin .title {
+.container-formlogin .title-fm {
   width: 100%;
   height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.container-formlogin .title h3 {
+.container-formlogin .title-fm h3 {
   font-size: 20px;
   font-weight: 500;
   color: var(--primary-color);
   position: relative;
 }
-.container-formlogin .title .btn-close {
+.container-formlogin .title-fm .btn-close {
   position: absolute;
   right: 5px;
   top: 2px;
@@ -1294,11 +1294,13 @@ h6 {
   height: calc(100% / 3);
   text-align: start;
   padding: 5px;
+  overflow: hidden;
 }
 
 .card-cpc .card-description-cpc .card-des-content-cpc .card-title-cpc h3 {
-  font-size: clamp(0.5rem, 0.4013rem + 0.5263vw, 0.875rem);
-  font-weight: 600;
+  font-size: clamp(0.625rem, 0.5428rem + 0.4386vw, 0.9375rem);
+  font-weight: 500;
+  height: max-content;
 }
 
 .card-cpc .card-description-cpc .card-des-content-cpc .card-des-cpc {
@@ -1308,9 +1310,9 @@ h6 {
   text-align: start;
 }
 .card-cpc .card-description-cpc .card-des-content-cpc .card-des-cpc h3 {
-  font-size: clamp(0.5rem, 0.375rem + 0.4vw, 0.75rem);
+  font-size: clamp(0.625rem, 0.5428rem + 0.4386vw, 0.9375rem);
   font-weight: 400;
-  height: 100%;
+  height: max-content;
   word-wrap: break-word;
   word-break: break-all;
 }
@@ -1321,9 +1323,9 @@ h6 {
 }
 
 .card-cpc .card-description-cpc .card-des-content-cpc .card-price-cpc h3 {
-  font-size: clamp(0.5rem, 0.4013rem + 0.5263vw, 0.875rem);
+  font-size: clamp(0.625rem, 0.5428rem + 0.4386vw, 0.9375rem);
   color: #ff0040;
-  font-weight: 500;
+  font-weight: 800;
 }
 
 .card-cpc .card-description-cpc .card-button-cpc {
@@ -1364,6 +1366,13 @@ h6 {
   border-top-right-radius: 0;
   border-bottom-left-radius: 0;
 }
+@media only screen and (max-width: 480px) {
+  .card-cpc {
+    min-width: 150px;
+    max-width: unset;
+    width: auto;
+  }
+}
 /* shop cart product  */
 .container-cpsitem {
   margin: 0 auto;
@@ -1381,6 +1390,7 @@ h6 {
 }
 .container-cpsitem .deletebtn-cpsitem {
   width: 10%;
+  min-width: 50px;
   display: block;
   height: fit-content;
   border: none;
@@ -1389,33 +1399,37 @@ h6 {
 }
 
 .container-cpsitem .content-cpsitem {
-  width: 75%;
+  width: 100%;
+  max-width: calc(100% - 50px);
   height: 100%;
   display: flex;
-  justify-content: space-between;
+  column-gap: 10px;
   align-items: center;
+  text-align: center;
 }
 .container-cpsitem .content-cpsitem .image-cpsitem {
-  width: 70px;
+  width: max-content;
   height: 100%;
   margin-right: 5px;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
 }
 .container-cpsitem .content-cpsitem .image-cpsitem img {
-  min-width: 50px;
-  max-width: 50px;
-  max-height: 50px;
+  max-width: 60px;
+  max-height: 60px;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 .container-cpsitem .content-cpsitem .title-cpsitem {
-  font-size: clamp(0.5rem, 0.3393rem + 0.8571vw, 0.875rem);
+  font-size: clamp(0.5rem, 0.375rem + 0.6667vw, 0.875rem);
   text-align: start;
 }
 .container-cpsitem .buttons-cpsitem {
   min-height: 50px;
-  min-width: 80px;
+  min-width: 70px;
   width: 15%;
   height: 100%;
   display: flex;

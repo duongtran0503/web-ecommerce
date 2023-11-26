@@ -80,7 +80,7 @@ const viewCart = ({ cart }) => {
 
 
       <div class="content-cpsitem">
-      <div class="card-image-cpc">
+      <div class="image-cpsitem">
       ${
         product.productType
           ? ` <img src="../image/product/${product.productType}/${product.image}" alt="" />`

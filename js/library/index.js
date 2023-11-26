@@ -7,12 +7,15 @@ import { pagNext, pagPrev } from "./components/Shop/pagination.js";
 import CountProduct from "./components/build/CountProduct.js";
 import showProduct from "./components/build/showProduct.js";
 import { loadQ } from "./components/build/showProduct.js";
+import TotailCont from "./components/build/Totailcont.js";
 import ShowLaptop from "./components/Home/ShowLaptop.js";
 import ShowPhone from "./components/Home/ShowPhone.js";
 import ShowTivi from "./components/Home/ShowTivi.js";
 import ShowKey from "./components/Home/ShowKey.js";
 import ShowWatch from "./components/Home/ShowWatch.js";
 import purcharedProduct from "./components/Shop/purchasedProduct.js";
+import NavStatic from "./components/admin/NavStatic.js";
+import renderInfor from "./components/user/inforUser.js";
 import MessageBox from "./module/MessageBox.js";
 import countDow from "./module/countDow.js";
 import { slideOfBanner, slideOfContent } from "./module/slideShow.js";
@@ -110,31 +113,94 @@ const deltailProductSpecifi = document.getElementById(
 const deltailProductQuantity = document.getElementById(
   "ele-quantity-showProductPage"
 );
+// admin
+const adminMainContent = document.getElementById(
+  "ele-admin-main-content-static"
+);
+// customer
+const UserInfor = document.getElementById("ele-infor-customer");
 // global
+
 export { globalMessageBox, globalTotailCont };
+if (globalTotailCont) {
+  attach(TotailCont, globalTotailCont);
+}
 if (globalCountProductHome) {
   attach(CountProduct, globalCountProductHome);
 }
 if (globalCountProductShop) {
   attach(CountProduct, globalCountProductShop);
 }
+if (adminMainContent) {
+  attach(NavStatic, adminMainContent);
+}
+// login ,logout
+let check = JSON.parse(localStorage.getItem("user"));
+let state = JSON.parse(localStorage.getItem("state"));
+if (state) {
+  console.log(state);
+}
+
+if (HomebtnOpenAcount) {
+  console.log(4);
+  const handleClick = () => {
+    HomebtnOpenAcount.classList.toggle("active");
+    HomeMainAcount.classList.toggle("active");
+  };
+  HomebtnOpenAcount.addEventListener("click", handleClick);
+}
 if (globaLLogin) {
-  globaLLogin.onclick = (e) => {
+  const handleClick = (e) => {
     e.stopPropagation();
     globalFormLogin.style.display = "block";
     globaLLogin.classList.toggle("active");
   };
+  globaLLogin.addEventListener("click", handleClick);
+  if (Object.keys(check).length !== 0) {
+    let state = JSON.parse(localStorage.getItem("state"));
+    if (check.permisson === "customer" && state.mess === 1) {
+      MessageBox("Thông báo", "chào mừng bạn đã quay trở lại");
+      state.mess = 2;
+    } else if (state.mess === 1) {
+      MessageBox("Thông báo", "chế độ quản trị viên");
+      state.mess = 2;
+    }
+    localStorage.setItem("state", JSON.stringify(state));
+    if (check.permisson === "customer") {
+      HomebtnOpenAcount.addEventListener("click", () => {
+        if (window.location.href.includes("User.html")) {
+          return;
+        }
+        if (window.location.href.includes("page")) {
+          window.location.href = "./User.html";
+        } else {
+          window.location.href = "./page/User.html";
+        }
+      });
+    } else if (check.permisson === "admin") {
+      HomebtnOpenAcount.setAttribute("titles", "đăng xuất");
+      HomebtnOpenAcount.addEventListener("click", () => {
+        dispatch("logout");
+      });
+    }
+  } else {
+    setTimeout(HomebtnOpenAcount.click(), 1000);
+    setTimeout(globaLLogin.click(), 1000);
+  }
 }
+
 if (globalBtnCloseLogin) {
   globalBtnCloseLogin.onclick = function () {
     globalFormLogin.style.display = "none";
     globaLLogin.classList.toggle("active");
-    globaLLogin.parentElement.classList.toggle("active");
+    HomebtnOpenAcount.classList.toggle("active");
+    HomeMainAcount.classList.toggle("active");
   };
 }
 if (globalFormLogin) {
   Login(globalInputEmailLogin, globalInputPassLogin, globalBtnSubmitLogin);
 }
+
 //HOme
 countDow(
   "ele-day-Home",
@@ -148,18 +214,14 @@ countDow(
   "ele-sale-minutes-Home",
   "ele-sale-second-Home"
 );
-if (HomebtnOpenAcount) {
-  HomebtnOpenAcount.onclick = () => {
-    HomebtnOpenAcount.classList.toggle("active");
-    HomeMainAcount.classList.toggle("active");
-  };
-}
 
-window.addEventListener("resize", function () {
-  if (this.innerWidth > 1023) {
-    phoneHeaderMenu.style.display = "none";
-  }
-});
+if (phoneHeaderMenu) {
+  window.addEventListener("resize", function () {
+    if (this.innerWidth > 1023) {
+      phoneHeaderMenu.style.display = "none";
+    }
+  });
+}
 if (phoneHeaderBtn) {
   phoneHeaderBtn.onclick = function () {
     phoneHeaderMenu.style.display = "block";
@@ -354,7 +416,6 @@ if (globalInputSearch) {
   let check = localStorage.getItem("searchKey")
     ? localStorage.getItem("searchKey")
     : "";
-  console.log(check);
   if (globalInputSearch.value.length === 0 && check.length !== 0) {
     dispatch("searchItem", check);
     localStorage.setItem("searchKey", "");
@@ -383,4 +444,7 @@ if (deltailMain) {
     deltailProductSpecifi
   );
   attach(loadQ, deltailProductQuantity);
+}
+if (UserInfor) {
+  attach(renderInfor, UserInfor);
 }
