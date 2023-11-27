@@ -137,9 +137,6 @@ if (adminMainContent) {
 // login ,logout
 let check = JSON.parse(localStorage.getItem("user"));
 let state = JSON.parse(localStorage.getItem("state"));
-if (state) {
-  console.log(state);
-}
 
 if (HomebtnOpenAcount) {
   console.log(4);
@@ -178,9 +175,12 @@ if (globaLLogin) {
         }
       });
     } else if (check.permisson === "admin") {
-      HomebtnOpenAcount.setAttribute("titles", "đăng xuất");
       HomebtnOpenAcount.addEventListener("click", () => {
-        dispatch("logout");
+        if (window.location.href.includes("page")) {
+          window.location.href = "./AdminPage.html";
+        } else {
+          window.location.href = "./page/AdminPage.html";
+        }
       });
     }
   } else {
@@ -250,16 +250,20 @@ if (phoneHeaderBtn) {
     phoneBtnSearch.onclick = (e) => {
       e.preventDefault();
       e.stopPropagation();
-      console.log(
-        window.location.href.includes("index.html") &&
-          phoneInputsearch.value.length !== 0
-      );
+
       if (
         window.location.href.includes("index.html") &&
         phoneInputsearch.value.length !== 0
       ) {
         localStorage.setItem("searchKey", phoneInputsearch.value);
         window.location.href = "./page/Shop.html";
+      }
+      if (
+        window.location.href.includes("page") &&
+        phoneInputsearch.value.length !== 0
+      ) {
+        localStorage.setItem("searchKey", phoneInputsearch.value);
+        window.location.href = "./Shop.html";
       }
       if (pagi) {
         pagi.classList.add("active");
@@ -375,7 +379,13 @@ if (globalInputSearch) {
       localStorage.setItem("searchKey", globalInputSearch.value);
       window.location.href = "./page/Shop.html";
     }
-
+    if (
+      window.location.href.includes("page") &&
+      globalInputSearch.value.length !== 0
+    ) {
+      localStorage.setItem("searchKey", globalInputSearch.value);
+      window.location.href = "./Shop.html";
+    }
     dispatch("searchItem", searchKey);
     searchKey = "";
     globalInputSearch.value = "";
@@ -393,6 +403,13 @@ if (globalInputSearch) {
       ) {
         localStorage.setItem("searchKey", globalInputSearch.value);
         window.location.href = "./page/Shop.html";
+      }
+      if (
+        window.location.href.includes("page") &&
+        globalInputSearch.value.length !== 0
+      ) {
+        localStorage.setItem("searchKey", globalInputSearch.value);
+        window.location.href = "./Shop.html";
       }
       if (pagi) {
         pagi.classList.add("active");

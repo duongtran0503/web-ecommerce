@@ -236,6 +236,7 @@
   column-gap: 20px;
 }
 .sale .content .item {
+  margin: 0 auto;
   max-width: 230px;
   max-height: 430px;
   min-width: 230px;

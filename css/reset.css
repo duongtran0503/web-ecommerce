@@ -267,7 +267,7 @@ h6 {
   padding: 10px;
   border-radius: 8px;
   box-shadow: 0 0 0 100000px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
+  z-index: 500;
   background: #fff;
   animation: form 0.5s linear forwards;
   animation-iteration-count: 1;
@@ -964,6 +964,7 @@ h6 {
     align-items: center;
     cursor: pointer;
   }
+
   .container-header
     .header
     .header-middle
@@ -1052,7 +1053,7 @@ h6 {
     height: 48px;
     display: flex;
     align-items: center;
-
+    cursor: pointer;
     column-gap: 20px;
   }
   .container-header
@@ -1065,6 +1066,7 @@ h6 {
     .item-icon {
     width: 40px;
     height: 40px;
+    cursor: pointer;
   }
   .container-header .header .header-middle .menu-phone-wrap .navigation-2 {
     width: 100%;
@@ -1093,6 +1095,7 @@ h6 {
     padding-left: 10px;
     display: flex;
     align-items: center;
+    cursor: pointer;
   }
   .container-header
     .header

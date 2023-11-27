@@ -14,6 +14,7 @@
     <link rel="icon" type="image/x-icon" href="../image/logo/logo.png" />
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/ViewCart.css" />
+    <link rel="stylesheet" href="../css/thanhtoan.css" />
     <script type="module" src="../js/library/index.js" defer></script>
   </head>
   <body>
@@ -81,7 +82,7 @@
                 </button>
               </form>
               <div class="selection-menu">
-                <div class="product-menu" id="ele-product-menu-hdmn">
+                <div class="product-menu active" id="ele-product-menu-hdmn">
                   sản phẩm
                 </div>
                 <div class="main-menu" id="ele-main-menu-hdmn">menu</div>
@@ -255,7 +256,77 @@
       <h1 class="title">trang thanh toán shop E-Commerce</h1>
 
       <section class="container-product">
-        <div class="content-left" id=""></div>
+        <div class="content-left-payment" id="">
+          <div class="container-fp">
+            <form class="child-container" id="form">
+              <div class="left-container">
+                <h3>Thông tin khách hàng</h3>
+                <div class="box-input">
+                  <label for="name">Họ tên</label>
+                  <input type="text" id="name" name="name" placeholder="" />
+                  <span class="message"></span>
+                </div>
+                <div class="box-input">
+                  <label for="address">Địa chỉ</label>
+                  <input
+                    type="text"
+                    id="address"
+                    name="address"
+                    placeholder=""
+                  />
+                  <span class="message"></span>
+                </div>
+                <div class="box-input">
+                  <label for="phone-number">Số điện thoại</label>
+                  <input
+                    type="text"
+                    id="phone-number"
+                    name="phone-number"
+                    placeholder=""
+                  />
+                  <span class="message"></span>
+                </div>
+                <div class="box-input">
+                  <label for="email">Email</label>
+                  <input type="text" id="email" name="email" placeholder="" />
+                  <span class="message"></span>
+                </div>
+              </div>
+
+              <div class="pay-method">
+                <h3>Hình thức thanh toán</h3>
+                <div class="option1">
+                  <input
+                    type="radio"
+                    id="option1"
+                    name="options"
+                    value="option1"
+                  />
+                  <label for="option1">Tiền mặt</label>
+                </div>
+                <div class="option2">
+                  <input
+                    type="radio"
+                    id="option2"
+                    name="options"
+                    value="option2"
+                  />
+                  <label for="option2">Chuyển khoản</label>
+                </div>
+                <div class="option3">
+                  <input
+                    type="radio"
+                    id="option3"
+                    name="options"
+                    value="option3"
+                  />
+                  <label for="option3">Ship COD</label>
+                </div>
+              </div>
+              <input type="submit" class="paybtn" value="Đặt hàng" />
+            </form>
+          </div>
+        </div>
         <div class="content-right">
           <div class="banner-1">
             <img src="../image/banner/leftBanner.png" alt="" />
@@ -267,76 +338,17 @@
             <h5>tổng số tiền là</h5>
             <span id="totail-cont">0 vnđ</span>
           </div>
-          <div
+          <!-- <div
             class="payment"
             id="ele-btn-payment"
             onclick="dispatch('payment')"
           >
             Thanh Toán
-          </div>
+          </div> -->
         </div>
       </section>
     </section>
-    <section class="form-payment active" id="form-payment">
-      <h1>Thanh toán đơn hàng</h1>
-      <div class="container">
-        <h3 class="titles">Hóa đơn thanh toán</h3>
-        <form action="#" autocomplete="off">
-          <div class="user-details">
-            <div class="input-box">
-              <label for="full-name" class="details">Họ tên</label>
-              <input
-                id="full-name"
-                type="text"
-                placeholder="Vui lòng nhập họ tên"
-                required
-              />
-              <span class="border-bottom-input"></span>
-              <span class="occurr-error"></span>
-            </div>
-            <div class="input-box">
-              <label for="user-name" class="details">Địa chỉ</label>
-              <input
-                id="user-name"
-                type="text"
-                placeholder="Địa chỉ"
-                required
-              />
-              <span class="border-bottom-input"></span>
-              <span class="occurr-error"></span>
-            </div>
-            <div class="input-box">
-              <label for="Email" class="details">Email</label>
-              <input
-                id="Email"
-                type="text"
-                placeholder="vui lòng nhập email"
-                required
-              />
-              <span class="border-bottom-input"></span>
-              <span class="occurr-error"></span>
-            </div>
-            <div class="input-box">
-              <label for="phone-number" class="details">Số điện thoại</label>
-              <input
-                id="phone-number"
-                type="text"
-                placeholder="vui lòng nhập số điện thoại"
-                required
-              />
-              <span class="border-bottom-input"></span>
-              <span class="occurr-error"></span>
-            </div>
-          </div>
 
-          <div class="button">
-            <button id="payment" onclick="dispatch('payment')">
-              thanh toán
-            </button>
-          </div>
-        </form>
-      </div>
-    </section>
     <hr />
 
     <section id="footer" class="container-footer">
@@ -421,4 +433,104 @@
       </footer>
     </section>
   </body>
+  <script>
+    let value = "";
+    function Validator(options) {
+      function validate(inputElements, element) {
+        var errorElements = inputElements.parentElement.querySelector(
+          options.errorSelector
+        );
+        var errorMessage = element.test(inputElements.value);
+        if (errorMessage) {
+          errorElements.innerText = errorMessage;
+          inputElements.parentElement.classList.add("invalid");
+        } else {
+          errorElements.innerText = "";
+          inputElements.parentElement.classList.remove("invalid");
+        }
+        return !errorMessage;
+      }
+      var formElement = document.querySelector(options.form);
+      if (formElement) {
+        var isFormValid = true;
+        //Validate khi nhấn submit
+        formElement.onsubmit = function (e) {
+          e.preventDefault();
+          options.rules.forEach((element) => {
+            var inputElements = formElement.querySelector(element.selector);
+            if (inputElements) {
+              var isValid = validate(inputElements, element);
+              if (!isValid) isFormValid = false;
+            }
+          });
+          if (isFormValid) {
+            var enableInputs = formElement.querySelectorAll("[name]");
+            var formValues = Array.from(enableInputs).reduce(function (
+              values,
+              input
+            ) {
+              values[input.name] = input.value;
+              return values;
+            },
+            {});
+            options.onsubmit(formValues);
+            value = formValues;
+          }
+        };
+        //Validate khi blur ra khỏi input
+        options.rules.forEach((element) => {
+          var inputElements = formElement.querySelector(element.selector);
+          if (inputElements) {
+            inputElements.onblur = function () {
+              validate(inputElements, element);
+            };
+            inputElements.oninput = function () {
+              var errorElements = inputElements.parentElement.querySelector(
+                options.errorSelector
+              );
+              errorElements.innerText = "";
+              inputElements.parentElement.classList.remove("invalid");
+            };
+          }
+        });
+      }
+    }
+    Validator.isRequired = function (selector, message) {
+      return {
+        selector: selector,
+        test: function (value) {
+          return value.trim()
+            ? undefined
+            : message || "Hãy nhập thông tin này !";
+        },
+      };
+    };
+
+    Validator.isEmail = function (selector, message) {
+      return {
+        selector: selector,
+        test: function (value) {
+          var regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+          var mess;
+          if (value.trim()) mess = "Email không hợp lệ !";
+          else mess = message;
+          return regex.test(value) ? undefined : mess;
+        },
+      };
+    };
+    Validator({
+      form: "#form",
+      errorSelector: ".message",
+      rules: [
+        Validator.isRequired("#name", "Hãy nhập họ tên !"),
+        Validator.isRequired("#address", "Hãy nhập địa chỉ !"),
+        Validator.isRequired("#phone-number", "Hãy nhập số điện thoại !"),
+        Validator.isEmail("#email", "Hãy nhập email !"),
+      ],
+      onsubmit: function (data) {
+        console.log(data);
+        dispatch("payment");
+      },
+    });
+  </script>
 </html>

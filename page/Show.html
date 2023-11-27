@@ -16,13 +16,15 @@
     <link rel="stylesheet" href="../css/show.css" />
   </head>
   <body>
+    <div id="messageBox"></div>
+    <div id="btnGoToTop" onclick="window.scrollTo(0,0)">&uarr;</div>
     <div id="formLogin-global">
       <section class="container-formlogin" id="ele-form-login">
         <div class="title-fm">
           <h3>Đăng nhập</h3>
           <span class="btn-close" id="ele-account-singin-close">x</span>
         </div>
-        <form action="#" class="form">
+        <form action="#" class="form" autocomplete="off">
           <div class="input-box">
             <label for="">Tên người dùng</label>
             <input
@@ -67,11 +69,21 @@
       <section class="container-header" style="max-height: 120px">
         <header class="header">
           <section class="header-top">
-            <h4 class="header-top__title-left" onclick="localStorage.clear()">
+            <h4
+              class="header-top__title-left"
+              style="cursor: pointer"
+              onclick="localStorage.clear()"
+            >
               E-Commerce.com
             </h4>
             <div class="header-top-right">
-              <h4 class="header-top__title-right-1">&copy; group 17</h4>
+              <h4
+                class="header-top__title-right-1"
+                style="cursor: pointer"
+                onclick="location.href = `./AdminPage.html`"
+              >
+                &copy; group 17
+              </h4>
               <div class="header-top__title-right-2">
                 <i class="fa-brands fa-facebook"></i>
                 <i class="fa-brands fa-square-instagram"></i>
@@ -90,15 +102,13 @@
                     class="phone-access-item"
                     titles="cửa hàng"
                     onclick="location.href =`./Shop.html`"
+                    id="ele-shopPage"
                   >
                     <i class="fa-solid fa-shop"></i>
                   </div>
-                  <div
-                    class="phone-access-item"
-                    titles="giỏ hàng"
-                    onclick="location.href =`./ViewCart.html`"
-                  >
+                  <div class="phone-access-item active" titles="giỏ hàng">
                     <i class="fa-solid fa-cart-plus"></i>
+                    <span id="ele-countproductincart-Home"></span>
                   </div>
                 </div>
                 <button class="menu-btn-close" id="ele-menu-btn-close-hdmn">
@@ -109,16 +119,16 @@
                 <div class="input-box">
                   <input
                     type="text"
-                    id="input"
+                    id="ele-input-phone-search"
                     placeholder="nhập tên sản phẩm"
                   />
                 </div>
-                <button class="button-search">
+                <button class="button-search" id="ele-btn-phone-search">
                   <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
               </form>
               <div class="selection-menu">
-                <div class="product-menu" id="ele-product-menu-hdmn">
+                <div class="product-menu active" id="ele-product-menu-hdmn">
                   sản phẩm
                 </div>
                 <div class="main-menu" id="ele-main-menu-hdmn">menu</div>
@@ -143,7 +153,10 @@
                       <i class="fa-solid fa-chevron-right"></i>
                     </div>
                   </li>
-                  <li class="option-item">
+                  <li
+                    class="option-item"
+                    onclick="MessageBox('thông báo','sản phẩm chưa có trên cữa hàng','warning')"
+                  >
                     <div class="item-icon">
                       <img src="../image/icon/tainghe.png" alt="" />
                     </div>
@@ -152,7 +165,10 @@
                       <i class="fa-solid fa-chevron-right"></i>
                     </div>
                   </li>
-                  <li class="option-item">
+                  <li
+                    class="option-item"
+                    onclick="MessageBox('thông báo','sản phẩm chưa có trên cữa hàng','warning')"
+                  >
                     <div class="item-icon">
                       <img src="../image/icon/loa.png" alt="" />
                     </div>
@@ -228,25 +244,25 @@
             </div>
             <form action="#" class="header-search" autocomplete="off">
               <div class="input-box">
-                <label for="input"
+                <label for="ele-input-heađer-global"
                   ><i class="fa-solid fa-magnifying-glass"></i
                 ></label>
                 <input
-                  id="input"
+                  id="ele-input-heađer-global"
                   type="text"
                   class="input"
                   placeholder="nhập tên sản phẩm"
                 />
               </div>
               <div class="buttons">
-                <button>tìm kiếm</button>
+                <button id="ele-btn-header-search">tìm kiếm</button>
               </div>
             </form>
             <div class="header-access-list">
               <div
                 class="header-access-item"
                 titles="Trang chủ"
-                onclick="location.href = `../index.html`"
+                onclick="location.href =`../index.html`"
               >
                 <i class="fa-solid fa-house"></i>
               </div>
@@ -257,23 +273,21 @@
               >
                 <i class="fa-solid fa-shop"></i>
               </div>
-              <div
-                class="header-access-item"
-                titles="giỏ hàng"
-                onclick="location.href =`./ViewCart.html`"
-              >
+              <div class="header-access-item active" titles="giỏ hàng">
                 <i class="fa-solid fa-cart-plus"></i>
                 <span id="ele-countproductincart-Home"></span>
               </div>
-              <div class="header-access-item-3" titles="tài khoản">
+              <div
+                class="header-access-item-3"
+                id="ele-btn-open-account"
+                titles="tài khoản"
+              >
                 <i class="fa-regular fa-user"></i>
                 <div class="main-account" id="ele-accout">
                   <div class="option option-1" id="ele-account-singin">
                     <span>&bull;</span> đăng nhập
                   </div>
-                  <div class="option option-2" id="ele-account-singout">
-                    <span>&bull;</span> đăng xuất
-                  </div>
+
                   <div class="option option-3" id="ele-account-create">
                     <span>&bull;</span> đang ký
                   </div>
