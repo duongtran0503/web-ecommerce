@@ -31,7 +31,7 @@ body {
   width: 100%;
   height: 480px;
   position: relative;
-  background-color: #ed7672;
+  background-color: #020e38;
   transition: background-color 1s ease-in;
 }
 /* .container-banner::after {

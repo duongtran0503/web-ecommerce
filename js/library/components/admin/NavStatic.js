@@ -1,20 +1,24 @@
 import html from "../../core/core.js";
-import { connect } from "../../core/store.js";
-const connector = connect((state) => ({
-  product: state.purcharedProduct,
-}));
-
-const StaticPage = ({ product }) => {
+const StaticPage = () => {
+  let order = [];
   const VND = new Intl.NumberFormat("vi-VN", {
     style: "currency",
     currency: "VND",
   });
-  let check = localStorage.getItem("buyProduct")
-    ? JSON.parse(localStorage.getItem("buyProduct"))
+  let check = localStorage.getItem("order")
+    ? JSON.parse(localStorage.getItem("order"))
     : [];
-  if (check.length !== 0 && product.length === 0) {
-    product = [...check];
-  }
+
+  order = check.reduce((acc, cur) => {
+    return acc.concat(cur);
+  }, []);
+
+  const totail_cont = order.reduce((acc, cur) => {
+    return acc + cur.price * cur.quantity;
+  }, 0);
+  const totail_product = order.length;
+  const totail_acces = check.length;
+  console.log(totail_acces, totail_cont, totail_product);
   return html`
     <div class="header">
       <div class="left">
@@ -40,14 +44,14 @@ const StaticPage = ({ product }) => {
       <li>
         <i class="bx bx-calendar-check"></i>
         <span class="info">
-          <h3>1,074</h3>
+          <h3>${totail_product}</h3>
           <p>sản phẩm đã bán</p>
         </span>
       </li>
       <li>
         <i class="bx bx-show-alt"></i>
         <span class="info">
-          <h3>3,944</h3>
+          <h3>${totail_acces}</h3>
           <p>lượng truy cập trang</p>
         </span>
       </li>
@@ -55,7 +59,7 @@ const StaticPage = ({ product }) => {
       <li>
         <i class="bx bx-dollar-circle"></i>
         <span class="info">
-          <h3>$6,742</h3>
+          <h3>${VND.format(totail_cont)}</h3>
           <p>Tổng tiền</p>
         </span>
       </li>
@@ -79,6 +83,7 @@ const StaticPage = ({ product }) => {
         <table id="customers">
           <thead>
             <tr>
+              <th>người đặt hàng</th>
               <th>Thời gian</th>
               <th>sản phẩm</th>
               <th>giá</th>
@@ -86,25 +91,26 @@ const StaticPage = ({ product }) => {
             </tr>
           </thead>
           <tbody id="ele-history-shop">
-            ${product.length === 0
-              ? "<div>Chưa có đơn hàng nào</div>"
-              : `
-               ${product.map(
-                 (element) =>
-                   `  <tr>
-                   <td>${element.date}</td>
-                       <td>${element.title} x <span style = "color:red;">${
-                     element.quantity
-                   }</span></td>
-                       <td>${VND.format(element.price * element.quantity)}</td>
-                       <td>đã được thanh toán</td>
-                     </tr>`
-               )}
-              `}
+            ${order.map(
+              (order_detail) =>
+                ` <tr>
+                <td>${order_detail.userName}</td>
+                <td>${order_detail.date}</td>
+                <td>${order_detail.title}x<span style = "color:red;">${
+                  order_detail.quantity
+                }</span></td>
+                 <td>${VND.format(
+                   order_detail.price * order_detail.quantity
+                 )}</td>
+                <td>đã thanh toán</td>
+              </tr>  
+
+              `
+            )}
           </tbody>
         </table>
       </div>
     </div>
   `;
 };
-export default connector(StaticPage);
+export default StaticPage;

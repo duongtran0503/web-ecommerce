@@ -5,22 +5,22 @@ const Acount = [
     permisson: "admin",
   },
   {
-    userName: "nguyenvana@gmail.com",
+    userName: "tranduong@gmail.com",
     passWorld: "12",
     permisson: "customer",
-    name: "Nguyen van A",
+    name: "Huỳnh Trần Dương",
   },
   {
-    userName: "nguyenvanb@gmail.com",
+    userName: "ngocvu@gmail.com",
     passWorld: "12",
     permisson: "customer",
-    name: "Nguyen van B",
+    name: "Nguyễn Ngọc Vũ",
   },
   {
-    userName: "nguyenvanc@gmail.com",
+    userName: "quangthai@gmail.com",
     passWorld: "12",
     permisson: "customer",
-    name: "Nguyen van C",
+    name: "Phạm Quang Thái",
   },
 ];
 export default Acount;

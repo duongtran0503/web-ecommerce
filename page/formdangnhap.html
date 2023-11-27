@@ -1,54 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <title>Đăng nhập</title>
-    <link rel="stylesheet" href="../css/reset.css" />
-  </head>
-  <body>
-    <section class="container-formlogin">
-      <div class="title">
-        <h3>Đăng nhập</h3>
-        <span class="btn-close">x</span>
+<div class="container-fp">
+  <div class="banner">
+    <div class="logo-image">
+      <img src="./image/logo.png" />
+    </div>
+    <div class="title"><span>E</span>Commerce</div>
+  </div>
+  <div class="pay">
+    <img src="./image/credit-card.png" />
+    <h4>Thanh toán</h4>
+    <p>
+      Vui lòng kiểm tra thông tin Khách hàng, thông tin Giỏ Hàng trước khi Đặt
+      hàng.
+    </p>
+  </div>
+  <form class="child-container" id="form">
+    <div class="left-container">
+      <h3>Thông tin khách hàng</h3>
+      <div class="box-input">
+        <label for="name">Họ tên</label>
+        <input type="text" id="name" name="name" placeholder="" />
+        <span class="message"></span>
       </div>
-      <form action="#" class="form">
-        <div class="input-box">
-          <label for="">Tên người dùng</label>
-          <input type="text" placeholder="vui lòng nhập tên đăng nhập" />
-          <span id="ele-form-message-name"></span>
-        </div>
-        <div class="input-box">
-          <label for="">mật khẩu</label>
-          <input type="text" placeholder="vui lòng nhập mật khẩu" />
-          <span id="ele-form-message-name"></span>
-        </div>
-        <div class="buttons">
-          <button>Đăng nhập</button>
-        </div>
-      </form>
-      <div class="sub-title">
-        <h3>các phương thưc đăng nhập khác</h3>
+      <div class="box-input">
+        <label for="address">Địa chỉ</label>
+        <input type="text" id="address" name="address" placeholder="" />
+        <span class="message"></span>
       </div>
-      <div class="icon-list">
-        <div class="icon-item">
-          <i class="fa-brands fa-facebook"></i>
-          <span>facebook</span>
-        </div>
-        <div class="icon-item">
-          <i class="fa-brands fa-google"> <span>Google</span></i>
-        </div>
-        <div class="icon-item">
-          <i class="fa-brands fa-github"></i> <span>Github</span>
-        </div>
+      <div class="box-input">
+        <label for="phone-number">Số điện thoại</label>
+        <input
+          type="text"
+          id="phone-number"
+          name="phone-number"
+          placeholder=""
+        />
+        <span class="message"></span>
       </div>
-    </section>
-  </body>
-</html>
+      <div class="box-input">
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" placeholder="" />
+        <span class="message"></span>
+      </div>
+    </div>
+    <div class="right-container"></div>
+    <div class="pay-method">
+      <h3>Hình thức thanh toán</h3>
+      <div class="option1">
+        <input type="radio" id="option1" name="options" value="option1" />
+        <label for="option1">Tiền mặt</label>
+      </div>
+      <div class="option2">
+        <input type="radio" id="option2" name="options" value="option2" />
+        <label for="option2">Chuyển khoản</label>
+      </div>
+      <div class="option3">
+        <input type="radio" id="option3" name="options" value="option3" />
+        <label for="option3">Ship COD</label>
+      </div>
+    </div>
+    <input type="submit" class="paybtn" value="Đặt hàng" />
+  </form>
+</div>

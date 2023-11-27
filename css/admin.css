@@ -42,6 +42,7 @@ body.dark {
   --light: #181a1e;
   --grey: #25252c;
   --dark: #fbfbfb;
+  --dart-table: #181a1e;
 }
 
 body {
@@ -689,7 +690,8 @@ body {
 }
 
 #customers tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: #d2d2d2f1;
+  color: black;
 }
 
 #customers tr:hover {

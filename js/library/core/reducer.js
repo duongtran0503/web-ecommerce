@@ -33,7 +33,6 @@ export default function reducer(state = init, action, args) {
     case "searchItem": {
       const keyword = args[0].trim();
       if (keyword.length === 0) {
-        console.log("none");
         return {
           ...state,
         };
@@ -72,7 +71,10 @@ export default function reducer(state = init, action, args) {
       };
     }
     case "filterPr": {
-      const newList = state.productList;
+      const newList =
+        state.searchProductList.length !== 0
+          ? state.searchProductList
+          : state.productList;
       const condition = args[0];
       if (condition === "highttolow") {
         newList.sort((p1, p2) => parseFloat(p2.price) - parseFloat(p1.price));
@@ -353,13 +355,13 @@ export default function reducer(state = init, action, args) {
       let user = JSON.parse(localStorage.getItem("user"));
       let item = localStorage.getItem("order");
       let order = item ? JSON.parse(item) : [];
-      order = [
-        ...order,
-        {
-          user,
-          buyProduct,
-        },
-      ];
+      let order_detail = buyProduct.map((product) => {
+        return {
+          ...product,
+          ...user,
+        };
+      });
+      order = [...order, order_detail];
       localStorage.setItem("order", JSON.stringify(order));
       MessageBox("Thông báo", "thanh toán thành công");
       return {
@@ -379,15 +381,35 @@ export default function reducer(state = init, action, args) {
           check = true;
           data = value;
         }
+        if (
+          value.userName === data.userName &&
+          value.passWorld !== data.passWorld
+        ) {
+          MessageBox("Thông báo", "mật khẩu không đúng", "error");
+        }
+        if (
+          value.userName !== data.userName &&
+          value.passWorld !== data.passWorld
+        ) {
+          MessageBox("Thông báo", "tài khoản không tồn tại", "error");
+          return {
+            ...state,
+          };
+        }
       });
       if (check) {
         localStorage.setItem("user", JSON.stringify(data));
-        const state = { state: 404, mess: 1 };
-        localStorage.setItem("state", JSON.stringify(state));
+        const state = { state: 0, mess: 1 };
+
         const url = window.location.href;
         if (data.permisson === "customer") {
+          state.state = 404;
+          localStorage.setItem("state", JSON.stringify(state));
           window.location.href = url;
         } else {
+          state.state = 101;
+          localStorage.setItem("state", JSON.stringify(state));
+
           window.location.href = "./page/AdminPage.html";
         }
       }
