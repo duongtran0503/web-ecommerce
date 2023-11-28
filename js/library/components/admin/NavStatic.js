@@ -18,7 +18,7 @@ const StaticPage = () => {
   }, 0);
   const totail_product = order.length;
   const totail_acces = check.length;
-  console.log(totail_acces, totail_cont, totail_product);
+  console.log(order);
   return html`
     <div class="header">
       <div class="left">
@@ -86,14 +86,14 @@ const StaticPage = () => {
               <th>người đặt hàng</th>
               <th>Thời gian</th>
               <th>sản phẩm</th>
-              <th>giá</th>
+              <th>tổng tiên</th>
               <th>trạng thái</th>
             </tr>
           </thead>
           <tbody id="ele-history-shop">
             ${order.map(
               (order_detail) =>
-                ` <tr>
+                ` <tr onclick = "showInfor(this)">
                 <td>${order_detail.userName}</td>
                 <td>${order_detail.date}</td>
                 <td>${order_detail.title}x<span style = "color:red;">${
@@ -103,6 +103,53 @@ const StaticPage = () => {
                    order_detail.price * order_detail.quantity
                  )}</td>
                 <td>đã thanh toán</td>
+                <td style = "display:none">
+                
+                <div class="infor-content">
+                  <div class="infor-content-left">
+                  <img src="../image/product/${order_detail.productType}/${
+                  order_detail.image
+                }" alt="" />
+                  </div>
+                  <div class="infor-content-right">
+                    <div class="box-infor">
+                      <h3 class="c-infor">Họ tên:${
+                        order_detail.user__detail.name
+                      }</h3>
+                    </div>
+                    <div class="box-infor">
+                      <h3 class="c-infor">Địa chỉ:${
+                        order_detail.user__detail.address
+                      }</h3>
+                    </div>
+                    <div class="box-infor">
+                      <h3 class="c-infor">SDT:${
+                        order_detail.user__detail["phone-number"]
+                      }
+                      </h3>
+                    </div>
+                    <div class="box-infor">
+                      <h3 class="c-infor">Email:${
+                        order_detail.user__detail.email
+                      }</h3>
+                    </div>
+                    <div class="box-infor">
+                      <h3 class="c-infor">thời Gian:${order_detail.date}</h3>
+                    </div>
+                    <div class="box-infor">
+                      <h3 class="c-infor">
+                        Tên sản phẩm:${order_detail.title}
+                      </h3>
+                    </div>
+                    <div class="box-infor">
+                      <h3 class="c-infor">Giá:${VND.format(
+                        order_detail.price
+                      )} số lượng: ${order_detail.quantity}</h3>
+                    </div>
+                  </div>
+                </div>
+              
+              </td>
               </tr>  
 
               `

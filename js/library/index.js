@@ -93,6 +93,8 @@ const shopPaginationBtnPrev = document.getElementById(
 const shopPaginationBtnNext = document.getElementById(
   "ele-pagination-next-shopPage"
 );
+const pagi = document.getElementById("ele-pagination");
+const btnback = document.getElementById("ele-pagination-ch");
 //  viewCart
 const ViewCartHis = document.getElementById("ele-history-shop");
 // show product
@@ -136,10 +138,8 @@ if (adminMainContent) {
 }
 // login ,logout
 let check = JSON.parse(localStorage.getItem("user"));
-let state = JSON.parse(localStorage.getItem("state"));
 
 if (HomebtnOpenAcount) {
-  console.log(4);
   const handleClick = () => {
     HomebtnOpenAcount.classList.toggle("active");
     HomeMainAcount.classList.toggle("active");
@@ -164,6 +164,7 @@ if (globaLLogin) {
     }
     localStorage.setItem("state", JSON.stringify(state));
     if (check.permisson === "customer") {
+      HomeMainAcount.style.display = "none";
       HomebtnOpenAcount.addEventListener("click", () => {
         if (window.location.href.includes("User.html")) {
           return;
@@ -392,8 +393,6 @@ if (globalInputSearch) {
     globalInputSearch.blur();
   };
 
-  const pagi = document.getElementById("ele-pagination");
-  const btnback = document.getElementById("ele-pagination-ch");
   const handleKeyDown = (e) => {
     window.scrollTo(0, 0);
     if (e.keyCode === 13) {
@@ -460,8 +459,10 @@ if (deltailMain) {
     deltailProductPrice,
     deltailProductSpecifi
   );
+  //  ascending or descending quantity product
   attach(loadQ, deltailProductQuantity);
 }
+// render infor  userpage
 if (UserInfor) {
   attach(renderInfor, UserInfor);
 }
