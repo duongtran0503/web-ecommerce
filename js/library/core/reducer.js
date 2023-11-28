@@ -403,7 +403,11 @@ export default function reducer(state = init, action, args) {
           state.state = 101;
           localStorage.setItem("state", JSON.stringify(state));
 
-          window.location.href = "./page/AdminPage.html";
+          if (window.location.href.indexOf("page")) {
+            window.location.href = "./AdminPage.html";
+          } else {
+            window.location.href = "./page/AdminPage.html";
+          }
         }
       }
       return {

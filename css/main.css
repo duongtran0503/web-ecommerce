@@ -230,6 +230,7 @@ body {
   overflow: hidden;
   padding-left: 10px;
   padding-right: 10px;
+  z-index: 100;
 }
 .banner .banner-right .buttons button:hover {
   background-color: aliceblue;
