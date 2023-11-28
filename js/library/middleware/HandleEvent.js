@@ -3,7 +3,11 @@ export default function HandleEvent(action, element, ...args) {
     case "searchItem":
       {
         localStorage.setItem("searchKey", args[0]);
-        window.location.href = "./page/Shop.html";
+        if (window.location.href.includes("page")) {
+          window.location.href = "./Shop.html";
+        } else {
+          window.location.href = "./page/Shop.html";
+        }
       }
       break;
     case "show":

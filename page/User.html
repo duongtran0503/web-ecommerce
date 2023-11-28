@@ -89,7 +89,10 @@
               </div>
               <nav class="navigation-1" id="ele-navigation-1-hdmn">
                 <ul class="list-option">
-                  <li class="option-item">
+                  <li
+                    class="option-item"
+                    onclick="HandleEvent('searchItem',this,'Điện thoại')"
+                  >
                     <div class="item-icon">
                       <img src="../image/icon/phone.png" alt="" />
                     </div>
@@ -98,7 +101,10 @@
                       <i class="fa-solid fa-chevron-right"></i>
                     </div>
                   </li>
-                  <li class="option-item">
+                  <li
+                    class="option-item"
+                    onclick="HandleEvent('searchItem',this,'laptop')"
+                  >
                     <div class="item-icon">
                       <img src="../image/icon/laptop.png" alt="" />
                     </div>
@@ -131,7 +137,10 @@
                       <i class="fa-solid fa-chevron-right"></i>
                     </div>
                   </li>
-                  <li class="option-item">
+                  <li
+                    class="option-item"
+                    onclick="HandleEvent('searchItem',this,'màn hình')"
+                  >
                     <div class="item-icon">
                       <img src="../image/icon/pc.png" alt="" />
                     </div>
@@ -140,7 +149,10 @@
                       <i class="fa-solid fa-chevron-right"></i>
                     </div>
                   </li>
-                  <li class="option-item">
+                  <li
+                    class="option-item"
+                    onclick="HandleEvent('searchItem',this,'bàn phím')"
+                  >
                     <div class="item-icon">
                       <img src="../image/icon/keyandmouse.png" alt="" />
                     </div>
@@ -149,7 +161,10 @@
                       <i class="fa-solid fa-chevron-right"></i>
                     </div>
                   </li>
-                  <li class="option-item">
+                  <li
+                    class="option-item"
+                    onclick="MessageBox('thông báo','sản phẩm chưa có trên cữa hàng','warning')"
+                  >
                     <div class="item-icon">
                       <img src="../image/icon/mtbag.png" alt="" />
                     </div>
@@ -158,7 +173,10 @@
                       <i class="fa-solid fa-chevron-right"></i>
                     </div>
                   </li>
-                  <li class="option-item">
+                  <li
+                    class="option-item"
+                    onclick="MessageBox('thông báo','sản phẩm chưa có trên cữa hàng','warning')"
+                  >
                     <div class="item-icon">
                       <img src="../image/icon/dongho.png" alt="" />
                     </div>
@@ -239,9 +257,10 @@
                 class="header-access-item-3 active"
                 id="ele-btn-open-account"
                 titles="tài khoản"
+                style="pointer-events: none"
               >
                 <i class="fa-regular fa-user"></i>
-                <div class="main-account" id="ele-accout">
+                <!-- <div class="main-account" id="ele-accout">
                   <div class="option option-1" id="ele-account-singin">
                     <span>&bull;</span> đăng nhập
                   </div>
@@ -251,7 +270,7 @@
                   <div class="option option-3" id="ele-account-create">
                     <span>&bull;</span> đang ký
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
           </section>

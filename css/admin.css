@@ -13,8 +13,27 @@
   --light-warning: #fff2c6;
   --success: #388e3c;
   --light-success: #bbf7d0;
+  --primary-color-button: #db4444;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color-button);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 * {
   margin: 0;
   padding: 0;
@@ -55,7 +74,104 @@ body {
   right: 32px;
   z-index: 1000;
 }
-
+#renderInfor {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+#renderInfor {
+  max-width: 600px;
+  height: 370px;
+  width: 100%;
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 0 100000px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  animation: form 0.5s linear forwards;
+  animation-iteration-count: 1;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  color: black;
+  display: flex;
+}
+@keyframes form {
+  0% {
+    top: 50px;
+  }
+  100% {
+    top: 100px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1022.98px) {
+  #renderInfor {
+    z-index: 3000;
+  }
+}
+#renderInfor.active {
+  display: none;
+}
+.infor-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.infor-content .infor-content-left {
+  width: 300px;
+  height: 100%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+  border-bottom: 5px;
+}
+.infor-content .infor-content-left:hover {
+  box-shadow: unset;
+}
+.infor-content .infor-content-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.infor-content .infor-content-right {
+  max-width: 300px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+.infor-content .infor-content-right .box-infor {
+  width: 100%;
+  height: 50px;
+  min-height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #0a2e58;
+}
+.infor-content .infor-content-right .box-infor:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+}
+.infor-content .infor-content-right .box-infor h3 {
+  width: 90%;
+  height: 90%;
+  text-align: start;
+  font-size: 14px;
+  font-weight: 400;
+}
+.infor-content .infor-content-right .box-infor:nth-child(6) {
+  overflow: hidden;
+  overflow-x: scroll;
+}
+.infor-content .infor-content-right .box-infor::-webkit-scrollbar {
+  height: 5px;
+}
+.infor-content .infor-content-right .box-infor::-webkit-scrollbar-thumb {
+  background: var(--primary-color-button);
+}
 .toast {
   display: flex;
   align-items: center;

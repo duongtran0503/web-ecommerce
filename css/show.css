@@ -181,6 +181,13 @@
   font-size: clamp(0.625rem, 0.4643rem + 0.8571vw, 1rem);
   font-weight: 400;
 }
+.container-main .main .content-right .banner-middle {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .container-main .main .content-right .banner-bottom {
   width: 100%;
   height: auto;

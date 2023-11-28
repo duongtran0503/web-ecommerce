@@ -14,7 +14,7 @@ const Acount = [
     userName: "ngocvu@gmail.com",
     passWorld: "12",
     permisson: "customer",
-    name: "Nguyễn Ngọc Vũ",
+    name: "Lương Ngọc Vũ",
   },
   {
     userName: "quangthai@gmail.com",

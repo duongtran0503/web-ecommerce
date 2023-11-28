@@ -60,6 +60,7 @@ body {
 .content-sub button {
   width: 300px;
   height: 40px;
+  min-height: 40px;
   color: white;
   background: var(--primary-color-button);
   box-shadow: var(--primary-boxshadow);

@@ -355,10 +355,12 @@ export default function reducer(state = init, action, args) {
       let user = JSON.parse(localStorage.getItem("user"));
       let item = localStorage.getItem("order");
       let order = item ? JSON.parse(item) : [];
+      let user__detail = args[0];
       let order_detail = buyProduct.map((product) => {
         return {
           ...product,
           ...user,
+          user__detail,
         };
       });
       order = [...order, order_detail];
@@ -373,30 +375,21 @@ export default function reducer(state = init, action, args) {
     case "login": {
       let check = false;
       let data = args[0];
-      Acount.forEach((value) => {
-        if (
-          value.userName === data.userName &&
-          value.passWorld === data.passWorld
-        ) {
-          check = true;
-          data = value;
-        }
-        if (
-          value.userName === data.userName &&
-          value.passWorld !== data.passWorld
-        ) {
-          MessageBox("Thông báo", "mật khẩu không đúng", "error");
-        }
-        if (
-          value.userName !== data.userName &&
-          value.passWorld !== data.passWorld
-        ) {
-          MessageBox("Thông báo", "tài khoản không tồn tại", "error");
-          return {
-            ...state,
-          };
-        }
-      });
+      let item = Acount.find((value) => data.userName === value.userName);
+      if (!item) {
+        MessageBox("Thông báo", "tên đăng nhập hoặc mật khẩu sai", "warning");
+        return {
+          ...state,
+        };
+      } else if (item.passWorld !== data.passWorld) {
+        MessageBox("Thông báo", "mật khẩu không đúng", "warning");
+        return {
+          ...state,
+        };
+      } else {
+        check = true;
+      }
+
       if (check) {
         localStorage.setItem("user", JSON.stringify(data));
         const state = { state: 0, mess: 1 };

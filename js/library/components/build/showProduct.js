@@ -13,20 +13,18 @@ const getData = ({ product }) => {
     };
   });
   product = items[0];
-  console.log(product);
 
   return product;
 };
 let state;
 const showProduct = (eleImage, eleTitle, eleTramake, elePrice, eleProp) => {
   state = connetor(getData)();
-  console.log(state);
   if (state === null) {
     return;
   }
   eleImage.innerHTML = `
      <div class="image">
-     <img src="../image/product/${state.nameStore}/${state.image}" alt="" />
+     <img src="../image/product/${state.productType}/${state.image}" alt="" />
    </div>
      `;
   eleTitle.innerHTML = `

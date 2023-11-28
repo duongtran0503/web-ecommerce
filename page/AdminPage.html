@@ -17,6 +17,7 @@
   <body>
     <!-- Sidebar -->
     <div id="messageBox"></div>
+    <div id="renderInfor" class="active"></div>
     <div class="sidebar close">
       <a href="#" class="logo">
         <i class="bx bx-code-alt"></i>
@@ -85,6 +86,15 @@
     </div>
 
     <script>
+      const show = document.getElementById("renderInfor");
+      show.onclick = function () {
+        this.classList.add("active");
+      };
+      const showInfor = (ele) => {
+        const infor = ele.lastElementChild.innerHTML;
+        show.classList.remove("active");
+        show.innerHTML = infor;
+      };
       const menuBar = document.querySelector(".content nav .bx.bx-menu");
       const sideBar = document.querySelector(".sidebar");
 
