@@ -8,11 +8,11 @@ const purcharedProduct = ({ product }) => {
     style: "currency",
     currency: "VND",
   });
-  let check = localStorage.getItem("buyProduct")
-    ? JSON.parse(localStorage.getItem("buyProduct"))
+  let check = localStorage.getItem("user")
+    ? JSON.parse(localStorage.getItem("user"))
     : [];
-  if (check.length !== 0 && product.length === 0) {
-    product = [...check];
+  if (check.order.length !== 0 && product.length === 0) {
+    product = [...check.order];
   }
   return html`
     ${product.length === 0
@@ -26,7 +26,9 @@ const purcharedProduct = ({ product }) => {
                element.quantity
              }</span></td>
                  <td>${VND.format(element.price * element.quantity)}</td>
-                 <td>đang vận chuyển</td>
+                 <td>${
+                   !element.check ? "Dang chở xác nhận" : "đang vận chuyển"
+                 }</td>
                </tr>`
          )}
         `}

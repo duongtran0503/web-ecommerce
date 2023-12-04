@@ -10,7 +10,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <title>ShopFoodie</title>
+    <title>Thanh Toán</title>
     <link rel="icon" type="image/x-icon" href="../image/logo/logo.png" />
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/ViewCart.css" />
@@ -259,10 +259,12 @@
                   <div class="option option-1" id="ele-account-singin">
                     <span>&bull;</span> đăng nhập
                   </div>
-                  <div class="option option-2" id="ele-account-singout">
-                    <span>&bull;</span> đăng xuất
-                  </div>
-                  <div class="option option-3" id="ele-account-create">
+
+                  <div
+                    class="option option-3"
+                    id="ele-account-create"
+                    onclick=" MessageBox('thông báo','chức năng chưa được cập nhập','error')"
+                  >
                     <span>&bull;</span> đang ký
                   </div>
                 </div>
@@ -311,34 +313,37 @@
                 </div>
               </div>
 
-              <div class="pay-method">
-                <h3>Hình thức thanh toán</h3>
-                <div class="option1">
-                  <input
-                    type="radio"
-                    id="option1"
-                    name="options"
-                    value="option1"
-                  />
-                  <label for="option1">Tiền mặt</label>
-                </div>
-                <div class="option2">
-                  <input
-                    type="radio"
-                    id="option2"
-                    name="options"
-                    value="option2"
-                  />
-                  <label for="option2">Chuyển khoản</label>
-                </div>
-                <div class="option3">
-                  <input
-                    type="radio"
-                    id="option3"
-                    name="options"
-                    value="option3"
-                  />
-                  <label for="option3">Ship COD</label>
+              <div class="pay-method" style="display: none">
+                <div class="box-input">
+                  <h3>Hình thức thanh toán</h3>
+                  <div>
+                    <input
+                      type="radio"
+                      value="tien-mat"
+                      name="pay"
+                      id="option1"
+                    />
+                    <label for="option1">Tiền mặt</label>
+                  </div>
+                  <div>
+                    <input
+                      type="radio"
+                      value="chuyen-khoan"
+                      name="pay"
+                      id="option2"
+                    />
+                    <label for="option2">Chuyển khoản</label>
+                  </div>
+                  <div>
+                    <input
+                      type="radio"
+                      value="ship-cod"
+                      name="pay"
+                      id="option3"
+                    />
+                    <label for="option3">Ship COD</label>
+                  </div>
+                  <div class="message"></div>
                 </div>
               </div>
               <input type="submit" class="paybtn" value="Đặt hàng" />
@@ -452,64 +457,119 @@
     </section>
   </body>
   <script>
-    let value = "";
-    function Validator(options) {
-      function validate(inputElements, element) {
-        var errorElements = inputElements.parentElement.querySelector(
-          options.errorSelector
-        );
-        var errorMessage = element.test(inputElements.value);
+    function Validator(object) {
+      function getParent(element, selector) {
+        while (element.parentElement) {
+          if (element.parentElement.matches(selector))
+            return element.parentElement;
+          element = element.parentElement;
+        }
+      }
+      var selectorRules = {};
+      //Hàm thực hiện validate
+      function validate(inputElement, rule) {
+        var errorElement = getParent(
+          inputElement,
+          object.formGroupSelector
+        ).querySelector(object.errorSelector);
+        var errorMessage;
+        //Lấy ra các rule của selector
+        var rules = selectorRules[rule.selector];
+        for (var i = 0; i < rules.length; ++i) {
+          switch (inputElement.type) {
+            case "radio":
+              errorMessage = rules[i](
+                formElement.querySelector(rule.selector + ":checked")
+              );
+              break;
+            default:
+              errorMessage = rules[i](inputElement.value.trim());
+          }
+          if (errorMessage) break;
+        }
         if (errorMessage) {
-          errorElements.innerText = errorMessage;
-          inputElements.parentElement.classList.add("invalid");
+          errorElement.innerText = errorMessage;
+          getParent(inputElement, object.formGroupSelector).classList.add(
+            "invalid"
+          );
         } else {
-          errorElements.innerText = "";
-          inputElements.parentElement.classList.remove("invalid");
+          errorElement.innerText = "";
+          getParent(inputElement, object.formGroupSelector).classList.remove(
+            "invalid"
+          );
         }
         return !errorMessage;
       }
-      var formElement = document.querySelector(options.form);
+      var formElement = document.querySelector(object.form);
       if (formElement) {
-        var isFormValid = true;
-        //Validate khi nhấn submit
         formElement.onsubmit = function (e) {
           e.preventDefault();
-          options.rules.forEach((element) => {
-            var inputElements = formElement.querySelector(element.selector);
-            if (inputElements) {
-              var isValid = validate(inputElements, element);
-              if (!isValid) isFormValid = false;
-            }
+          var isFromValid = true;
+          object.rules.forEach(function (rule) {
+            var inputElement = formElement.querySelector(rule.selector);
+            var isValid = validate(inputElement, rule);
+            if (!isValid) isFromValid = false;
           });
-          if (isFormValid) {
-            var enableInputs = formElement.querySelectorAll("[name]");
-            var formValues = Array.from(enableInputs).reduce(function (
-              values,
-              input
-            ) {
-              values[input.name] = input.value;
-              return values;
-            },
-            {});
-            options.onsubmit(formValues);
-            value = formValues;
+
+          if (isFromValid) {
+            if (typeof object.onSubmit === "function") {
+              var enableInput = formElement.querySelectorAll("[name]");
+              var formValues = Array.from(enableInput).reduce(function (
+                values,
+                input
+              ) {
+                switch (input.type) {
+                  case "file":
+                    values[input.name] = input.files;
+                    break;
+
+                  default:
+                    values[input.name] = input.value;
+                }
+                return values;
+              },
+              {});
+              object.onSubmit(formValues);
+            }
           }
         };
-        //Validate khi blur ra khỏi input
-        options.rules.forEach((element) => {
-          var inputElements = formElement.querySelector(element.selector);
-          if (inputElements) {
-            inputElements.onblur = function () {
-              validate(inputElements, element);
-            };
-            inputElements.oninput = function () {
-              var errorElements = inputElements.parentElement.querySelector(
-                options.errorSelector
-              );
-              errorElements.innerText = "";
-              inputElements.parentElement.classList.remove("invalid");
-            };
+        //Lặp qua mỗi rules và xử lí
+        object.rules.forEach(function (rule) {
+          if (Array.isArray(selectorRules[rule.selector])) {
+            selectorRules[rule.selector].push(rule.test);
+          } else {
+            //Lưu lại các rules
+            selectorRules[rule.selector] = [rule.test];
           }
+          var inputElements = formElement.querySelectorAll(rule.selector);
+          Array.from(inputElements).forEach(function (inputElement) {
+            if (inputElement) {
+              switch (inputElement.type) {
+                case "file":
+                  inputElement.onchange = function () {
+                    validate(inputElement, rule);
+                  };
+                  break;
+                default:
+                  //Xử lí khi click ra khỏi ô input
+                  inputElement.onblur = function () {
+                    validate(inputElement, rule);
+                  };
+                  //Xử lí khi người dùng nhập vào input
+                  inputElement.oninput = function () {
+                    var errorElement = getParent(
+                      inputElement,
+                      object.formGroupSelector
+                    ).querySelector(object.errorSelector);
+                    errorElement.innerText = "";
+                    getParent(
+                      inputElement,
+                      object.formGroupSelector
+                    ).classList.remove("invalid");
+                  };
+              }
+            }
+          });
         });
       }
     }
@@ -517,36 +577,83 @@
       return {
         selector: selector,
         test: function (value) {
-          return value.trim()
-            ? undefined
-            : message || "Hãy nhập thông tin này !";
+          return value ? undefined : message || "Hãy nhập thông tin này !";
         },
       };
     };
 
-    Validator.isEmail = function (selector, message) {
+    Validator.isEmail = function (selector) {
       return {
         selector: selector,
         test: function (value) {
           var regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-          var mess;
-          if (value.trim()) mess = "Email không hợp lệ !";
-          else mess = message;
-          return regex.test(value) ? undefined : mess;
+          return regex.test(value) ? undefined : "Email không hợp lệ !";
         },
       };
     };
+    Validator.minLength = function (selector, min, message) {
+      return {
+        selector: selector,
+        test: function (value) {
+          return value.length >= min
+            ? undefined
+            : message || `Hãy nhập tối thiếu ${min} kí tự`;
+        },
+      };
+    };
+    Validator.isConfirmed = function (selector, getConfirmValue, message) {
+      return {
+        selector: selector,
+        test: function (value) {
+          return value === getConfirmValue()
+            ? undefined
+            : message || "Giá trị nhập vào không chính xác !";
+        },
+      };
+    };
+    Validator.isPositiveInteger = function (selector, message) {
+      return {
+        selector: selector,
+        test: function (value) {
+          return value >= 0 && Number.isInteger(parseFloat(value))
+            ? undefined
+            : message || "Giá trị phải là số nguyên không âm !";
+        },
+      };
+    };
+    Validator.isDecimal = function (selector, message) {
+      return {
+        selector: selector,
+        test: function (value) {
+          return value >= 0 && !isNaN(value) && !Number.isInteger(value)
+            ? undefined
+            : message || "Giá trị phải là số dương !";
+        },
+      };
+    };
+  </script>
+  <script>
     Validator({
       form: "#form",
+      formGroupSelector: ".box-input",
       errorSelector: ".message",
       rules: [
         Validator.isRequired("#name", "Hãy nhập họ tên !"),
         Validator.isRequired("#address", "Hãy nhập địa chỉ !"),
         Validator.isRequired("#phone-number", "Hãy nhập số điện thoại !"),
-        Validator.isEmail("#email", "Hãy nhập email !"),
+        Validator.isPositiveInteger(
+          "#phone-number",
+          "Số điện thoại không hợp lệ !"
+        ),
+        Validator.minLength(
+          "#phone-number",
+          10,
+          "Số điện thoại cần tối thiểu 10 số !"
+        ),
+        Validator.isRequired("#email", "Hãy nhập email !"),
+        Validator.isEmail("#email"),
       ],
-      onsubmit: function (data) {
-        console.log(data);
+      onSubmit: function (data) {
         dispatch("payment", data);
       },
     });
