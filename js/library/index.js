@@ -8,6 +8,7 @@ import CountProduct from "./components/build/CountProduct.js";
 import showProduct from "./components/build/showProduct.js";
 import { loadQ } from "./components/build/showProduct.js";
 import TotailCont from "./components/build/Totailcont.js";
+import loading from "./components/build/loadingChange.js";
 import ShowLaptop from "./components/Home/ShowLaptop.js";
 import ShowPhone from "./components/Home/ShowPhone.js";
 import ShowTivi from "./components/Home/ShowTivi.js";
@@ -15,6 +16,10 @@ import ShowKey from "./components/Home/ShowKey.js";
 import ShowWatch from "./components/Home/ShowWatch.js";
 import purcharedProduct from "./components/Shop/purchasedProduct.js";
 import NavStatic from "./components/admin/NavStatic.js";
+import NavShop from "./components/admin/NavShop.js";
+import navMessage from "./components/admin/NavMessage.js";
+import navUser from "./components/admin/NavUser.js";
+import navSetting from "./components/admin/NavSetting.js";
 import renderInfor from "./components/user/inforUser.js";
 import MessageBox from "./module/MessageBox.js";
 import countDow from "./module/countDow.js";
@@ -116,9 +121,22 @@ const deltailProductQuantity = document.getElementById(
   "ele-quantity-showProductPage"
 );
 // admin
-const adminMainContent = document.getElementById(
+const adminMainContentStatic = document.getElementById(
   "ele-admin-main-content-static"
 );
+const adminMainContentShop = document.getElementById(
+  "ele-admin-main-content-shop"
+);
+const adminMainContentMessage = document.getElementById(
+  "ele-admin-main-content-message"
+);
+const adminMainContentUser = document.getElementById(
+  "ele-admin-main-content-user"
+);
+const adminMainContentSetting = document.getElementById(
+  "ele-admin-main-content-setting"
+);
+const adminLoadingChangePage = document.getElementById("loading-change-page");
 // customer
 const UserInfor = document.getElementById("ele-infor-customer");
 // global
@@ -133,8 +151,23 @@ if (globalCountProductHome) {
 if (globalCountProductShop) {
   attach(CountProduct, globalCountProductShop);
 }
-if (adminMainContent) {
-  attach(NavStatic, adminMainContent);
+if (adminMainContentStatic) {
+  attach(NavStatic, adminMainContentStatic);
+}
+if (adminMainContentMessage) {
+  attach(navMessage, adminMainContentMessage);
+}
+if (adminMainContentShop) {
+  attach(NavShop, adminMainContentShop);
+}
+if (adminMainContentUser) {
+  attach(navUser, adminMainContentUser);
+}
+if (adminMainContentSetting) {
+  attach(navSetting, adminMainContentSetting);
+}
+if (adminLoadingChangePage) {
+  attach(loading, adminLoadingChangePage);
 }
 // login ,logout
 let check = JSON.parse(localStorage.getItem("user"));
@@ -176,6 +209,7 @@ if (globaLLogin) {
         }
       });
     } else if (check.permisson === "admin") {
+      HomeMainAcount.style.display = "none";
       HomebtnOpenAcount.addEventListener("click", () => {
         if (window.location.href.includes("page")) {
           window.location.href = "./AdminPage.html";

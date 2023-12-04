@@ -1,0 +1,119 @@
+.container-main {
+  margin-top: 140px;
+}
+@media only screen and (max-width: 1024px) {
+  .container-main {
+    margin-top: 20px;
+  }
+}
+.container-f {
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border: 2px solid #f1f1f1f1;
+  border-radius: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+}
+.form-title {
+  font-size: 16px;
+  text-align: center;
+  margin: 10px auto 0 auto;
+}
+.form {
+  margin: 0 15px;
+  font-weight: 400;
+}
+label {
+  font-weight: 600;
+  font-size: 18px;
+}
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  margin: 5px 0 10px 0;
+  padding: 15px;
+  background-color: #f1f1f1f1;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+.registerbtn {
+  width: 100%;
+  border: 2px solid transparent;
+  padding: 12px 20px;
+  color: whitesmoke;
+  font-size: 20px;
+  margin: 5px 0 10px 0;
+  cursor: pointer;
+  opacity: 0.9;
+  border-radius: 10px;
+  background: var(--primary-color);
+}
+.registerbtn:hover {
+  background-color: #ffffff;
+  color: #646262;
+  border-color: #646262;
+  transition: 0.3s;
+}
+.form-goup input:focus {
+  border-color: #2691d9;
+  transition: 0.3s;
+}
+.log-in {
+  text-align: right;
+}
+.log-in a {
+  text-decoration: underline;
+}
+.log-in a:link {
+  color: blue;
+}
+
+.log-in a:hover {
+  color: lightblue;
+}
+
+.selection {
+  display: flex;
+  margin: 10px auto;
+}
+.selection div {
+  width: 33%;
+  box-sizing: border-box;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  cursor: pointer;
+}
+.selection h4 {
+  color: #ffffff;
+  font-size: 14px;
+}
+.facebook {
+  background-color: #106bff;
+}
+.google {
+  background-color: #f52036;
+  margin: 0 10px;
+}
+.github {
+  background-color: #353332;
+}
+.input-box.invalid input {
+  border-color: #f52036;
+  transition: 0.3s;
+}
+.handle-error {
+  color: #f52036;
+}
+@media screen and (max-width: 767px) {
+  .selection h4 {
+    display: none;
+  }
+  .selection img {
+    margin-right: 0;
+  }
+}

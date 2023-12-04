@@ -1,4 +1,20 @@
 import html from "../../core/core.js";
+import { connect } from "../../core/store.js";
+const connector = connect();
+const btnCheck = (userName, id, nameStore) => {
+  const Account = JSON.parse(localStorage.getItem("Account"));
+  let item = Account.find((value) => userName === value.userName);
+  let order = item.order.find((p) => p.id === id && p.nameStore === nameStore);
+
+  return html`<button
+    id="btn-check-order"
+    class="${order.check ? "action" : ""}"
+    onclick="handleChecked(this,'admin/checkOrder','${userName}',${id},'${nameStore}')"
+  >
+    ${order.check ? "đã xác nhận" : "chưa xác nhận"}
+  </button>`;
+};
+connector(btnCheck);
 const StaticPage = () => {
   let order = [];
   const VND = new Intl.NumberFormat("vi-VN", {
@@ -18,7 +34,6 @@ const StaticPage = () => {
   }, 0);
   const totail_product = order.length;
   const totail_acces = check.length;
-  console.log(order);
   return html`
     <div class="header">
       <div class="left">
@@ -71,14 +86,6 @@ const StaticPage = () => {
         <div class="header">
           <i class="bx bx-receipt"></i>
           <h3>đơn hàng đã đặt gần đây</h3>
-          <i
-            class="bx bx-filter"
-            onclick=" MessageBox('thông báo','chức năng chưa được cập nhập','error')"
-          ></i>
-          <i
-            class="bx bx-search"
-            onclick=" MessageBox('thông báo','chức năng chưa được cập nhập','error')"
-          ></i>
         </div>
         <table id="customers">
           <thead>
@@ -88,13 +95,14 @@ const StaticPage = () => {
               <th>sản phẩm</th>
               <th>tổng tiên</th>
               <th>trạng thái</th>
+              <th>xác nhận đơn hàng</th>
             </tr>
           </thead>
-          <tbody id="ele-history-shop">
+          <tbody>
             ${order.map(
               (order_detail) =>
-                ` <tr onclick = "showInfor(this)">
-                <td>${order_detail.userName}</td>
+                ` <tr >
+                <td >${order_detail.userName}</td>
                 <td>${order_detail.date}</td>
                 <td>${order_detail.title}x<span style = "color:red;">${
                   order_detail.quantity
@@ -103,6 +111,14 @@ const StaticPage = () => {
                    order_detail.price * order_detail.quantity
                  )}</td>
                 <td>đã thanh toán</td>
+                <td>
+                 <button id ="btn-show-order" onclick = "showInfor(this)">chi tiết</button>
+                   ${btnCheck(
+                     order_detail.userName,
+                     order_detail.id,
+                     order_detail.nameStore
+                   )}
+                 </td>
                 <td style = "display:none">
                 
                 <div class="infor-content">

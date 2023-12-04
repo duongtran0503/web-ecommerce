@@ -7,6 +7,13 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>admin ecommerce</title>
     <link rel="icon" href="../image/logo/logo.png" />
 
@@ -16,6 +23,95 @@
 
   <body>
     <!-- Sidebar -->
+    <div id="form-add-product">
+      <div class="container-f-add-p">
+        <form action="#" class="form-f-add-p" id="form">
+          <span id="btn-close-f-add-p" onclick="handleBtnCloseFormAddProdcut()"
+            >X</span
+          >
+          <h2 id="title-f-add-p">Thêm Sản Phẩm</h2>
+          <div class="input-box-f-add-p">
+            <label for="name">Tên sản phẩm</label>
+            <input type="text" id="name" name="name" />
+            <div class="error-message-f-add-p"></div>
+          </div>
+          <div class="input-box-f-add-p">
+            <label for="describe">Mô tả sản phẩm</label>
+            <textarea rows="4" id="describe" name="describe"></textarea>
+            <div class="error-message-f-add-p"></div>
+          </div>
+          <div class="input-box-f-add-p">
+            <label for="price">Giá sản phẩm</label>
+            <input type="text" id="price" name="price" />
+            <div class="error-message-f-add-p"></div>
+          </div>
+          <div class="input-box-f-add-p">
+            <label for="type">Loại sản phẩm</label>
+            <select id="type-f-add-p" name="type">
+              <option value="" selected disabled hidden>-- Chọn loại --</option>
+              <option value="keyandmouse">keyandmouse</option>
+              <option value="laptop">laptop</option>
+              <option value="man_hinh">man_hinh</option>
+              <option value="phone">phone</option>
+            </select>
+            <div class="error-message-f-add-p"></div>
+          </div>
+          <div class="input-box-f-add-p">
+            <label for="image">URL Hình ảnh</label>
+            <input type="file" id="image-f-add-p" name="image" />
+            <image class="previewImage-f-add-p"></image>
+            <div class="error-message-f-add-p"></div>
+          </div>
+          <input type="submit" id="submitbtn-f-add-p" value="Thêm sản phẩm" />
+        </form>
+      </div>
+    </div>
+    <div id="form-edit-product">
+      <div class="container-f-edit-p">
+        <form action="#" class="form-f-edit-p" id="form-edit">
+          <span
+            id="btn-close-f-edit-p"
+            onclick="handleBtnCloseFormEditProdcut()"
+            >X</span
+          >
+          <h2 id="title-f-edit-p">sửa Sản Phẩm</h2>
+          <div class="input-box-f-edit-p">
+            <label for="name">Tên sản phẩm</label>
+            <input type="text" id="name-edit" name="name" />
+            <div class="error-message-f-edit-p"></div>
+          </div>
+          <div class="input-box-f-edit-p">
+            <label for="describe">Mô tả sản phẩm</label>
+            <textarea rows="4" id="describe-edit" name="describe"></textarea>
+            <div class="error-message-f-edit-p"></div>
+          </div>
+          <div class="input-box-f-edit-p">
+            <label for="price">Giá sản phẩm</label>
+            <input type="text" id="price-edit" name="price" />
+            <div class="error-message-f-edit-p"></div>
+          </div>
+          <div class="input-box-f-edit-p">
+            <label for="type">Loại sản phẩm</label>
+            <select id="type-f-edit-p" name="type">
+              <option value="" selected disabled hidden>-- Chọn loại --</option>
+              <option value="keyandmouse">keyandmouse</option>
+              <option value="laptop">laptop</option>
+              <option value="man_hinh">man_hinh</option>
+              <option value="phone">phone</option>
+            </select>
+            <div class="error-message-f-edit-p"></div>
+          </div>
+          <div class="input-box-f-edit-p">
+            <label for="image">URL Hình ảnh</label>
+            <input type="file" id="image-f-edit-p" name="image" />
+            <image class="previewImage-f-edit-p"></image>
+            <div class="error-message-f-edit-p" style="display: none"></div>
+          </div>
+          <input type="submit" id="submitbtn-f-edit-p" value="sửa sản phẩm" />
+        </form>
+      </div>
+    </div>
+    <div id="notifiBox"></div>
     <div id="messageBox"></div>
     <div id="renderInfor" class="active"></div>
     <div class="sidebar close">
@@ -24,31 +120,23 @@
         <div class="logo-name"><span>admin</span>e-c</div>
       </a>
       <ul class="side-menu">
-        <li
-          titles="shop"
-          onclick=" MessageBox('thông báo','chức năng chưa được cập nhập','error')"
-        >
+        <li titles="shop" onclick=" HandleRouter('admin/Router','shop')">
           <a href="#"><i class="bx bx-store-alt"></i>Shop</a>
         </li>
-        <li class="active" titles="static">
+        <li
+          class="active"
+          titles="static"
+          onclick=" HandleRouter('admin/Router','static')"
+        >
           <a href="#"><i class="bx bx-analyse"></i>thống kê</a>
         </li>
-        <li
-          titles="mes"
-          onclick=" MessageBox('thông báo','chức năng chưa được cập nhập','error')"
-        >
-          <a href="#"><i class="bx bx-message-square-dots"></i>Tin nhắn</a>
+        <li titles="mes" onclick=" HandleRouter('admin/Router','message')">
+          <a href="#"><i class="bx bx-message-square-dots"></i>Phản hôi</a>
         </li>
-        <li
-          titles="user"
-          onclick=" MessageBox('thông báo','chức năng chưa được cập nhập','error')"
-        >
+        <li titles="user" onclick=" HandleRouter('admin/Router','user')">
           <a href="#"><i class="bx bx-group"></i>người dùng</a>
         </li>
-        <li
-          titles="setting"
-          onclick=" MessageBox('thông báo','chức năng chưa được cập nhập','error')"
-        >
+        <li titles="setting" onclick=" HandleRouter('admin/Router','setting')">
           <a href="#"><i class="bx bx-cog"></i>cài đặt</a>
         </li>
       </ul>
@@ -82,19 +170,385 @@
 
       <!-- End of Navbar -->
 
+      <section class="main-loading" id="loading-change-page"></section>
+      <main class="main-content active" id="ele-admin-main-content-shop"></main>
       <main class="main-content" id="ele-admin-main-content-static"></main>
+      <main
+        class="main-content active"
+        id="ele-admin-main-content-message"
+        style="background: #fff"
+      ></main>
+      <main class="main-content active" id="ele-admin-main-content-user"></main>
+      <main
+        class="main-content active"
+        id="ele-admin-main-content-setting"
+      ></main>
     </div>
-
     <script>
+      function Validator(object) {
+        function getParent(element, selector) {
+          while (element.parentElement) {
+            if (element.parentElement.matches(selector))
+              return element.parentElement;
+            element = element.parentElement;
+          }
+        }
+        var selectorRules = {};
+        //Hàm thực hiện validate
+        function validate(inputElement, rule) {
+          var errorElement = getParent(
+            inputElement,
+            object.formGroupSelector
+          ).querySelector(object.errorSelector);
+          var errorMessage;
+          //Lấy ra các rule của selector
+          var rules = selectorRules[rule.selector];
+          for (var i = 0; i < rules.length; ++i) {
+            errorMessage = rules[i](inputElement.value);
+            if (errorMessage) break;
+          }
+          if (errorMessage) {
+            errorElement.innerText = errorMessage;
+            getParent(inputElement, object.formGroupSelector).classList.add(
+              "invalid"
+            );
+          } else {
+            errorElement.innerText = "";
+            getParent(inputElement, object.formGroupSelector).classList.remove(
+              "invalid"
+            );
+          }
+          return !errorMessage;
+        }
+        var formElement = document.querySelector(object.form);
+        if (formElement) {
+          formElement.onsubmit = function (e) {
+            e.preventDefault();
+            var isFromValid = true;
+            object.rules.forEach(function (rule) {
+              var inputElement = formElement.querySelector(rule.selector);
+              var isValid = validate(inputElement, rule);
+              if (!isValid) isFromValid = false;
+            });
+
+            if (isFromValid) {
+              if (typeof object.onSubmit === "function") {
+                var enableInput = formElement.querySelectorAll("[name]");
+                var formValues = Array.from(enableInput).reduce(function (
+                  values,
+                  input
+                ) {
+                  switch (input.type) {
+                    case "file":
+                      values[input.name] = input.files;
+                      break;
+                    default:
+                      values[input.name] = input.value;
+                  }
+                  return values;
+                },
+                {});
+                object.onSubmit(formValues);
+              }
+            }
+          };
+          //Lặp qua mỗi rules và xử lí
+          object.rules.forEach(function (rule) {
+            if (Array.isArray(selectorRules[rule.selector])) {
+              selectorRules[rule.selector].push(rule.test);
+            } else {
+              //Lưu lại các rules
+              selectorRules[rule.selector] = [rule.test];
+            }
+            var inputElement = formElement.querySelector(rule.selector);
+            if (inputElement) {
+              switch (inputElement.type) {
+                case "file":
+                  inputElement.onchange = function () {
+                    validate(inputElement, rule);
+                  };
+                  break;
+                default:
+                  //Xử lí khi click ra khỏi ô input
+                  inputElement.onblur = function () {
+                    validate(inputElement, rule);
+                  };
+                  //Xử lí khi người dùng nhập vào input
+                  inputElement.oninput = function () {
+                    var errorElement = getParent(
+                      inputElement,
+                      object.formGroupSelector
+                    ).querySelector(object.errorSelector);
+                    errorElement.innerText = "";
+                    getParent(
+                      inputElement,
+                      object.formGroupSelector
+                    ).classList.remove("invalid");
+                  };
+              }
+            }
+          });
+        }
+      }
+      Validator.isRequired = function (selector, message) {
+        return {
+          selector: selector,
+          test: function (value) {
+            return value.trim()
+              ? undefined
+              : message || "Hãy nhập thông tin này !";
+          },
+        };
+      };
+
+      Validator.isEmail = function (selector, message) {
+        return {
+          selector: selector,
+          test: function (value) {
+            var regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            return regex.test(value) ? undefined : "Email không hợp lệ !";
+          },
+        };
+      };
+      Validator.minLength = function (selector, min) {
+        return {
+          selector: selector,
+          test: function (value) {
+            return value.length >= min
+              ? undefined
+              : `Hãy nhập tối thiếu ${min} kí tự`;
+          },
+        };
+      };
+      Validator.isConfirmed = function (selector, getConfirmValue, message) {
+        return {
+          selector: selector,
+          test: function (value) {
+            return value === getConfirmValue()
+              ? undefined
+              : message || "Giá trị nhập vào không chính xác !";
+          },
+        };
+      };
+      Validator.isPositiveInteger = function (selector, message) {
+        return {
+          selector: selector,
+          test: function (value) {
+            return value >= 0 && Number.isInteger(parseFloat(value))
+              ? undefined
+              : message || "Giá trị phải là số nguyên không âm !";
+          },
+        };
+      };
+      Validator.isDecimal = function (selector, message) {
+        return {
+          selector: selector,
+          test: function (value) {
+            return value >= 0 && !isNaN(value) && !Number.isInteger(value)
+              ? undefined
+              : message || "Giá trị phải là số dương !";
+          },
+        };
+      };
+
+      document
+        .querySelector("#image-f-add-p")
+        .addEventListener("change", function () {
+          var file = this.files[0];
+          if (file) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+              var previewImage = document.querySelector(
+                ".previewImage-f-add-p"
+              );
+              if (previewImage) {
+                previewImage.src = e.target.result;
+                previewImage.style.display = "block";
+                previewImage.classList.add("changed");
+              }
+            };
+            reader.readAsDataURL(file);
+          }
+        });
+    </script>
+    <script>
+      // show information of product
+      const showInforProduct = (ele) => {
+        const content = ele.lastElementChild.innerHTML;
+        const show = document.getElementById("renderInfor");
+        show.classList.remove("active");
+
+        show.innerHTML = content;
+      };
+      // hanfle form add product
+      const handleOpentFormAddProduct = () => {
+        const form = document.getElementById("form-add-product");
+        form.classList.add("active");
+      };
+      const handleBtnCloseFormAddProdcut = () => {
+        const form = document.getElementById("form-add-product");
+        form.classList.remove("active");
+      };
+      // form add
+
+      Validator({
+        form: "#form",
+        formGroupSelector: ".input-box-f-add-p",
+        errorSelector: ".error-message-f-add-p",
+        rules: [
+          Validator.isRequired("#name", "Hãy nhập tên sản phẩm !"),
+          Validator.isRequired("#price", "Hãy nhập giá sản phẩm !"),
+          Validator.isDecimal("#price", "Giá sản phẩm phải là số dương !"),
+          Validator.isRequired("#type-f-add-p", "Hãy chọn loại sản phẩm !"),
+          Validator.isRequired("#image-f-add-p", "Hãy thêm hình ảnh !"),
+        ],
+        onSubmit: function (data) {
+          dispatch("admin/shopAddProdcut", data);
+          const form = document.getElementById("form-add-product");
+          form.classList.remove("active");
+        },
+      });
+      //  form edit
+      let storeOfProdcutEdit = "";
+      let indexOfProdcutEdit = "";
+      const handleOpenFormEditProduct = (
+        name,
+        des,
+        price,
+        type,
+        image,
+        store,
+        index
+      ) => {
+        const inputName = document.getElementById("name-edit");
+        const inputDes = document.getElementById("describe-edit");
+        const inputPrice = document.getElementById("price-edit");
+        const inputType = document.getElementById("type-f-edit-p");
+        const inputImage = document.getElementById("image-f-edit-p");
+        inputName.value = name;
+        inputDes.value = des;
+        inputPrice.value = price;
+        inputType.value = type;
+        storeOfProdcutEdit = store;
+        indexOfProdcutEdit = index;
+        const previewImage = document.querySelector(".previewImage-f-edit-p");
+        previewImage.src = image;
+        previewImage.classList.add("changed");
+        inputImage.addEventListener("change", function () {
+          let file = this.files[0];
+          if (file) {
+            let reader = new FileReader();
+            reader.onload = function (e) {
+              if (previewImage) {
+                previewImage.src = e.target.result;
+                previewImage.style.display = "block";
+                previewImage.classList.add("changed");
+              }
+            };
+            reader.readAsDataURL(file);
+          }
+        });
+        const form = document.getElementById("form-edit-product");
+        form.classList.add("active");
+      };
+      const handleBtnCloseFormEditProdcut = () => {
+        const form = document.getElementById("form-edit-product");
+        form.classList.remove("active");
+      };
+      Validator({
+        form: "#form-edit",
+        formGroupSelector: ".input-box-f-edit-p",
+        errorSelector: ".error-message-f-edit-p",
+        rules: [
+          Validator.isRequired("#name-edit", "Hãy nhập tên sản phẩm !"),
+          Validator.isRequired("#price-edit", "Hãy nhập giá sản phẩm !"),
+          Validator.isDecimal("#price-edit", "Giá sản phẩm phải là số dương !"),
+          Validator.isRequired("#type-f-edit-p", "Hãy chọn loại sản phẩm !"),
+          // Validator.isRequired("#image-f-edit-p", "Hãy thêm hình ảnh !"),
+        ],
+        onSubmit: function (data) {
+          dispatch(
+            "admin/shopEditProdcut",
+            data,
+            storeOfProdcutEdit,
+            indexOfProdcutEdit
+          );
+          const form = document.getElementById("form-edit-product");
+          form.classList.remove("active");
+        },
+      });
+      // handle notify
+      let productDelete = {};
+      const handleBtnDeleteProduct = (ele, store, index) => {
+        const notify = document.getElementById("notifiBox");
+        productDelete = { store, index };
+        const content = ele.parentElement.parentElement.lastElementChild;
+        notify.innerHTML = content.innerHTML;
+        notify.classList.add("active");
+      };
+      const handleCloseBtnNotify = () => {
+        const notify = document.getElementById("notifiBox");
+        notify.classList.remove("active");
+      };
+      const handleBtnAgree = () => {
+        const notify = document.getElementById("notifiBox");
+        dispatch(
+          "admin/deleteProduct",
+          productDelete.store,
+          productDelete.index
+        );
+        notify.classList.remove("active");
+      };
+      //handle btn search
+      const handleSearchBtn = (ele) => {
+        const input = ele.parentElement.firstElementChild;
+        if (input.value.length === 0) {
+          return;
+        }
+        dispatch("admin/shopSearchInput", input.value);
+      };
+      // loadding ui
+      const mainLoading = document.getElementById("loading-change-page");
+      setTimeout(() => {
+        mainLoading.classList.add("active");
+      }, 1000);
+      const HandleRouter = (action, id) => {
+        const main = document.getElementById(`ele-admin-main-content-${id}`);
+        const mainEle = document.getElementsByClassName("main-content");
+        HandleEvent("admin/Router", main, mainEle, mainLoading);
+      };
+      //   handle check order of user
+      const handleChecked = (ele, ...args) => {
+        MessageBox("Thông báo", "đơn hàng đã được xác nhận");
+        dispatch(...args);
+      };
+      //handle btn show infor order
+
       const show = document.getElementById("renderInfor");
       show.onclick = function () {
         this.classList.add("active");
       };
+      //handle btn show infor order
       const showInfor = (ele) => {
-        const infor = ele.lastElementChild.innerHTML;
+        const infor =
+          ele.parentElement.parentElement.lastElementChild.innerHTML;
         show.classList.remove("active");
         show.innerHTML = infor;
       };
+      const sideLinks = document.querySelectorAll(
+        ".sidebar .side-menu li a:not(.logout)"
+      );
+      //   handle toggle when click navigaton
+      sideLinks.forEach((item) => {
+        const li = item.parentElement;
+        item.addEventListener("click", () => {
+          sideLinks.forEach((i) => {
+            i.parentElement.classList.remove("active");
+          });
+          li.classList.add("active");
+          document.getElementById("title-admin").innerText = li.innerText;
+        });
+      });
       const menuBar = document.querySelector(".content nav .bx.bx-menu");
       const sideBar = document.querySelector(".sidebar");
 

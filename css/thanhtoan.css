@@ -99,6 +99,8 @@
 .paybtn {
   max-width: calc(60% - 10px);
   width: 100%;
+  max-height: 50px;
+  min-height: 50px;
   margin: 15px auto;
   font-size: 20px;
   padding: 10px;

@@ -36,15 +36,38 @@ export default function HandleEvent(action, element, ...args) {
         window.location.href = `./ViewCart.html`;
       }
       break;
-    case "payment": {
-      let stateUser = JSON.parse(localStorage.getItem("state"));
-      if (!stateUser) {
-        MessageBox("Thông báo", "Hãy đang nhập để thanh toán đơn hàng");
-        return;
-      } else {
-        window.location.href = "./formthanhtoan.html";
+    case "payment":
+      {
+        let stateUser = JSON.parse(localStorage.getItem("state"));
+        if (!stateUser) {
+          MessageBox("Thông báo", "Hãy đang nhập để thanh toán đơn hàng");
+          return;
+        } else {
+          window.location.href = "./formthanhtoan.html";
+        }
       }
-    }
+      break;
+    case "admin/Router":
+      {
+        const mainContent = [...args[0]];
+        const mainLoading = args[1];
+        mainContent.forEach((ele) => {
+          if (!ele.classList.contains("active")) {
+            ele.classList.add("active");
+          }
+        });
+        mainLoading.classList.remove("active");
+        setTimeout(() => {
+          mainLoading.classList.add("active");
+          element.classList.remove("active");
+        }, 1000);
+      }
+      break;
+    case "admin/shopBtnDeleP":
+      {
+        console.log(element);
+      }
+      break;
     default:
       return;
   }

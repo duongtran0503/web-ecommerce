@@ -18,9 +18,7 @@ const productlist = ({ searchProduct, productlist, item, start, end }) => {
   } else if (searchProduct.length !== 0) {
     item = searchProduct;
   }
-  function converJson(obj) {
-    return JSON.stringify(obj);
-  }
+
   const VND = new Intl.NumberFormat("vi-VN", {
     style: "currency",
     currency: "VND",
